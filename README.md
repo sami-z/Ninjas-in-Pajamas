@@ -1,6 +1,6 @@
 # Ninjas-in-Pajamas
 
-A form based application designed to help make student life easier. Main features include a club/volunteer oppurtunity finder, a GPA calculator, and a financial planner.
+A form-based application designed to help make student-life easier. Main features include a club/volunteer oppurtunity finder, a GPA calculator, and a financial planner.
 
 Version 1 can be located in the master branch of the repository under the Team Project Folder.
 
