@@ -4,6 +4,7 @@ public class mainApp {
 	//Two instance variables needed to run the application
 	ClubList masterClubList;
 	Person currentPerson;
+	readFile reader;
 	
 	//Constructor used to initializes the app
 	public mainApp(String data,Person currentPerson) 
@@ -23,7 +24,7 @@ public class mainApp {
 	//Reads the data and returns a ClubList
 	private ClubList ReadData(String data) throws Exception
 	{
-		readFile reader = new readFile(data);
+		reader = new readFile(data);
 		return reader.readClubData();
 	}
 	

@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.FileWriter; //how we will actually write to new file
 import java.util.Scanner;
 
-import javax.xml.ws.Response;
-
 
 /* How to use this program: The writeFile program creates a data.txt file in the directory where it is launched.
  * The user can input data relating to the different clubs around campus, the program takes this data in a writes

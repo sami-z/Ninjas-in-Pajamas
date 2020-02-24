@@ -1,11 +1,14 @@
 import java.util.*;
 public class main {
 	
+	private static mainApp app;
+	private static readFile reader;
+	
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
 		Person p1 = getInitialPerson(input);
-		mainApp app = new mainApp("data.txt",p1);
+		app = new mainApp("data.txt",p1);
 		boolean Condition;
 		
 		do {
@@ -18,7 +21,7 @@ public class main {
 	
 	public static void displayInterestMapping() 
 	{
-		readFile reader = new readFile("map.txt");
+		reader = new readFile("map.txt");
 		reader.displayMap();
 	}
 	
