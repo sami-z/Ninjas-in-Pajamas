@@ -8,5 +8,6 @@ How to Compile and Run:
 1. Click "Clone or download" in the GitHub repository (Ninjas-in-Pajamas) and download the repository as a zip file.
 2. Unzip/Extract all the files into the desired directory.
 3. Create a new JAVA project in Eclipse.
-4. Import the unzipped files into your newly created JAVA project.
-5. Run main.java only and follow the instructions to go through a text-based version of the application.
+4. Import the unzipped JAVA files into your newly created JAVA project (in the src folder).
+5. Import the map.txt and data.txt files into the PROJECT (NOT the src folder).
+6. Run main.java only and follow the instructions to go through a text-based version of the application.
