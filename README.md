@@ -1,4 +1,4 @@
-# Ninjas-in-Pajamas
+# Ninjas-in-Pajamas (T03 - GROUP 12)
 
 A form-based application designed to help make student-life easier. Main features include a club/volunteer oppurtunity finder, a GPA calculator, and a financial planner.
 
