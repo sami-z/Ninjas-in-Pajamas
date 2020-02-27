@@ -19,7 +19,7 @@ public class main {
 		}while(Condition);
 		
 	}
-	// fuck sami
+	
 	public static void displayInterestMapping() 
 	{
 		reader = new readFile("map.txt");
