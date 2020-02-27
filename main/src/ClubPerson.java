@@ -4,19 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-public class Person {
-	
-	//Name of the person
-	private String name;
-	
-	//Age of the person
-	private int yos;
-	
-	// Major program the person is in
-	private String major;
-	
-	// Minor program the person is in
-	private String minor;
+public class ClubPerson extends MasterPerson {
 	
 	// List of interests the person has
 	private ArrayList<String> interests = new ArrayList<String>();
@@ -41,15 +29,11 @@ public class Person {
 	 * faculties: The String ArrayList of the faculties by which the person is apart of
 	 * 
 	 * */
-	public Person(String name, int yos, String major, String minor, ArrayList<String> interests, ArrayList<String> faculties) {
-		
+	public ClubPerson(String name, int yos, String major, String minor, ArrayList<String> interests, ArrayList<String> faculties) {
+		super(name,yos,major,minor);
 		readFile reader = new readFile("map.txt");
 		mapOfInterest = reader.readMap();
 		
-		this.name = new String(name);
-		this.yos = yos;
-		this.major = new String(major);
-		this.minor = new String(minor);
 		for (String d : interests) {
 			addInterest(new String(d));
 		}
@@ -92,26 +76,6 @@ public class Person {
 		return new ClubList(recommendedClubs);
 	}
 	
-	public String getName() {
-		return new String(name);
-		
-	}
-	
-	public int getYOS() {
-		return yos;
-	
-	}
-	
-	public String getMajor() {
-		return new String(major);
-		
-	}
-	
-	public String getMinor() {
-		return new String(minor);
-		
-	}
-	
 	public ArrayList<String> getInterests() {
 		ArrayList<String> nInterests = new ArrayList<String>();
 		for (String d : interests) {
@@ -128,25 +92,6 @@ public class Person {
 		}
 		return nFaculties;
 		
-	}
-	
-	public void setName(String newName) {
-		name = new String(newName);
-		
-	}
-
-	public void setYOS(int yos) {
-		yos = yos;
-		
-	}
-	
-	public void setMajor(String newMajor) {
-		major = new String(newMajor);
-		
-	}
-	
-	public void setMinor(String newMinor) {
-		minor = new String(newMinor);
 	}
 	
 	public void addInterest(String newInterest) {
@@ -184,9 +129,7 @@ public class Person {
 	
 	public void displayInfo() 
 	{
-		System.out.println("Name: " + name);
-		System.out.println("Year of Study: " + yos);
-		System.out.println("Major: " + major);
+		super.displayInfo();
 		System.out.println("Interests: ");
 		displayInterests();
 		

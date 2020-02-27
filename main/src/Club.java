@@ -24,7 +24,7 @@ public class Club {
 	 * Name: Name of the club
 	 * Description: The description of the club
 	 * link: The link of the club
-	 * cate: The String array of categores that the club fits
+	 * cate: The String array of categories that the club fits
 	 * */
 	public Club(String Name, String Description,String link, String[] cate) 
 	{

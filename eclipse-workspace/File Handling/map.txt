@@ -1,0 +1,28 @@
+1|Undergrad/Graduate Societies
+1.1|Faculty of Science
+1.2|Faculty of Arts
+1.3|Faculty of Social Work
+1.4|Faculty of Kinesiology
+1.5|Faculty of Health Science
+1.6|Faculty of Nursing
+1.7|Schulich School of Engineering
+1.8|Haskayne School of Business
+1.9|Werklund School of Education
+1.10|Pre-Graduate Societies
+1.11|Graduate Societies
+2|Culture + Language
+3|Politics
+4|Religion
+5|Arts
+5.1|Fine/Visual Arts
+5.2|Performance Arts
+6|Sports
+7|Entertainment + Pop Culture + Games
+8|Competition
+9|Outdoors
+10|Activism + Sustainability
+11|STEM
+12|Research
+13|Greek Life
+14|LGBTQ+
+15|Other

@@ -3,11 +3,11 @@ public class mainApp {
 
 	//Two instance variables needed to run the application
 	ClubList masterClubList;
-	Person currentPerson;
+	ClubPerson currentPerson;
 	readFile reader;
 	
 	//Constructor used to initializes the app
-	public mainApp(String data,Person currentPerson) 
+	public mainApp(String data,ClubPerson currentPerson) 
 	{
 		try {
 		masterClubList = ReadData(data);
