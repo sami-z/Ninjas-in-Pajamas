@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
-		ClubPerson p1 = getInitiaClublPerson(input);
+		ClubPerson p1 = getInitialClubPerson(input);
 		app = new MainApp("data.txt",p1);
 		boolean Condition;
 
@@ -27,7 +27,7 @@ public class Main {
 		reader.displayMap();
 	}
 
-	public static ClubPerson getInitiaClublPerson(Scanner input) 
+	public static ClubPerson getInitialClubPerson(Scanner input) 
 	{
 		ArrayList<String> interests = new ArrayList<String>();
 		ArrayList<String> fac = new ArrayList<String>();
@@ -78,5 +78,10 @@ public class Main {
 
 		return p1;
 	}
+	
+	/* public static FinancePerson getInitialFinancePerson(Scanner input)
+	{
+		will continue working on this soon
+	} */
 
 }
