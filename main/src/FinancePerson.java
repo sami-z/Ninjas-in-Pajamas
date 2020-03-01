@@ -6,10 +6,11 @@ public class FinancePerson extends MasterPerson{
 	private ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
 	private ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
 	private double longTermGoal;
+	private int longTermGoalMonthBased;
 	private double weeklyIncome;
 	private double weeklyBudget;
 	
-	public FinancePerson(String name, int yos, String major, String minor, double tuition, ArrayList<Double> allWeeklyExpenses, ArrayList<Double> allMonthlyExpenses, double longTermGoal, double weeklyIncome, double weeklyBudget)
+	public FinancePerson(String name, int yos, String major, String minor, double tuition, ArrayList<Double> allWeeklyExpenses, ArrayList<Double> allMonthlyExpenses, double longTermGoal, int longTermGoalMonthBased, double weeklyIncome, double weeklyBudget)
 	{
 		super(name, yos, major, minor);
 		setTuition(tuition);
@@ -20,6 +21,7 @@ public class FinancePerson extends MasterPerson{
 			addMonthlyExpense(new Double(d));
 		}
 		setLongTermGoal(longTermGoal);
+		setLongTermGoalMonthBased(longTermGoalMonthBased);
 		setWeeklyIncome(weeklyIncome);
 		setWeeklyBudget(weeklyBudget);
 	}
@@ -42,6 +44,16 @@ public class FinancePerson extends MasterPerson{
 	public void setLongTermGoal(double longTermGoal)
 	{
 		this.longTermGoal = longTermGoal;
+	}
+	
+	public int getLongTermGoalMonthBased()
+	{
+		return this.longTermGoalMonthBased;
+	}
+	
+	public void setLongTermGoalMonthBased(int newMonthBasedGoal)
+	{
+		this.longTermGoalMonthBased = newMonthBasedGoal;
 	}
 	
 	public double getWeeklyIncome()
