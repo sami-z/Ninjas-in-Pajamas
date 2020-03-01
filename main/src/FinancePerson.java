@@ -14,10 +14,10 @@ public class FinancePerson extends MasterPerson{
 	{
 		super(name, yos, major, minor);
 		setTuition(tuition);
-		for (double d : allWeeklyExpenses) {
+		for (Double d : allWeeklyExpenses) {
 			addWeeklyExpense(new Double(d));
 		}
-		for (double d : allMonthlyExpenses) {
+		for (Double d : allMonthlyExpenses) {
 			addMonthlyExpense(new Double(d));
 		}
 		setLongTermGoal(longTermGoal);
