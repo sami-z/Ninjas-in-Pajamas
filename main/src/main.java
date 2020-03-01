@@ -48,7 +48,7 @@ public class main {
 		displayInterestMapping();
 		do 
 		{
-			System.out.println("Enter numbers based on the above mapping");
+			System.out.println("Enter interest(s) based on the above mapping");
 			currInt = input.nextLine();
 			if(!currInt.equals(""))
 			interests.add(currInt);
@@ -56,7 +56,19 @@ public class main {
 		
 		do 
 		{
-			System.out.println("Enter faculty");
+			System.out.println("1.1|Faculty of Science");
+			System.out.println("1.2|Faculty of Arts");
+			System.out.println("1.3|Faculty of Social Work");
+			System.out.println("1.4|Faculty of Kinesiology");
+			System.out.println("1.5|Faculty of Health Science");
+			System.out.println("1.6|Faculty of Nursing");
+			System.out.println("1.7|Schulich School of Engineering");
+			System.out.println("1.8|Haskayne School of Business");
+			System.out.println("1.9|Werklund School of Education");
+			System.out.println("1.10|Pre-Graduate Societies");
+			System.out.println("1.11|Graduate Societies");
+			
+			System.out.println("Enter faculty(ies) based on the above mapping");
 			currFac = input.nextLine();
 			fac.add(currFac);
 		}while(!currFac.equals(""));
