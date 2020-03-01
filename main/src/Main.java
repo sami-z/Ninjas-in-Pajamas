@@ -26,7 +26,7 @@ public class Main {
 		reader = new ReadFile("map.txt");
 		reader.displayMap();
 	}
-
+// another test
 	public static ClubPerson getInitiaClublPerson(Scanner input) 
 	{
 		ArrayList<String> interests = new ArrayList<String>();
