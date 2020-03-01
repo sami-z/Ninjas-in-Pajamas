@@ -15,6 +15,9 @@ public class FinancePerson extends MasterPerson{
 		for (double d : allExpenses) {
 			addExpense(new Double(d));
 		}
+		setLongTermGoal(longTermGoal);
+		setWeeklyIncome(weeklyIncome);
+		setWeeklyBudget(weeklyBudget);
 	}
 	
 	public double getTuition()
