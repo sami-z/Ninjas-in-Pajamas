@@ -3,6 +3,7 @@ import java.util.*;
 public class FinancePerson extends MasterPerson{
 	
 	private double tuition;
+	private double savings;
 	private ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
 	private ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
 	private double longTermGoal;
@@ -10,10 +11,11 @@ public class FinancePerson extends MasterPerson{
 	private double weeklyIncome;
 	private double weeklyBudget;
 	
-	public FinancePerson(String name, int yos, String major, String minor, double tuition, ArrayList<Double> allWeeklyExpenses, ArrayList<Double> allMonthlyExpenses, double longTermGoal, int longTermGoalMonthBased, double weeklyIncome, double weeklyBudget)
+	public FinancePerson(String name, int yos, String major, String minor, double tuition, double savings, ArrayList<Double> allWeeklyExpenses, ArrayList<Double> allMonthlyExpenses, double longTermGoal, int longTermGoalMonthBased, double weeklyIncome, double weeklyBudget)
 	{
 		super(name, yos, major, minor);
 		setTuition(tuition);
+		setSavings(savings);
 		for (Double d : allWeeklyExpenses) {
 			addWeeklyExpense(new Double(d));
 		}
@@ -34,6 +36,16 @@ public class FinancePerson extends MasterPerson{
 	public void setTuition(double tuition)
 	{
 		this.tuition = tuition;
+	}
+	
+	public double getSavings()
+	{
+		return this.savings;
+	}
+	
+	public void setSavings(double savings)
+	{
+		this.savings = savings;
 	}
 	
 	public double getLongTermGoal()
