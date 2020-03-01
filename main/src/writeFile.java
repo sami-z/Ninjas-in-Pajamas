@@ -9,7 +9,7 @@ import java.util.Scanner;
  * the data into one line of data.txt.
  * */
 
-public class writeFile {
+public class WriteFile {
 			
 	public static void main (String [] args) 
 	{

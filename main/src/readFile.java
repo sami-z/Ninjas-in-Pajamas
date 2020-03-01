@@ -2,9 +2,9 @@ import java.io.BufferedReader; //works like Scanner class, will read from file
 import java.io.FileReader; // how to access file in Windows
 import java.util.*;
 
-public class readFile {	
+public class ReadFile {	
 	private String dataFile;
-	public readFile(String dataFile) 
+	public ReadFile(String dataFile) 
 	{
 		this.dataFile = dataFile;
 	}

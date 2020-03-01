@@ -1,13 +1,13 @@
-import java.util.*;
-public class mainApp {
+import java.util.Scanner;
+public class MainApp {
 
 	//Two instance variables needed to run the application
 	ClubList masterClubList;
 	ClubPerson currentPerson;
-	readFile reader;
+	ReadFile reader;
 	
 	//Constructor used to initializes the app
-	public mainApp(String data,ClubPerson currentPerson) 
+	public MainApp(String data,ClubPerson currentPerson) 
 	{
 		try {
 		masterClubList = ReadData(data);
@@ -24,7 +24,7 @@ public class mainApp {
 	//Reads the data and returns a ClubList
 	private ClubList ReadData(String data) throws Exception
 	{
-		reader = new readFile(data);
+		reader = new ReadFile(data);
 		return reader.readClubData();
 	}
 	

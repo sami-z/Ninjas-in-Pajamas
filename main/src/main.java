@@ -1,15 +1,16 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 //random stuff
-public class main {
+public class Main {
 	
-	private static mainApp app;
-	private static readFile reader;
+	private static MainApp app;
+	private static ReadFile reader;
 	
 	public static void main(String[] args) 
 	{
 		Scanner input = new Scanner(System.in);
 		ClubPerson p1 = getInitiaClublPerson(input);
-		app = new mainApp("data.txt",p1);
+		app = new MainApp("data.txt",p1);
 		boolean Condition;
 		
 		do {
@@ -22,7 +23,7 @@ public class main {
 	
 	public static void displayInterestMapping() 
 	{
-		reader = new readFile("map.txt");
+		reader = new ReadFile("map.txt");
 		reader.displayMap();
 	}
 	

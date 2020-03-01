@@ -31,7 +31,7 @@ public class ClubPerson extends MasterPerson {
 	 * */
 	public ClubPerson(String name, int yos, String major, String minor, ArrayList<String> interests, ArrayList<String> faculties) {
 		super(name,yos,major,minor);
-		readFile reader = new readFile("map.txt");
+		ReadFile reader = new ReadFile("map.txt");
 		mapOfInterest = reader.readMap();
 		
 		for (String d : interests) {
