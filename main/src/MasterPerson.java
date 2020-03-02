@@ -19,7 +19,7 @@ public class MasterPerson {
 		this.major = new String(major);
 		this.minor = new String(minor);
 	}
-	// random comment for commit test
+	
 	public String getName() {
 		return new String(name);
 		
