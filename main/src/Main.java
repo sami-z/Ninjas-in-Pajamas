@@ -8,8 +8,9 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
+		
 		Scanner input = new Scanner(System.in);
-		ClubPerson p1 = getInitialClubPerson(input);
+		MasterPerson p1 = getInitialMasterPerson(input);
 		app = new MainApp("data.txt",p1);
 		boolean Condition;
 
@@ -27,11 +28,8 @@ public class Main {
 		reader.displayMap();
 	}
 
-	public static ClubPerson getInitialClubPerson(Scanner input) 
+	public static MasterPerson getInitialMasterPerson(Scanner input)
 	{
-		ArrayList<String> interests = new ArrayList<String>();
-		ArrayList<String> fac = new ArrayList<String>();
-
 		System.out.println("Enter name: ");
 		String name = input.nextLine();
 
@@ -43,6 +41,16 @@ public class Main {
 		String Major = input.nextLine();
 		System.out.println("Enter Minor: ");
 		String Minor = input.nextLine();
+		
+		MasterPerson p1 = new MasterPerson(name, YOS, Major, Minor);
+		
+		return p1;
+	}
+	
+	public static ClubPerson getInitialClubPerson(Scanner input, MasterPerson p1) 
+	{
+		ArrayList<String> interests = new ArrayList<String>();
+		ArrayList<String> fac = new ArrayList<String>();
 		String currFac;
 		String currInt;
 
@@ -74,14 +82,61 @@ public class Main {
 			fac.add(currFac);
 		}while(!currFac.equals(""));
 
-		ClubPerson p1 = new ClubPerson(name,YOS,Major,Minor,interests,fac);
+		ClubPerson p2 = new ClubPerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(),interests,fac);
 
-		return p1;
+		return p2;
 	}
 	
-	/* public static FinancePerson getInitialFinancePerson(Scanner input)
+	public static FinancePerson getInitialFinancePerson(Scanner input, MasterPerson p1)
 	{
-		will continue working on this soon
-	} */
+		
+		ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
+		ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
+		double currWeeklyExpense;
+		double currMonthlyExpense;
+		System.out.println("Enter your yearly tuition: ");
+		double tuition = input.nextDouble();
+
+		System.out.println("Enter the amount in your savings account: ");
+		double savings = input.nextDouble();
+		
+		String expense;
+		String monthExpense;
+		
+		do 
+		{
+			System.out.println("Enter all weekly expenses: ");
+			expense = input.nextLine();
+			if(!expense.equals("")) {
+				currWeeklyExpense = Double.parseDouble(expense);
+				allWeeklyExpenses.add(currWeeklyExpense);
+			}
+		}while(!expense.equals(""));
+		
+		do 
+		{
+			System.out.println("Enter all monthly expenses: ");
+			monthExpense = input.nextLine();
+			if(!monthExpense.equals("")) {
+				currMonthlyExpense = Double.parseDouble(monthExpense);
+				allMonthlyExpenses.add(currMonthlyExpense);
+			}
+		}while(!monthExpense.equals(""));
+		
+		System.out.println("Enter your long-term goal amount: ");
+		double longTermGoal = input.nextDouble();
+		
+		System.out.println("Enter your long-term goal period in months: ");
+		int longTermGoalMonthBased = input.nextInt();
+		
+		System.out.println("Enter your weekly income: ");
+		double weeklyIncome = input.nextDouble();
+		
+		System.out.println("Enter your weekly budget: ");
+		double weeklyBudget = input.nextDouble();
+		
+		FinancePerson p3 = new FinancePerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(), tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
+		return p3;
+	} 
 
 }
