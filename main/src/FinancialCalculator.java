@@ -13,6 +13,11 @@ public class FinancialCalculator extends FinancePerson {
 		super(name, yos, major, minor, tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
 	}
 	
+	public FinancialCalculator(FinancePerson p) 
+	{
+		super(p.getName(),p.getYOS(),p.getMajor(),p.getMinor(),p.getTuition(),p.getSavings(),p.getAllWeeklyExpenses(),p.getAllMonthlyExpenses(),p.getLongTermGoal(),p.getLongTermGoalMonthBased(),p.getWeeklyIncome(),p.getWeeklyBudget());
+	}
+	
 	public double calculateWeeklyExpenditure()
 	{
 		double weeklyExpenditure = 0;
