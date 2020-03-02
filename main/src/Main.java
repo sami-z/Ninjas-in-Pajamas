@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 //random stuff
+
 public class Main {
 
 	private static MainApp app;
@@ -11,7 +12,24 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		MasterPerson p1 = getInitialMasterPerson(input);
-		app = new MainApp("data.txt",p1);
+		
+		System.out.println("Enter what you want to do");
+		System.out.println("1: Get clubs you're interested in!");
+		System.out.println("2: Budget your expenses");
+		String k  = input.nextLine();
+		int l = Integer.parseInt(k);
+		
+		if(l == 1) 
+		{
+			ClubPerson  p2 = getInitialClubPerson(input,p1);
+			app = new ClubApp("data.txt",p2);
+		}
+		else if(l == 2) 
+		{
+			FinancePerson p3 = getInitialFinancePerson(input,p1);
+			app = new FinanceApp(p3);
+		}
+		
 		boolean Condition;
 
 		do {
@@ -95,10 +113,13 @@ public class Main {
 		double currWeeklyExpense;
 		double currMonthlyExpense;
 		System.out.println("Enter your yearly tuition: ");
-		double tuition = input.nextDouble();
+		
+		String strTuition = input.nextLine();
+		double tuition = Double.parseDouble(strTuition);
 
 		System.out.println("Enter the amount in your savings account: ");
-		double savings = input.nextDouble();
+		String strSavings = input.nextLine();
+		double savings = Double.parseDouble(strSavings);
 		
 		String expense;
 		String monthExpense;

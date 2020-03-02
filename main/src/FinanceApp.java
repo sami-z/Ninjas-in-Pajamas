@@ -23,16 +23,16 @@ public class FinanceApp extends MainApp{
 		switch(action) 
 		{
 		case 1:
-			CalcOfPerson.displayWeeklyExpenditure();
+			System.out.println(CalcOfPerson.displayWeeklyExpenditure());
 			break;
 		case 2:
-			CalcOfPerson.displayWeeklySavings();
+			System.out.println(CalcOfPerson.displayWeeklySavings());
 			break;
 		case 3:
-			CalcOfPerson.displayWeeklyBudgetDiff();
+			System.out.println(CalcOfPerson.displayWeeklyBudgetDiff());
 			break;
 		case 4:
-			CalcOfPerson.displayLongTermGoalInfo();
+			System.out.println(CalcOfPerson.displayLongTermGoalInfo());
 			break;
 		case 5:
 			return false;

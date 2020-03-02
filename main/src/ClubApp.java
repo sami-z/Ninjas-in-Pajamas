@@ -116,7 +116,8 @@ public class ClubApp extends MainApp{
 				do {
 				System.out.println("Enter interest(s) to add: ");
 				newInterest = interests.nextLine();	
-				currentPerson.addInterest(newInterest);
+				if(!newInterest.equals(""))
+					currentPerson.addInterest(newInterest);
 				}
 				while(!newInterest.contentEquals("")); 
 
@@ -184,8 +185,13 @@ public class ClubApp extends MainApp{
 			System.out.println();
 			responseStr = input.nextLine();
 			response = Integer.parseInt(responseStr);
+			
+			if(response==-1)
+				break;
 
 			Club returnedClub = list.getClub(response-1);
+			
+			
 			if(returnedClub==null)
 				System.out.println("Invalid club number");
 			else
