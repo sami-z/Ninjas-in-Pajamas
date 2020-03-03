@@ -16,6 +16,7 @@ public class Main {
 		System.out.println("Which of the following 3 features would you like to use?");
 		System.out.println("1: Get information about clubs you're interested in!");
 		System.out.println("2: Get information about your finances and budget your expenses!");
+		System.out.println("3: GPA Calc");
 		String k  = input.nextLine();
 		int l = Integer.parseInt(k);
 		
@@ -28,6 +29,10 @@ public class Main {
 		{
 			FinancePerson p3 = getInitialFinancePerson(input,p1);
 			app = new FinanceApp(p3);
+		}
+		else if (l==3) 
+		{
+			app = new GPAApp(p1);
 		}
 		
 		boolean Condition;
