@@ -86,28 +86,39 @@ public class FinancialCalculator extends FinancePerson {
 	public String displayLongTermGoalInfo()
 	{
 		int totalDays = getLongTermGoalMonthBased() * 30;
-		double totalSavings = calculateDailySavings() * totalDays;
-		double daysNeeded = getLongTermGoal() / calculateDailySavings();
-		long daysNeededRounded = Math.round(daysNeeded);
-		double diff = totalSavings - getLongTermGoal();
-		
 		LocalDateTime currentDateTime = LocalDateTime.now();
-		LocalDateTime expectedDateTime = currentDateTime.plusDays(daysNeededRounded);
 		String DATE_FORMAT = "yyyy/MM/dd";
-		DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
 		DateTimeFormatter myFormat = DateTimeFormatter.ofPattern(DATE_FORMAT);
-		
 		String infoLongTermGoal = "";
-		if (diff >= 0) {
-			infoLongTermGoal = "\n" + "Incredible, " + getName() + "! At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", and you will have saved an additional amount of $" + String.format("%.2f", diff) + " by your desired long-term goal period";
-		} else {
+		DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
 		
-			double suggestedDailySavings = getLongTermGoal() / totalDays;
-			double suggestedWeeklySavings = suggestedDailySavings * 7;
-			double weeklySavingsDiff = suggestedWeeklySavings - calculateWeeklySavings();
+		if (calculateDailySavings() > 0) {
+			double totalSavings = calculateDailySavings() * totalDays;
+			double daysNeeded = getLongTermGoal() / calculateDailySavings();
+			long daysNeededRounded = Math.round(daysNeeded);
+			double diff = totalSavings - getLongTermGoal();
 			
-			infoLongTermGoal = "\n" + "Bad news, " + getName() + " :( At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", so you will have to up your weekly savings game by $" + String.format("%.2f", weeklySavingsDiff) + " to achieve that goal by your desired long-term goal period";
+			LocalDateTime expectedDateTime = currentDateTime.plusDays(daysNeededRounded);
+			
+			if (diff >= 0) {
+				infoLongTermGoal = "\n" + "Incredible, " + getName() + "! At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", and you will have saved an additional amount of $" + String.format("%.2f", diff) + " by your desired long-term goal period";
+			} else {
+			
+				double suggestedDailySavings = getLongTermGoal() / totalDays;
+				double suggestedWeeklySavings = suggestedDailySavings * 7;
+				double weeklySavingsDiff = suggestedWeeklySavings - calculateWeeklySavings();
+				
+				infoLongTermGoal = "\n" + "Bad news, " + getName() + " :( At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", so you will need to up your weekly savings game by $" + String.format("%.2f", weeklySavingsDiff) + " to achieve that goal by your desired long-term goal period";
+			}
+		} else {
+			LocalDateTime periodDateTime = currentDateTime.plusDays(totalDays);
+			double suggestedDailySavings2 = getLongTermGoal() / totalDays;
+			double positiveValue = calculateWeeklySavings() * (-1);
+			double suggestedWeeklySavings2 = (suggestedDailySavings2 * 7) + positiveValue;
+			
+			infoLongTermGoal = "\n" + "Very bad news, " + getName() + " :( At the rate of your income and expenditure, it seems like you are spending more than you are earning. In order to reach your long-term goal by your desired long-term goal period, which is " + myFormat.format(periodDateTime) + ". You will need to up your weekly savings game by $" + String.format("%.2f",  suggestedWeeklySavings2);
 		}
+	
 		return infoLongTermGoal;
 	}
 }
