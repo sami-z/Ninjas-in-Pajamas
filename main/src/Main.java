@@ -13,9 +13,9 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		MasterPerson p1 = getInitialMasterPerson(input);
 		
-		System.out.println("Enter what you want to do");
-		System.out.println("1: Get clubs you're interested in!");
-		System.out.println("2: Budget your expenses");
+		System.out.println("Which of the following 3 features would you like to use?");
+		System.out.println("1: Get information about clubs you're interested in!");
+		System.out.println("2: Get information about your finances and budget your expenses!");
 		String k  = input.nextLine();
 		int l = Integer.parseInt(k);
 		
@@ -48,16 +48,16 @@ public class Main {
 
 	public static MasterPerson getInitialMasterPerson(Scanner input)
 	{
-		System.out.println("Enter name: ");
+		System.out.println("Enter your name: ");
 		String name = input.nextLine();
 
 		System.out.println("Enter year of study: ");
 		String YOSString = input.nextLine();
 		int YOS = Integer.parseInt(YOSString);
 
-		System.out.println("Enter Major: ");
+		System.out.println("Enter your major: ");
 		String Major = input.nextLine();
-		System.out.println("Enter Minor: ");
+		System.out.println("Enter your minor: ");
 		String Minor = input.nextLine();
 		
 		MasterPerson p1 = new MasterPerson(name, YOS, Major, Minor);
@@ -75,7 +75,7 @@ public class Main {
 		displayInterestMapping();
 		do 
 		{
-			System.out.println("Enter interest(s) based on the above mapping");
+			System.out.println("Enter your interest(s) based on the above mapping");
 			currInt = input.nextLine();
 			if(!currInt.equals(""))
 			interests.add(currInt);
@@ -95,7 +95,7 @@ public class Main {
 			System.out.println("1.10|Pre-Graduate Societies");
 			System.out.println("1.11|Graduate Societies");
 
-			System.out.println("Enter faculty(ies) based on the above mapping");
+			System.out.println("Enter faculty(ies) you belong to based on the above mapping");
 			currFac = input.nextLine();
 			fac.add(currFac);
 		}while(!currFac.equals(""));
