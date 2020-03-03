@@ -144,17 +144,17 @@ public class Main {
 			}
 		}while(!monthExpense.equals(""));
 		
-		System.out.println("Enter your long-term goal amount: ");
-		double longTermGoal = input.nextDouble();
-		
-		System.out.println("Enter your long-term goal period in months: ");
-		int longTermGoalMonthBased = input.nextInt();
-		
 		System.out.println("Enter your weekly income: ");
 		double weeklyIncome = input.nextDouble();
 		
 		System.out.println("Enter your weekly budget: ");
 		double weeklyBudget = input.nextDouble();
+		
+		System.out.println("Enter your long-term goal amount: ");
+		double longTermGoal = input.nextDouble();
+		
+		System.out.println("Enter your long-term goal period in months: ");
+		int longTermGoalMonthBased = input.nextInt();
 		
 		FinancePerson p3 = new FinancePerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(), tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
 		return p3;

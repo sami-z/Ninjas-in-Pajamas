@@ -10,6 +10,7 @@ public class FinanceApp extends MainApp{
 	
 	public void displayMenu() 
 	{
+		System.out.println("");
 		System.out.println("Please enter an option below: ");
 		System.out.println("1: Display weekly expenditure");
 		System.out.println("2: Display weekly savings");

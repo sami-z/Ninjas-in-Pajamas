@@ -15,7 +15,7 @@ public class FinancialCalculator extends FinancePerson {
 	
 	public FinancialCalculator(FinancePerson p) 
 	{
-		super(p.getName(),p.getYOS(),p.getMajor(),p.getMinor(),p.getTuition(),p.getSavings(),p.getAllWeeklyExpenses(),p.getAllMonthlyExpenses(),p.getLongTermGoal(),p.getLongTermGoalMonthBased(),p.getWeeklyIncome(),p.getWeeklyBudget());
+		super(p.getName(), p.getYOS(), p.getMajor(), p.getMinor(), p.getTuition(), p.getSavings(), p.getAllWeeklyExpenses(), p.getAllMonthlyExpenses(), p.getLongTermGoal(), p.getLongTermGoalMonthBased(), p.getWeeklyIncome(), p.getWeeklyBudget());
 	}
 	
 	public double calculateWeeklyExpenditure()
@@ -35,7 +35,7 @@ public class FinancialCalculator extends FinancePerson {
 	
 	public String displayWeeklyExpenditure()
 	{
-		String infoWeeklyExpenditure = getName() + " , your weekly expenditure is $ " + String.format("%.2f", calculateWeeklyExpenditure()); 
+		String infoWeeklyExpenditure = "\n" + getName() + ", your weekly expenditure is $ " + String.format("%.2f", calculateWeeklyExpenditure()); 
 		return infoWeeklyExpenditure;
 	}
 	
@@ -50,10 +50,10 @@ public class FinancialCalculator extends FinancePerson {
 		String infoWeeklySavings = "";
 		
 		if (calculateWeeklySavings() >= 0) {
-			infoWeeklySavings = "Terrific, " + getName() + "! Your weekly savings is $ " + String.format("%.2f", calculateWeeklySavings());
+			infoWeeklySavings = "\n" + "Terrific, " + getName() + "! Your weekly savings is $ " + String.format("%.2f", calculateWeeklySavings());
 		} else {
 			double positiveValue = calculateWeeklySavings() * (-1);
-			infoWeeklySavings = "Uh oh, " + getName() + ":( Your weekly savings is -$ " + String.format("%.2f", positiveValue);
+			infoWeeklySavings = "\n" + "Uh oh, " + getName() + " :( Your weekly savings is -$ " + String.format("%.2f", positiveValue);
 		}
 		return infoWeeklySavings;
 	}
@@ -75,10 +75,10 @@ public class FinancialCalculator extends FinancePerson {
 		String infoWeeklyBudgetDiff = "";
 		
 		if (calculateBudgetDiff() >= 0) {
-			infoWeeklyBudgetDiff = "Yay, " + getName() + "! You are spending $ " + String.format("%.2f", calculateBudgetDiff()) + " less than your weekly budget";
+			infoWeeklyBudgetDiff = "\n" + "Yay, " + getName() + "! You are spending $ " + String.format("%.2f", calculateBudgetDiff()) + " less than your weekly budget";
 		} else {
 			double positiveValue = calculateBudgetDiff() * (-1);
-			infoWeeklyBudgetDiff = "Crap, " + getName() + ":( You are spending $ " + String.format("%.2f", positiveValue) + " more than your weekly budget";
+			infoWeeklyBudgetDiff = "\n" + "Crap, " + getName() + " :( You are spending $ " + String.format("%.2f", positiveValue) + " more than your weekly budget";
 		}
 		return infoWeeklyBudgetDiff;
 	}
@@ -99,14 +99,14 @@ public class FinancialCalculator extends FinancePerson {
 		
 		String infoLongTermGoal = "";
 		if (diff >= 0) {
-			infoLongTermGoal = "Incredible, " + getName() + "! At the rate of your income and expenditure, you will reach your long-term goal by " + myFormat.format(expectedDateTime) + ", and you will have saved an additional amount of $" + String.format("%.2f", diff) + " by your desired long-term goal period";
+			infoLongTermGoal = "\n" + "Incredible, " + getName() + "! At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", and you will have saved an additional amount of $" + String.format("%.2f", diff) + " by your desired long-term goal period";
 		} else {
 		
 			double suggestedDailySavings = getLongTermGoal() / totalDays;
 			double suggestedWeeklySavings = suggestedDailySavings * 7;
 			double weeklySavingsDiff = suggestedWeeklySavings - calculateWeeklySavings();
 			
-			infoLongTermGoal = "Bad news, " + getName() + ":( At the rate of your income and expenditure, you will reach your long-term goal by " + myFormat.format(expectedDateTime) + ", so you will have to up your weekly savings game by $" + String.format("%.2f", weeklySavingsDiff) + " to achieve that goal by your desired long-term goal period";
+			infoLongTermGoal = "\n" + "Bad news, " + getName() + " :( At the rate of your income and expenditure, you will reach your long-term goal approximately by " + myFormat.format(expectedDateTime) + ", so you will have to up your weekly savings game by $" + String.format("%.2f", weeklySavingsDiff) + " to achieve that goal by your desired long-term goal period";
 		}
 		return infoLongTermGoal;
 	}
