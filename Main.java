@@ -21,25 +21,27 @@ public class Main {
 			
 			double gradeNeeded = 0;
 			
-			System.out.print("Please enter a previous assignment/test grade: (Leave blank if you have no more assignments to input)");
-			Double previousAssignmentGrade = input.nextDouble();
+			System.out.println("How many assignments/tests have you completed so far? ");
+			int numOfAssignments = input.nextInt();
 			
-			while (previousAssignmentGrade.toString() != "") {
+			Double previousAssignmentGrade = 0.0;
+			
+			for (int i = 0; i < numOfAssignments; i++) {
 				
+				System.out.println("Please enter a previous assignment grade: ");
+				previousAssignmentGrade = input.nextDouble();
 				previousAssignmentGrades.add(previousAssignmentGrade);
 				
-				System.out.print("Please enter the weight of that assignment/test (as a decimal value between 0.0 and 1.0): ");
+				System.out.println("Please enter the weight of that assignment/test (as a decimal value between 0.0 and 1.0): ");
 				Double previousAssignmentWeight = input.nextDouble();
-				previousAssignmentWeights.add(assignmentWeight)
+				previousAssignmentWeights.add(previousAssignmentWeight);
 				
-				System.out.print("Please enter a previous assignment grade: (Leave blank if you have no more assignments to input)");
-				previousAssignmentGrade = input.nextDouble();
 			}
 			
-			System.out.print("Please enter the weight of your upcoming assignment/test: (as a decimal value between 0.0 and 1.0)");
+			System.out.println("Please enter the weight of your upcoming assignment/test: (as a decimal value between 0.0 and 1.0)");
 			assignmentWeight = input.nextDouble();
 			
-			System.out.print("Please enter your desired class grade: ");
+			System.out.println("Please enter your desired class grade: ");
 			desiredClassGrade = input.nextDouble();
 			
 			GPACalculator calc = new GPACalculator(previousAssignmentGrades, previousAssignmentWeights, assignmentWeight, desiredClassGrade);
@@ -57,18 +59,16 @@ public class Main {
 			
 			double gradeNeeded = 0;
 			
-			System.out.println("Please enter the number of courses you are currently enrolled in: ")
+			System.out.println("Please enter the number of courses you are currently enrolled in: ");
 			numOfClasses = input.nextInt();
 			
-			System.out.print("Please enter the final grade achieved in a course: (Leave blank if you have no more courses to input)");
-			Double finalClassGrade = input.nextDouble();
+			Double finalClassGrade = 0.0;
 			
-			while (finalClassGrade.toString() != "") {
+			for (int i = 0; i < numOfClasses - 1; i++) {
 				
-				finalClassGrades.add(finalClassGrade);
-				
-				System.out.print("Please enter the final grade achieved in a course: (Leave blank if you have no more courses to input)");
+				System.out.println("Please enter the final grade achieved in a course: ");
 				finalClassGrade = input.nextDouble();
+				finalClassGrades.add(finalClassGrade);
 			}
 			
 			System.out.println("Please enter your desired GPA: ");
@@ -78,7 +78,7 @@ public class Main {
 			
 			gradeNeeded = calc.CalculateGPA();
 			
-			System.out.println("The grade in this course required to maintain a " + desiredGPA + " is " + gradeNeeded);
+			System.out.println("The grade in your course required to maintain a " + desiredGPA + " is " + gradeNeeded);
 		}
 	}
 	
