@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ClubApp extends MainApp{
+public class ClubApp implements MainApp{
 	
 	//Two instance variables needed to run the application
 	ClubList masterClubList;

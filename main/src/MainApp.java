@@ -1,15 +1,9 @@
 import java.util.Scanner;
-public class MainApp {
+public interface MainApp {
 
-	public void displayMenu() 
-	{
-		System.out.println("1;");
-	}
+	public void displayMenu();
 	
-	public boolean performAction(int action) 
-	{
-		return false;
-	}
+	public boolean performAction(int action);
 	
 
 

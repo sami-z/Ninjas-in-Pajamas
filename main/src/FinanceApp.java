@@ -1,5 +1,5 @@
 
-public class FinanceApp extends MainApp{
+public class FinanceApp implements MainApp{
 	
 	FinancialCalculator CalcOfPerson;
 	

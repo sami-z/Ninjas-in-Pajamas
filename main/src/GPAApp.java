@@ -1,5 +1,5 @@
 import java.util.*;
-public class GPAApp extends MainApp{
+public class GPAApp implements MainApp{
 	
 	MasterPerson p1;
 	
