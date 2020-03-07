@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="783.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myController">
+   <children>
+      <AnchorPane fx:id="topBar" layoutY="-62.0" prefHeight="127.0" prefWidth="625.0" style="-fx-background-color: #708090;">
+         <children>
+            <Text layoutX="188.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the NIP">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+               <fill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="0.9605911330049262" startX="0.3448275862068966">
+                     <stops>
+                        <Stop color="#a12525" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="80.0" prefHeight="688.0" prefWidth="625.0" style="-fx-background-color: #d3d3d3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <AnchorPane prefHeight="76.0" prefWidth="625.0">
+               <children>
+                  <Text fill="#070707" layoutX="217.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a Feature Below">
+                     <font>
+                        <Font name="Webdings" size="19.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="75.0" fitWidth="138.0" layoutX="7.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Downloads/miitomo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Button layoutX="167.0" layoutY="230.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="             Club Finder">
+               <font>
+                  <Font name="Tahoma Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="69.0" fitWidth="160.0" layoutX="179.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/club.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="167.0" layoutY="366.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="             Financial Calculator" textAlignment="RIGHT" wrapText="true">
+               <font>
+                  <Font name="Tahoma Bold" size="22.0" />
+               </font>
+            </Button>
+            <Button layoutX="167.0" layoutY="516.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="             GPA Calculator" textOverrun="CLIP">
+               <font>
+                  <Font name="Tahoma Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="69.0" fitWidth="160.0" layoutX="190.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/fcalc.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="160.0" layoutX="179.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Downloads/gpa.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="167.0" layoutY="117.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="291.0" text="Profile">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
