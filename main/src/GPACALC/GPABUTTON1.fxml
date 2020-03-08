@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="888.0" prefWidth="578.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GPABUTTON1CONTROLLER">
+   <children>
+      <HBox layoutX="53.0" layoutY="109.0" prefHeight="39.0" prefWidth="568.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a previous assignment grade" wrappingWidth="298.66015625" />
+            <VBox prefHeight="54.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="previousAssign" onAction="#clear1" prefHeight="39.0" prefWidth="153.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="53.0" layoutY="200.0" prefHeight="100.0" prefWidth="512.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the weight of that assignment/test (as a decimal value between 0.0 and 1.0)" wrappingWidth="342.205078125" />
+            <VBox prefHeight="100.0" prefWidth="123.0">
+               <children>
+                  <TextField fx:id="weightAssign" onAction="#clear2" prefHeight="39.0" prefWidth="169.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="59.0" layoutY="389.0" prefHeight="39.0" prefWidth="512.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the weight of your upcoming assignment/test: (as a decimal value between 0.0 and 1.0)" wrappingWidth="313.66015625" />
+            <VBox prefHeight="17.0" prefWidth="163.0">
+               <children>
+                  <TextField fx:id="upcomingAssign" onAction="#getVal1" prefHeight="0.0" prefWidth="163.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="56.0" layoutY="498.0" prefHeight="61.0" prefWidth="518.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your desired class grade" wrappingWidth="342.205078125" />
+            <VBox prefHeight="85.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="desiredG" onAction="#getVal2" prefHeight="0.0" prefWidth="100.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button fx:id="computeButton" layoutX="257.0" layoutY="588.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
+         <font>
+            <Font name="Webdings" size="18.0" />
+         </font>
+      </Button>
+      <HBox layoutX="43.0" layoutY="300.0" prefHeight="54.0" prefWidth="544.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter and repeat for however many assignments you've completed!" />
+         </children>
+      </HBox>
+      <Pane layoutX="42.0" layoutY="653.0" prefHeight="200.0" prefWidth="535.0">
+         <children>
+            <Text layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The grade on this assignment/test required to maintain a  " textAlignment="CENTER" wrappingWidth="556.6689453125" />
+            <TextField fx:id="maintainOutput" layoutX="156.0" layoutY="50.0" />
+            <Text layoutX="211.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in this class is " wrappingWidth="112.65625" />
+            <TextField fx:id="neededGrade" alignment="BASELINE_LEFT" layoutX="155.0" layoutY="138.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

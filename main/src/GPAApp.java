@@ -24,6 +24,7 @@ public class GPAApp implements MainApp{
 			maintainCurrGPA();
 			break;
 		case 2:
+			maintainGPA();
 			break;
 		}
 		
@@ -69,7 +70,7 @@ public void maintainCurrGPA(){
 	
 	System.out.println("The grade on this assignment/test required to maintain a " + desiredClassGrade + " in this class is " + gradeNeeded);
 
-}
+}////////////////////////////////////
 
 
 

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="783.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="783.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_PACKAGE.mainController">
    <children>
-      <AnchorPane fx:id="topBar" layoutY="-62.0" prefHeight="127.0" prefWidth="625.0" style="-fx-background-color: #708090;">
+      <AnchorPane fx:id="topBar" layoutY="-63.0" prefHeight="127.0" prefWidth="625.0" style="-fx-background-color: #708090;">
          <children>
             <Text layoutX="188.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the NIP">
                <font>
@@ -62,7 +62,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="167.0" layoutY="516.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="GPA Calculator" textOverrun="CLIP">
+            <Button fx:id="gpaClick" layoutX="167.0" layoutY="516.0" mnemonicParsing="false" onAction="#displayGPA" prefHeight="98.0" prefWidth="291.0" text="GPA Calculator" textOverrun="CLIP">
                <font>
                   <Font name="Tahoma Bold" size="22.0" />
                </font>
