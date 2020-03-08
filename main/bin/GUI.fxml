@@ -62,7 +62,11 @@
                   </ImageView>
                </graphic>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="gpaClick" layoutX="167.0" layoutY="516.0" mnemonicParsing="false" onAction="#displayGPA" prefHeight="98.0" prefWidth="291.0" text="GPA Calculator" textOverrun="CLIP">
+=======
+            <Button layoutX="167.0" layoutY="516.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="GPA Calculator" textOverrun="CLIP">
+>>>>>>> 464132bd400462e8947c43ff257c6e671e6e5b5d
                <font>
                   <Font name="Tahoma Bold" size="22.0" />
                </font>
