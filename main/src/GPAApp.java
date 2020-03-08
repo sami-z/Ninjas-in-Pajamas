@@ -24,7 +24,6 @@ public class GPAApp implements MainApp{
 			maintainCurrGPA();
 			break;
 		case 2:
-
 			break;
 		}
 		
