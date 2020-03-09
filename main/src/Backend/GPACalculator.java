@@ -1,16 +1,17 @@
+package Backend;
 import java.util.ArrayList;
 import java.lang.*;
 
 public class GPACalculator {
 
-	ArrayList<Double> allGrade;
-	int numGradeCategories;
-	ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
-	ArrayList<Double> allGrades = new ArrayList<Double>();
-	ArrayList<Double> categoryWeights = new ArrayList<Double>();
-	double neededCategoryWeight;
-	double desiredCourseGrade;
-	String nameOfAssessment;
+	public ArrayList<Double> allGrade;
+	public int numGradeCategories;
+	public ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
+	public ArrayList<Double> allGrades = new ArrayList<Double>();
+	public ArrayList<Double> categoryWeights = new ArrayList<Double>();
+	public double neededCategoryWeight;
+	public double desiredCourseGrade;
+	public String nameOfAssessment;
 	
 	public GPACalculator() 
 	{
@@ -37,7 +38,7 @@ public class GPACalculator {
 		else if(gradeNeeded<0)
 			return 0.0;
 		else
-			return Math.round(gradeNeeded*100)/100;
+			return gradeNeeded;
 	}
 	///////
 	

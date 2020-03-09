@@ -1,3 +1,4 @@
+package Backend;
 
 public class MasterPerson {
 	//Name of the person

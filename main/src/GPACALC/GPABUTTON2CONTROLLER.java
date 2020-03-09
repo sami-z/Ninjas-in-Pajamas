@@ -1,6 +1,7 @@
 package GPACALC;
 
 import java.util.ArrayList;
+import Backend.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,7 +66,11 @@ public class GPABUTTON2CONTROLLER {
     //////////////////////////////////////////
     	
     	maintainG.setText(""+this.desiredGPA);
-    	neededG.setText(""+calc.gradeNeededToMaintain(this.desiredGPA));
+    	double gradeNeeded = calc.gradeNeededToMaintain(this.desiredGPA);
+    	if(gradeNeeded==-1.0)
+    		neededG.setText("You cannot obtain that GPA");
+    	else
+    		neededG.setText(""+gradeNeeded);
     }
 	}
 

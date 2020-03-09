@@ -1,5 +1,7 @@
 package GPACALC;
 
+import Backend.GPACalculator;
+
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
