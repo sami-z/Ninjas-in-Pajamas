@@ -37,15 +37,16 @@ public String maintainCurrGPA(){
 	
 	Scanner input = new Scanner(System.in);
 	
+	String num0;
 	
 	System.out.println("How many grade categories are in your course thus far?");
-	int numCate = input.nextInt();
+	num0 = input.nextLine();
+	int numCate = Integer.parseInt(num0);
 	
 	String num1;
 	String num2;
 	String num3;
-	int counterr;
-	boolean done = false;
+	
 	
 	for (int i = 0 ; i < numCate ; i++) {
 		
@@ -59,7 +60,7 @@ public String maintainCurrGPA(){
 		int currNum2 = Integer.parseInt(num2);
 		calc1.numCategoryComponents.add(currNum2);
 		
-		while (done != true) {
+		for (int k = 0 ; k < calc1.numCategoryComponents.get(i) ; k++) {
 			
 			System.out.println("Enter each of the " + num2 + " components grade: ");
 			num3 = input.nextLine();
