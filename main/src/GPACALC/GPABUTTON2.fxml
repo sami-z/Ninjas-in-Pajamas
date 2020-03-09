@@ -6,34 +6,48 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="763.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GPABUTTON2CONTROLLER">
+<AnchorPane prefHeight="671.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GPABUTTON2CONTROLLER">
    <children>
-      <AnchorPane layoutX="-294.0" layoutY="-25.0" prefHeight="763.0" prefWidth="590.0" style="-fx-background-color: #fdf5e6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="750.0" prefWidth="490.0" style="-fx-background-color: #fdf5e6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutX="28.0" layoutY="63.0" prefHeight="217.0" prefWidth="286.0" spacing="50.0">
+            <VBox layoutX="28.0" layoutY="50.0" prefHeight="50.0" prefWidth="244.0" spacing="50.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many courses are you currently enrolled in?" wrappingWidth="243.205078125" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each course, please enter the final grade achieved (excluding last class)" wrappingWidth="286.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your desired grade" />
                </children>
             </VBox>
-            <VBox layoutX="365.0" layoutY="77.0" prefHeight="200.0" prefWidth="100.0" spacing="50.0">
+            <VBox layoutX="365.0" layoutY="77.0" prefHeight="0.0" prefWidth="100.0" spacing="50.0" />
+            <Button fx:id="buttonC" layoutX="213.0" layoutY="382.0" mnemonicParsing="false" onAction="#clickC" text="COMPUTE" />
+            <VBox layoutX="387.0" layoutY="140.0" prefHeight="7.0" prefWidth="100.0" />
+            <VBox layoutX="387.0" layoutY="200.0" prefHeight="24.0" prefWidth="100.0" />
+            <VBox layoutX="33.0" layoutY="148.0" prefHeight="54.0" prefWidth="286.0">
                <children>
-                  <TextField fx:id="enrolledC" onAction="#getEC" />
-                  <TextField fx:id="finalG" onAction="#getFG" />
-                  <TextField fx:id="desiredG" onAction="#getDG" prefHeight="144.0" prefWidth="100.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each course, please enter the final GPA achieved (excluding last class)" wrappingWidth="286.0" />
                </children>
             </VBox>
-            <VBox layoutX="81.0" layoutY="422.0" prefHeight="217.0" prefWidth="429.0" spacing="50.0">
+            <VBox layoutX="28.0" layoutY="271.0" prefHeight="24.0" prefWidth="252.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The grade in your course required to maintain a" translateX="25.0" />
-                  <TextField fx:id="maintainG" prefHeight="39.0" prefWidth="246.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="is" translateX="200.0" />
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your desired GPA" />
                </children>
             </VBox>
-            <TextField fx:id="neededG" layoutX="184.0" layoutY="687.0" />
-            <Button fx:id="buttonC" layoutX="242.0" layoutY="355.0" mnemonicParsing="false" onAction="#clickC" text="COMPUTE" />
+            <TextField fx:id="enrolledC" layoutX="368.0" layoutY="38.0" onAction="#getEC" prefHeight="39.0" prefWidth="106.0" />
+            <TextField fx:id="desiredG" layoutX="368.0" layoutY="252.0" onAction="#getDG" prefHeight="39.0" prefWidth="106.0" />
+            <TextField fx:id="finalG" layoutX="368.0" layoutY="140.0" onAction="#getFG" prefHeight="39.0" prefWidth="106.0" />
+            <VBox alignment="TOP_CENTER" layoutX="57.0" layoutY="464.0" prefHeight="193.0" prefWidth="350.0" spacing="25.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The GPA in your course required to maintain a" textAlignment="CENTER" />
+                  <Text fx:id="maintainG" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="64.9970703125">
+                     <font>
+                        <Font name="System Italic" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="is" textAlignment="CENTER" wrappingWidth="70.9970703125" />
+                  <Text fx:id="neededG" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="381.9970703125">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>

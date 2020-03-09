@@ -120,7 +120,7 @@ public void maintainGPA()  {
 	
 	for (int i = 0; i < numOfClasses - 1; i++) {
 	
-	System.out.println("Please enter the final grade achieved in a course: ");
+	System.out.println("Please enter the final GPA achieved in a course: ");
 	String classGrade = input.nextLine();
 	calc.addGrade(Double.parseDouble(classGrade));
 	
@@ -136,7 +136,7 @@ public void maintainGPA()  {
 		System.out.println("You cannot get that grade from one class");
 	}else {
 	
-	System.out.println("The grade in your course required to maintain a " + desiredGPA + " is " +gradeNeeded );
+	System.out.println("The GPA in your course required to maintain a " + desiredGPA + " is " +gradeNeeded );
 	}
 	}
 

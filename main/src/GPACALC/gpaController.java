@@ -1,4 +1,4 @@
-package GPACALC;
+	package GPACALC;
 
 import java.io.IOException;
 
