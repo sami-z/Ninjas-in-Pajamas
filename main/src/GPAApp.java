@@ -31,7 +31,7 @@ public class GPAApp implements MainApp{
 		return true;
 	}
 
-public String maintainCurrGPA(){
+public void maintainCurrGPA(){
 
 	GPACalculator calc1 = new GPACalculator();
 	
@@ -64,7 +64,7 @@ public String maintainCurrGPA(){
 			
 			System.out.println("Enter each of the " + num2 + " components grade: ");
 			num3 = input.nextLine();
-			if (!num3.equals("")) {
+			if (num3.equals("")) {
 				break;
 			}
 			double currNum3 = Double.parseDouble(num3);
@@ -87,7 +87,7 @@ public String maintainCurrGPA(){
 	
 	String info = calc1.calculatePercentNeeded();
 
-	return info;
+	System.out.println(info);
 
 	
 	
