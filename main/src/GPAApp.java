@@ -31,42 +31,68 @@ public class GPAApp implements MainApp{
 		return true;
 	}
 
-public void maintainCurrGPA(){
+public String maintainCurrGPA(){
 
+	GPACalculator calc1 = new GPACalculator();
+	
 	Scanner input = new Scanner(System.in);
-	ArrayList<Double> previousAssignmentGrades = new ArrayList<Double>();
-	ArrayList<Double> previousAssignmentWeights = new ArrayList<Double>();
-	double assignmentWeight = 0;
-	double desiredClassGrade = 0;
 	
-	double gradeNeeded = 0;
 	
-	System.out.println("How many assignments/tests have you completed so far? ");
-	int numOfAssignments = input.nextInt();
+	System.out.println("How many grade categories are in your course thus far?");
+	int numCate = input.nextInt();
 	
-	Double previousAssignmentGrade = 0.0;
+	String num1;
+	String num2;
+	String num3;
+	int counterr;
+	boolean done = false;
 	
-	for (int i = 0; i < numOfAssignments; i++) {
-	
-	System.out.println("Please enter a previous assignment grade: ");
-	previousAssignmentGrade = input.nextDouble();
-	previousAssignmentGrades.add(previousAssignmentGrade);
-	
-	System.out.println("Please enter the weight of that assignment/test (as a decimal value between 0.0 and 1.0): ");
-	Double previousAssignmentWeight = input.nextDouble();
-	previousAssignmentWeights.add(previousAssignmentWeight);
-	
+	for (int i = 0 ; i < numCate ; i++) {
+		
+		System.out.println("Enter one of the " + numCate + " grade categories weight: ");
+		num1 = input.nextLine();
+		double currNum1 = Double.parseDouble(num1);
+		calc1.categoryWeights.add(currNum1);
+		
+		System.out.println("Enter the number of components in this grade category: ");
+		num2 = input.nextLine();
+		int currNum2 = Integer.parseInt(num2);
+		calc1.numCategoryComponents.add(currNum2);
+		
+		while (done != true) {
+			
+			System.out.println("Enter each of the " + num2 + " components grade: ");
+			num3 = input.nextLine();
+			if (!num3.equals("")) {
+				break;
+			}
+			double currNum3 = Double.parseDouble(num3);
+			calc1.allGrades.add(currNum3);
+		}
 	}
 	
-	System.out.println("Please enter the weight of your upcoming assignment/test: (as a decimal value between 0.0 and 1.0)");
-	assignmentWeight = input.nextDouble();
+	String num4;
+	String num5;
 	
-	System.out.println("Please enter your desired class grade: ");
-	desiredClassGrade = input.nextDouble();
+	System.out.println("What is the weight of the grade category that you would like to calculate?");
+	num4 = input.nextLine();
+	double currNum4 = Double.parseDouble(num4);
+	calc1.neededCategoryWeight = currNum4;
 	
+	System.out.println("What percentage would you like to achieve in this class?");
+	num5 = input.nextLine();
+	double currNum5 = Double.parseDouble(num5);
+	calc1.desiredCourseGrade = currNum5;
 	
-	System.out.println("The grade on this assignment/test required to maintain a " + desiredClassGrade + " in this class is " + gradeNeeded);
+	String info = calc1.calculatePercentNeeded();
 
+	return info;
+
+	
+	
+	
+	
+	
 }////////////////////////////////////
 
 

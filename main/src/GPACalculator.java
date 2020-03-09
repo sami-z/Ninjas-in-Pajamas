@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class GPACalculator {
 
-	private ArrayList<Double> allGrade;
-	private int numGradeCategories;
-	private ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
-	private ArrayList<Double> allGrades = new ArrayList<Double>();
-	private ArrayList<Double> categoryWeights = new ArrayList<Double>();
-	private double neededCategoryWeight;
-	private double desiredCourseGrade;
+	ArrayList<Double> allGrade;
+	int numGradeCategories;
+	ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
+	ArrayList<Double> allGrades = new ArrayList<Double>();
+	ArrayList<Double> categoryWeights = new ArrayList<Double>();
+	double neededCategoryWeight;
+	double desiredCourseGrade;
 
 	
 	public GPACalculator() 
