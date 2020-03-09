@@ -1,5 +1,7 @@
 package GPACALC;
+
 import java.util.ArrayList;
+import java.lang.*;
 
 public class GPACalculator {
 
@@ -16,8 +18,8 @@ public class GPACalculator {
 	{
 		allGrade = new ArrayList<Double>();
 	}
-	
-	public double calculateCGPA() 
+	///////
+	private double calculateCGPA() 
 	{
 		double average = 0;
 		for(int i = 0; i<allGrade.size();i++) 
@@ -34,9 +36,12 @@ public class GPACalculator {
 		double gradeNeeded = (GPAwanted * (allGrade.size()+1))-(currentGPA*allGrade.size());
 		if(gradeNeeded>4.0)
 			return -1;
+		else if(gradeNeeded<0)
+			return 0.0;
 		else
-			return gradeNeeded;
+			return Math.round(gradeNeeded*100)/100;
 	}
+	///////
 	
 	public void addGrade(double grade) {
 		if(grade>=0.0 && grade<=4.0)
@@ -73,8 +78,11 @@ public class GPACalculator {
 		double desiredWeight = neededCategoryWeight * multiplyWeight;
 		double minusWeight = desiredCourseGrade - totalGrade;
 		double neededGrade = minusWeight / desiredWeight;
+		double dob = neededGrade * 100;
+		long newLong = Math.round(dob);
+		double dob2 = newLong / 100;
 		
-		String infoMessage = "You need to get " + String.format("%.2f", neededGrade) + "% on the next " + nameOfAssessment + " to get " + desiredCourseGrade + "% in the course.";
+		String infoMessage = "You need to get " + dob2 + "% on the next " + nameOfAssessment + " to get " + desiredCourseGrade + "% in the course.";
 		
 		return infoMessage;
 	}

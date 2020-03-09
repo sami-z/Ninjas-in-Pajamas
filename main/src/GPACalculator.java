@@ -34,8 +34,10 @@ public class GPACalculator {
 		double gradeNeeded = (GPAwanted * (allGrade.size()+1))-(currentGPA*allGrade.size());
 		if(gradeNeeded>4.0)
 			return -1;
+		else if(gradeNeeded<0)
+			return 0.0;
 		else
-			return gradeNeeded;
+			return Math.round(gradeNeeded*100)/100;
 	}
 	///////
 	

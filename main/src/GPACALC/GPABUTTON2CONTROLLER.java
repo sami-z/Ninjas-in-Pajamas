@@ -29,6 +29,7 @@ public class GPABUTTON2CONTROLLER {
     @FXML
     private Button buttonC;
     
+    GPACalculator calc = new GPACalculator();
     
     private ArrayList<Double> allGrade = new ArrayList<Double>();
     private int numGradeCategories;
@@ -46,7 +47,7 @@ public class GPABUTTON2CONTROLLER {
     void getFG(ActionEvent event) {
     	if(!finalG.getText().equals("")) {
     		double initialV = Double.parseDouble(finalG.getText());
-	    	allGrade.add(initialV);
+	    	calc.allGrade.add(initialV);
 	    	finalG.clear();
     	}
 
@@ -63,29 +64,8 @@ public class GPABUTTON2CONTROLLER {
     
     //////////////////////////////////////////
     	
-    	GPACalculator calc = new GPACalculator();
-    	
-    	double average = 0;
-		for(int i = 0; i<allGrade.size();i++) 
-		{
-			average+=allGrade.get(i);
-		}
-		
-		double newAve = average/allGrade.size();
-
-    	
-    	double gradeNeeded = (desiredGPA* (allGrade.size()+1))-(newAve*allGrade.size());    	
-    	
-    	String str1 = Double.toString(desiredGPA);
-    	String str2 = Double.toString(gradeNeeded);
-    	
-    	maintainG.setText(str1);
-    	if (gradeNeeded >4.0) {
-    		neededG.setText("You cannot get that grade from one class");
-    	}else {
-    	neededG.setText(str2);
-    	}
-
+    	maintainG.setText(""+this.desiredGPA);
+    	neededG.setText(""+calc.gradeNeededToMaintain(this.desiredGPA));
     }
 	}
 
