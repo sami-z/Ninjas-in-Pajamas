@@ -2,95 +2,82 @@ import java.util.ArrayList;
 
 public class GPACalculator {
 
-	private ArrayList<Double> previousAssignmentGrades;
-	private ArrayList<Double> previousAssignemntWeights;
-	private double assignmentWeight;
-	private double desiredClassGrade;
+	private ArrayList<Double> allGrade;
+	private int numGradeCategories;
+	private ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
+	private ArrayList<Double> allGrades = new ArrayList<Double>();
+	private ArrayList<Double> categoryWeights = new ArrayList<Double>();
+	private double neededCategoryWeight;
+	private double desiredCourseGrade;
+
 	
-	private int numOfClasses;
-	private ArrayList<Double> finalClassGrades;
-	private double desiredGPA;
-
-	public GPACalculator(ArrayList<Double> previousAssignmentGrades, ArrayList<Double> previousAssignemntWeights, double assignmentWeight, double desiredClassGrade) {
-
-		this.previousAssignmentGrades = new ArrayList<Double>();
+	public GPACalculator() 
+	{
+		allGrade = new ArrayList<Double>();
+	}
+	
+	private double calculateCGPA() 
+	{
+		double average = 0;
+		for(int i = 0; i<allGrade.size();i++) 
+		{
+			average+=allGrade.get(i);
+		}
+			
+		return average/allGrade.size();
+	}
+	
+	public double gradeNeededToMaintain(double GPAwanted) 
+	{
+		double currentGPA = calculateCGPA();
+		double gradeNeeded = (GPAwanted * (allGrade.size()+1))-(currentGPA*allGrade.size());
+		if(gradeNeeded>4.0)
+			return -1;
+		else
+			return gradeNeeded;
+	}
+	
+	public void addGrade(double grade) {
+		if(grade>=0.0 && grade<=4.0)
+			allGrade.add(grade);
+	}
+	
+	public String calculatePercentNeeded()
+	{
 		
-		for (double num : previousAssignmentGrades) {
-		this.previousAssignmentGrades.add(num);
+		double totalGrade = 0;
+		double totalWeight = 0;
+		
+		for (int d = 0; d < categoryWeights.size(); d++) {
+			
+			totalWeight = totalWeight + categoryWeights.get(d);
 		}
 		
-		this.previousAssignemntWeights = new ArrayList<Double>();
+		double finalWeight = totalWeight + neededCategoryWeight;
+		double multiplyWeight = 1 / finalWeight;
 		
-		for (double num : previousAssignemntWeights) {
-		this.previousAssignemntWeights.add(num);
+		for (int i = 0 ; i < categoryWeights.size() ; i++) {
+			
+			double currentWeight = categoryWeights.get(i) * multiplyWeight;
+			int currentNumCategoryComponents = numCategoryComponents.get(i);
+			double eachWeight = currentWeight / currentNumCategoryComponents;
+			
+			for (int j = 0 ; j < currentNumCategoryComponents ; j++) {
+				
+				double currentGrade = allGrades.get(j);
+				totalGrade = totalGrade + (currentGrade * eachWeight);
+			}
 		}
 		
-		this.assignmentWeight = assignmentWeight;
-		this.desiredClassGrade = desiredClassGrade;
-	}	
-
-	public GPACalculator(int numOfClasses, ArrayList<Double> finalClassGrades, double desiredGPA) {
-
-		this.numOfClasses = numOfClasses;
-		this.finalClassGrades = new ArrayList<Double>();
+		double desiredWeight = neededCategoryWeight * multiplyWeight;
+		double minusWeight = desiredCourseGrade - totalGrade;
+		double neededGrade = minusWeight / desiredWeight;
 		
-		for (double grade : finalClassGrades) {
-		this.finalClassGrades.add(grade);
-		}
+		String infoMessage = "You need to get " + String.format("%.2f", neededGrade) + "% to get " + desiredCourseGrade + " in the course.";
 		
-		this.desiredGPA = desiredGPA;
+		return infoMessage;
 	}
 
-	public double CalculateAssignmentGradeNeeded() {
 
-		double currentAverage = 0;
-		double weightedGradeSum = 0;
-		double sumOfWeights = 0;
-		double gradeNeeded = 0;
-		
-		for (double grade : this.previousAssignmentGrades) {
-		for (double weight : this.previousAssignemntWeights) {
-		double weightedGrade = grade * weight;
-		weightedGradeSum += weightedGrade;
-		sumOfWeights += weight;
-		}
-		}
-		
-		currentAverage = (weightedGradeSum / (sumOfWeights * 100)) * 100;
-		currentAverage = Math.round(currentAverage * 100.0) / 100.0;
-		
-		gradeNeeded = (this.desiredClassGrade - ((1.0 - this.assignmentWeight) * currentAverage)) / this.assignmentWeight;
-		gradeNeeded = Math.round(gradeNeeded * 100.0) / 100.0;
-		
-		return gradeNeeded;
-	}
-
-	public double CalculateGPA() {
-
-		double numOfClasses = this.numOfClasses;
-		ArrayList<Double> finalClassGrades = this.finalClassGrades;
-		double desiredGPA = this.desiredGPA;
-		
-		double currentGPA = 0;
-		double classGradesSum = 0;
-		double weightOfClass = 0;
-		double gradeNeeded = 0;
-		
-		
-		for (double grade : finalClassGrades) {
-		classGradesSum += grade;
-		}
-
-		currentGPA = classGradesSum / (numOfClasses - 1);
-		currentGPA = Math.round(currentGPA * 100.0) / 100.0;
-		
-		weightOfClass = (100 / numOfClasses) / 100;
-		weightOfClass = Math.round(weightOfClass * 100.0) / 100.0;
-		
-		gradeNeeded = (desiredGPA - ((1.0 - weightOfClass) * currentGPA)) / weightOfClass;
-		gradeNeeded = Math.round(gradeNeeded * 100.0) / 100.0;
-		
-		return gradeNeeded;
-		}
 
 }
