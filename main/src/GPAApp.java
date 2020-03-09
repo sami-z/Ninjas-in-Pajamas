@@ -10,8 +10,8 @@ public class GPAApp implements MainApp{
 	}
 
 	public void displayMenu() {
-		System.out.println("Which function would you like to use:");
-		System.out.println("Enter 1, to calculate what grade you need on an assignment/test in order to maintain a certain grade.");
+		System.out.println("Which function would you like to use?");
+		System.out.println("Enter 1, to calculate what grade you need on a grade category to achieve a certain grade.");
 		System.out.println("Enter 2, to calculate what grade you need in a course to maintain a certain GPA.");
 	}
 	
@@ -74,8 +74,13 @@ public void maintainCurrGPA(){
 	
 	String num4;
 	String num5;
+	String num6;
 	
-	System.out.println("What is the weight of the grade category that you would like to calculate?");
+	System.out.println("What type of assessment would you like to use for the calculations?");
+	num6 = input.nextLine();
+	calc1.nameOfAssessment = num6;
+
+	System.out.println("What is the weight of the " + calc1.nameOfAssessment + "you would like to calculate?");
 	num4 = input.nextLine();
 	double currNum4 = Double.parseDouble(num4);
 	calc1.neededCategoryWeight = currNum4;

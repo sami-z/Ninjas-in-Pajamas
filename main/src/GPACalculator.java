@@ -9,7 +9,7 @@ public class GPACalculator {
 	ArrayList<Double> categoryWeights = new ArrayList<Double>();
 	double neededCategoryWeight;
 	double desiredCourseGrade;
-
+	String nameOfAssessment;
 	
 	public GPACalculator() 
 	{
@@ -73,7 +73,7 @@ public class GPACalculator {
 		double minusWeight = desiredCourseGrade - totalGrade;
 		double neededGrade = minusWeight / desiredWeight;
 		
-		String infoMessage = "You need to get " + String.format("%.2f", neededGrade) + "% to get " + desiredCourseGrade + "% in the course.";
+		String infoMessage = "You need to get " + String.format("%.2f", neededGrade) + "% on the next " + nameOfAssessment + " to get " + desiredCourseGrade + "% in the course.";
 		
 		return infoMessage;
 	}
