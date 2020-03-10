@@ -12,7 +12,7 @@
       <Cursor fx:constant="DISAPPEAR" />
    </cursor>
    <children>
-      <Button fx:id="gpa1" layoutX="118.0" layoutY="125.0" mnemonicParsing="false" onAction="#display1" prefHeight="81.0" prefWidth="365.0" text="Caclulate grade needed on assesment" />
+      <Button fx:id="gpa1" layoutX="118.0" layoutY="125.0" mnemonicParsing="false" onAction="#display1" prefHeight="81.0" prefWidth="365.0" text="Caclulate grade needed on assessment" />
       <Button fx:id="gpa2" layoutX="118.0" layoutY="239.0" mnemonicParsing="false" onAction="#display2" prefHeight="81.0" prefWidth="365.0" text="Calculate grade needed in course" />
       <Text layoutX="167.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to calculate?" />
    </children>
