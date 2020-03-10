@@ -13,7 +13,7 @@ How to Compile and Run GUI:
 6. Open and run Main.java in the package named GUI_PACKAGE and follow the prompts to go through the first GUI version of the application.
 
 
-How to Compile and Run Text-based application:
+How to Compile and Run Text-based Application:
 1. Click "Clone or download" in the GitHub repository (Ninjas-in-Pajamas) and download the repository as a zip file.
 2. Unzip/Extract all the packages/files into the desired directory.
 3. Create a new JAVA project in Eclipse.
