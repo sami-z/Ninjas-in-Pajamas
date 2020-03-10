@@ -23,7 +23,7 @@ public class gpaController {
         Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPABUTTON1.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        stage.setTitle("Calculating grade needed on assesment....");
+        stage.setTitle("Calculating grade needed on assessment....");
         stage.setScene(scene);
         stage.show();
     }

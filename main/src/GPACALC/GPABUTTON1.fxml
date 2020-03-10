@@ -55,7 +55,7 @@
       <TextField fx:id="componentG" layoutX="414.0" layoutY="291.0" onAction="#getComponentG" prefHeight="39.0" prefWidth="104.0" />
       <VBox layoutX="42.0" layoutY="404.0" prefHeight="48.0" prefWidth="131.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assesmemt you would like to use for the calculation" wrappingWidth="237.20703125" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assessmemt you would like to use for the calculation" wrappingWidth="237.20703125" />
          </children>
       </VBox>
       <TextField fx:id="assesment" layoutX="415.0" layoutY="404.0" onAction="#getAssesment" prefHeight="39.0" prefWidth="104.0" />
