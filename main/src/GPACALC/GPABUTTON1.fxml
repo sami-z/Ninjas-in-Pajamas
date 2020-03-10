@@ -55,7 +55,7 @@
       <TextField fx:id="componentG" layoutX="414.0" layoutY="291.0" onAction="#getComponentG" prefHeight="39.0" prefWidth="104.0" />
       <VBox layoutX="42.0" layoutY="404.0" prefHeight="48.0" prefWidth="131.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assessmemt you would like to use for the calculation" wrappingWidth="237.20703125" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assessment you would like to use for the calculation" wrappingWidth="237.20703125" />
          </children>
       </VBox>
       <TextField fx:id="assesment" layoutX="415.0" layoutY="404.0" onAction="#getAssesment" prefHeight="39.0" prefWidth="104.0" />
@@ -67,7 +67,7 @@
       </VBox>
       <VBox layoutX="36.0" layoutY="513.0" prefHeight="54.0" prefWidth="257.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the assesment" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the assessment" />
          </children>
       </VBox>
       <TextField fx:id="weightAssesment" layoutX="414.0" layoutY="513.0" onAction="#getWA" prefHeight="39.0" prefWidth="100.0" />
