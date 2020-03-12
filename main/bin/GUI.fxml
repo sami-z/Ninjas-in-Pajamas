@@ -74,7 +74,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="profileClick" layoutX="167.0" layoutY="117.0" mnemonicParsing="false" onAction="#displayProfile" prefHeight="39.0" prefWidth="291.0" text="Profile">
+            <Button fx:id="profileClick" layoutX="167.0" layoutY="113.0" mnemonicParsing="false" onAction="#displayProfile" prefHeight="43.0" prefWidth="291.0" text="Profile">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
