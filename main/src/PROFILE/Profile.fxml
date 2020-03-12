@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="627.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.ProfileController">
+   <children>
+      <Text layoutX="131.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the Profile Page" wrappingWidth="163.78466796875">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="13.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
