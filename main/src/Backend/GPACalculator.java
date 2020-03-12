@@ -13,6 +13,7 @@ public class GPACalculator {
 	public double desiredCourseGrade;
 	public String nameOfAssessment;
 	
+	
 	public GPACalculator() 
 	{
 		allGrade = new ArrayList<Double>();
@@ -29,10 +30,10 @@ public class GPACalculator {
 		return average/allGrade.size();
 	}
 	
-	public double gradeNeededToMaintain(double GPAwanted) 
+	public double gradeNeededToMaintain(int enrolledCourses,double GPAwanted) 
 	{
 		double currentGPA = calculateCGPA();
-		double gradeNeeded = (GPAwanted * (allGrade.size()+1))-(currentGPA*allGrade.size());
+		double gradeNeeded = ((GPAwanted * (enrolledCourses))-(currentGPA*allGrade.size()))/(enrolledCourses-allGrade.size());
 		if(gradeNeeded>4.0)
 			return -1;
 		else if(gradeNeeded<0)

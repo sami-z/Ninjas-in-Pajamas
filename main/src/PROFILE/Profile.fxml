@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="627.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.ProfileController">
+   <children>
+      <Text layoutX="131.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the Profile Page" wrappingWidth="163.78466796875">
+         <font>
+            <Font name="Euphemia UCAS Bold" size="13.0" />
+         </font></Text>
+      <Text layoutX="57.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter / update your name:" />
+      <TextField fx:id="nameField" layoutX="263.0" layoutY="130.0" onAction="#enterName" prefHeight="27.0" prefWidth="96.0" />
+      <Text layoutX="57.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your year of study:" />
+      <ChoiceBox fx:id="YOSchoiceBox" layoutX="263.0" layoutY="190.0" onMouseClicked="#initialize" prefHeight="27.0" prefWidth="96.0" />
+   </children>
+   <effect>
+      <SepiaTone />
+   </effect>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

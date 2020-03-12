@@ -18,6 +18,9 @@ public class mainController {
     @FXML
     public Button gpaClick; //private?????????
     
+    @FXML
+    public Button profileClick;
+    
 /*
     @FXML
     private AnchorPane topBar;
@@ -44,5 +47,18 @@ public class mainController {
             
         }
     	
+    @FXML
+    public void displayProfile(ActionEvent event) throws IOException {	
+             Parent root = FXMLLoader.load(getClass().getResource("/PROFILE/Profile.fxml"));
+             Scene scene = new Scene(root);
+             Stage stage = new Stage();
+             stage.setTitle("PROFILE");
+             stage.setScene(scene);
+             stage.show();
+             
+         }
+     	
+    
+    
     }
 
