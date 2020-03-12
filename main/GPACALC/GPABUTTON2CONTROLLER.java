@@ -66,7 +66,7 @@ public class GPABUTTON2CONTROLLER {
     //////////////////////////////////////////
     	
     	maintainG.setText(""+this.desiredGPA);
-    	double gradeNeeded = calc.gradeNeededToMaintain(this.desiredGPA);
+    	double gradeNeeded = calc.gradeNeededToMaintain(numGradeCategories,this.desiredGPA);
     	if(gradeNeeded==-1.0)
     		neededG.setText("You cannot obtain that GPA");
     	else
