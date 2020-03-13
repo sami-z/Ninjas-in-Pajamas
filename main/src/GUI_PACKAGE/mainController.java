@@ -2,6 +2,7 @@ package GUI_PACKAGE;
 
 import java.io.IOException;
 
+import ClubFinder.ClubMainInterfaceController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,9 @@ public class mainController {
     
     @FXML
     public Button profileClick;
+    
+    @FXML
+    public Button ClubButton;
     
 /*
     @FXML
@@ -57,6 +61,23 @@ public class mainController {
              stage.show();
              
          }
+    
+    @FXML
+    public void displayClub(ActionEvent event) throws IOException {	
+        //Parent root = FXMLLoader.load(getClass().getResource("/ClubFinder/Club.fxml"));
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/Club.fxml"));
+        Parent root = loader.load();
+        ClubMainInterfaceController controller = loader.<ClubMainInterfaceController>getController();
+        
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        controller.setStage(stage);
+        stage.setTitle("Club Finder");
+        stage.setScene(scene);
+        stage.show();
+        
+    }
      	
     
     

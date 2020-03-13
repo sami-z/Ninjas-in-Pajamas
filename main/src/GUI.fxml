@@ -38,7 +38,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <Button layoutX="167.0" layoutY="230.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="Club Finder">
+            <Button fx:id="ClubButton" layoutX="167.0" layoutY="230.0" mnemonicParsing="false" onAction="#displayClub" prefHeight="98.0" prefWidth="291.0" text="Club Finder">
                <font>
                   <Font name="Tahoma Bold" size="22.0" />
                </font>

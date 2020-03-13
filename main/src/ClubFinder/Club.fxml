@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Label text="Club Finder" BorderPane.alignment="CENTER" />
-   </top>
-   <center>
-      <SplitPane dividerPositions="0.29264214046822745" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-        </items>
-      </SplitPane>
-   </center>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClubFinder.ClubMainInterfaceController">
+   <children>
+      <VBox layoutX="131.0" layoutY="133.0" prefHeight="178.0" prefWidth="132.0" scaleX="1.1" scaleY="1.1" spacing="50.0">
+         <children>
+            <Button fx:id="ClubButton" disable="true" mnemonicParsing="false" onAction="#ClubOnClick" prefHeight="27.0" prefWidth="129.0" text="Get your clubs">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="AllButton" mnemonicParsing="false" onAction="#AllOnClick" prefHeight="27.0" prefWidth="129.0" text="View all Clubs">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#ExitOnClick" prefHeight="27.0" prefWidth="129.0" text="Go back">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Text layoutX="89.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select an option below" textAlignment="CENTER" wrappingWidth="216.82237243652344">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
