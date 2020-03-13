@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClubFinder.SingleClubController">
+   <children>
+      <VBox layoutX="6.0" layoutY="43.0" prefHeight="314.0" prefWidth="512.0" spacing="30.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " />
+                  <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="214.2060546875" />
+               </children>
+            </HBox>
+            <HBox prefHeight="78.0" prefWidth="518.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description: " />
+                  <Text fx:id="descriptionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="368.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link: " />
+                  <Text fx:id="linkText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Interests in Common: " />
+                  <Text fx:id="interestsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

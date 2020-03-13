@@ -39,7 +39,7 @@ public class ViewClubController {
 	
 	private VBox VboxOfClubs = new VBox();
     
-    public void createClub(Club toCreate) 
+    public void createClub(Club toCreate)
     {
     	Label c = new Label(toCreate.getName());
         HBox root = new HBox();
@@ -51,9 +51,26 @@ public class ViewClubController {
         final Button right = new Button("View");
         right.setOnAction(new EventHandler<ActionEvent>() 
         {
-        	public void handle(ActionEvent event) 
+        	@Override
+        	public void handle(ActionEvent event)
         	{
-        		Stage newStage = new Stage();
+        		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/SingleClubView.fxml"));
+                Parent root = null;
+				try {
+					root = loader.load();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                SingleClubController ha = loader.<SingleClubController>getController();
+                
+                ha.InitClubValues(new Club(toCreate));
+                
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle(toCreate.getName());
+                stage.setScene(scene);
+                stage.show();
         		
         		
         	}
