@@ -1,4 +1,4 @@
-package GpaCalc;
+package GPACALC;
 
 import Backend.GPACalculator;
 

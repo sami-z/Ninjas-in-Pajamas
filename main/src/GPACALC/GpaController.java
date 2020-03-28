@@ -1,4 +1,4 @@
-	package GpaCalc;
+	package GPACALC;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ public class GpaController {
 
     @FXML
     void display1(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/GpaCalc/GPABUTTON1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPABUTTON1.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Calculating grade needed on assessment....");
@@ -30,7 +30,7 @@ public class GpaController {
 
     @FXML
     void display2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/GpaCalc/GPABUTTON2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPABUTTON2.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Calculating grade needed in course....");

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="919.0" prefWidth="621.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GpaCalc.GpaButton1Controller">
+<AnchorPane prefHeight="919.0" prefWidth="621.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
    <children>
       <Button fx:id="computeButton" layoutX="259.0" layoutY="664.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
          <font>
