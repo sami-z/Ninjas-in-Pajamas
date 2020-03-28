@@ -1,8 +1,9 @@
-package GUI_PACKAGE;
+package GuiPackage;
 
 import java.io.IOException;
 
 import ClubFinder.ClubMainInterfaceController;
+import GuiPackage.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import GUI_PACKAGE.Main;
 
 
-public class mainController {
+public class MainController {
 
     @FXML
     public Button gpaClick; //private?????????
@@ -42,7 +42,7 @@ public class mainController {
     
     @FXML
    public void displayGPA(ActionEvent event) throws IOException {	
-            Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPA.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/GpaCalc/GPA.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("GPA CALCULATOR");

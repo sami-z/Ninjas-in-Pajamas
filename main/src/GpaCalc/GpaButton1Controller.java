@@ -1,4 +1,4 @@
-package GPACALC;
+package GpaCalc;
 
 import Backend.GPACalculator;
 
@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 
-public class GPABUTTON1CONTROLLER {
+public class GpaButton1Controller {
 	
 	@FXML
     private Text output;

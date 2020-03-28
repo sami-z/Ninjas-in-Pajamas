@@ -1,4 +1,4 @@
-package GPACALC;
+package GpaCalc;
 
 import java.util.ArrayList;
 import Backend.*;
@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 
-public class GPABUTTON2CONTROLLER {
+public class GpaButton2Controller {
 
     @FXML
     private Text maintainG;
