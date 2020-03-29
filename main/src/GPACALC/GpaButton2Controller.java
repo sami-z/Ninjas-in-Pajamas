@@ -11,6 +11,17 @@ import javafx.scene.text.Text;
 
 
 public class GpaButton2Controller {
+	
+	
+	
+	@FXML
+	private Text dGPA;
+	
+    @FXML
+    private Text textGPA;
+	
+	@FXML
+	private Text numCourses;
 
     @FXML
     private Text maintainG;
@@ -40,6 +51,7 @@ public class GpaButton2Controller {
     @FXML
     void getEC(ActionEvent event) {
     	this.numGradeCategories = Integer.parseInt(enrolledC.getText());
+    	numCourses.setText(enrolledC.getText());
     	enrolledC.clear();
     	
     }
@@ -49,14 +61,17 @@ public class GpaButton2Controller {
     	if(!finalG.getText().equals("")) {
     		double initialV = Double.parseDouble(finalG.getText());
 	    	calc.allGrade.add(initialV);
-	    	finalG.clear();
+	    	finalG.clear();  
+	    	textGPA.setText(calc.allGrade.toString());
+	    
     	}
-
+    	
     }
 
     @FXML
     void getDG(ActionEvent event) {
     	this.desiredGPA = Double.parseDouble(desiredG.getText());
+    	dGPA.setText(desiredG.getText());
     }
 
     
