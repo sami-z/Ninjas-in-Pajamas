@@ -11,18 +11,26 @@
 
 <AnchorPane prefHeight="627.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.ProfileController">
    <children>
-      <Text layoutX="131.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the Profile Page" wrappingWidth="163.78466796875">
+      <Text layoutX="131.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile" textAlignment="CENTER" wrappingWidth="163.78466796875">
          <font>
             <Font name="Euphemia UCAS Bold" size="13.0" />
          </font></Text>
-      <Text layoutX="57.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter / update your name:" />
-      <TextField fx:id="nameField" layoutX="263.0" layoutY="130.0" onAction="#enterName" prefHeight="27.0" prefWidth="96.0" />
-      <Text layoutX="57.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your year of study:" />
-      <ChoiceBox fx:id="YOSchoiceBox" layoutX="263.0" layoutY="190.0" onMouseClicked="#initialize" prefHeight="27.0" prefWidth="96.0" />
+      <Text layoutX="57.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter / update your name:" wrappingWidth="158.89453125" />
+      <TextField fx:id="nameField" layoutX="263.0" layoutY="89.0" onAction="#enterName" prefHeight="27.0" prefWidth="96.0" />
+      <Text layoutX="57.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your year of study:" wrappingWidth="158.89453125" />
+      <ChoiceBox fx:id="YOSchoiceBox" layoutX="263.0" layoutY="152.0" onMouseClicked="#initialize" prefHeight="27.0" prefWidth="96.0" />
+      <Text layoutX="57.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your major(s):" wrappingWidth="158.89453125" />
+      <Text layoutX="57.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your minor(s):" wrappingWidth="158.89453125" />
+      <Text layoutX="57.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Leave blank if none)">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <TextField layoutX="263.0" layoutY="228.0" prefHeight="27.0" prefWidth="96.0" />
+      <TextField layoutX="263.0" layoutY="291.0" prefHeight="27.0" prefWidth="96.0" />
+      <Button layoutX="57.0" layoutY="381.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="324.0" text="Clubs Feature Profile" />
+      <Button layoutX="57.0" layoutY="481.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="324.0" text="Finance Feature Profile" />
    </children>
-   <effect>
-      <SepiaTone />
-   </effect>
    <cursor>
       <Cursor fx:constant="DEFAULT" />
    </cursor>
