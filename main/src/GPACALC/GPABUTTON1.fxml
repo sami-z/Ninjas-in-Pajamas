@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="919.0" prefWidth="975.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
+<AnchorPane prefHeight="775.0" prefWidth="900.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
    <children>
-      <Button fx:id="computeButton" layoutX="407.0" layoutY="663.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
+      <Button fx:id="computeButton" layoutX="409.0" layoutY="633.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
          <font>
             <Font name="Webdings" size="18.0" />
          </font>
       </Button>
-      <Pane layoutX="216.0" layoutY="724.0" prefHeight="97.0" prefWidth="507.0">
+      <Pane layoutX="215.0" layoutY="684.0" prefHeight="61.0" prefWidth="491.0">
          <children>
-            <Text fx:id="output" layoutX="159.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.87744140625">
+            <Text fx:id="output" layoutX="159.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="180.60690307617188">
                <font>
                   <Font size="18.0" />
                </font></Text>
