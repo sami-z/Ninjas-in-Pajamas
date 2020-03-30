@@ -13,6 +13,29 @@ import javafx.scene.text.Text;
 
 public class GpaButton1Controller {
 	
+	
+	@FXML
+    private Text desiredGRADE;
+	
+	@FXML
+	private Text weightA;
+	
+	@FXML
+    private Text upCOMING;
+	
+	@FXML
+	private Text compGRADE;
+	
+	@FXML
+    private Text numGCAT;
+	
+    @FXML
+    private Text wCAT;
+    
+    @FXML
+    private Text catNUM;
+	
+	
 	@FXML
     private Text output;
 	
@@ -86,6 +109,7 @@ public class GpaButton1Controller {
     void getVal2(ActionEvent event) {
     	this.desiredClassGrade = Double.parseDouble(desiredG.getText());
     	calc1.desiredCourseGrade = this.desiredClassGrade;
+    	desiredGRADE.setText(desiredG.getText());
     	
 
     }
@@ -95,6 +119,7 @@ public class GpaButton1Controller {
     	double weight = Double.parseDouble(weightC.getText());
     	calc1.categoryWeights.add(weight);
     	weightC.clear();
+    	wCAT.setText(calc1.categoryWeights.toString());
     	
     }
 
@@ -108,6 +133,7 @@ public class GpaButton1Controller {
     @FXML
     void getNumCat(ActionEvent event) {
     	this.numCategory = Double.parseDouble(numCat.getText());
+    	numGCAT.setText(numCat.getText());
     
     }
     
@@ -116,6 +142,7 @@ public class GpaButton1Controller {
     	int component = Integer.parseInt(components.getText());
     	calc1.numCategoryComponents.add(component);
     	components.clear();
+    	catNUM.setText(calc1.numCategoryComponents.toString());
 
     }
     
@@ -125,6 +152,7 @@ public class GpaButton1Controller {
     	double cG = Double.parseDouble(componentG.getText());
     	calc1.allGrades.add(cG);
     	componentG.clear();
+    	compGRADE.setText(calc1.allGrades.toString());
     }
     
     
@@ -132,6 +160,7 @@ public class GpaButton1Controller {
     void getAssesment(ActionEvent event) {
     	String strAssesment= assesment.getText();
     	calc1.nameOfAssessment = strAssesment;
+    	upCOMING.setText(strAssesment);
     	
 
     }
@@ -140,6 +169,7 @@ public class GpaButton1Controller {
     void getWA(ActionEvent event) {
     	this.assesmentWeight = Double.parseDouble(weightAssesment.getText());
     	calc1.neededCategoryWeight = this.assesmentWeight;
+    	weightA.setText(this.assesmentWeight.toString());
     }
 
 

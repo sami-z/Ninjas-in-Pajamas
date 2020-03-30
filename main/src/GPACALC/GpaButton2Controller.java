@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 public class GpaButton2Controller {
 	
 	
-	
+
 	@FXML
 	private Text dGPA;
 	
