@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import Backend.Club;
 import Backend.ClubList;
+import Backend.ClubPerson;
 import Backend.ReadFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,8 @@ import javafx.stage.Stage;
 public class ClubMainInterfaceController {
 	
 	public Stage main;
+	
+	ClubPerson person;
 
     @FXML
     private Button ClubButton;
@@ -28,8 +31,29 @@ public class ClubMainInterfaceController {
     private Button ExitButton;
 
     @FXML
-    void ClubOnClick(ActionEvent event) {
-
+    void ClubOnClick(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/ViewClubs.fxml"));
+        Parent root = loader.load();
+        ViewClubController controller = loader.<ViewClubController>getController();
+        
+        ReadFile reader = new ReadFile("data.txt");
+        ClubList AllClubs  = reader.readClubData();
+        person.InitializeRecommended(AllClubs);
+        
+        ClubList recommendedClubs = person.getRecommended();
+        System.out.println(recommendedClubs.getSize());
+        for(int i = 0;i<recommendedClubs.getSize();i++) 
+        {
+        	controller.createClub(recommendedClubs.getClub(i));
+        }
+        
+        controller.addToScroll();
+        controller.setStage(main);
+        controller.setPreviousScene(ClubButton.getScene());
+        
+        Scene scene = new Scene(root);
+        main.setScene(scene);
+        main.show();
     }
 
     @FXML
@@ -50,6 +74,7 @@ public class ClubMainInterfaceController {
         
         controller.addToScroll();
         controller.setStage(main);
+        controller.setPreviousScene(ClubButton.getScene());
         
         Scene scene = new Scene(root);
         main.setScene(scene);
@@ -63,6 +88,12 @@ public class ClubMainInterfaceController {
     
     public void setStage(Stage or) {
     	main = or;
+    }
+    
+    public void setPerson(ClubPerson person) 
+    {
+    	System.out.println(person.getInterests().toString());
+    	this.person = person;
     }
 
 }

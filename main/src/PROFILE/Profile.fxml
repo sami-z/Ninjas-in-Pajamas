@@ -26,9 +26,9 @@
             <Font size="12.0" />
          </font>
       </Text>
-      <TextField layoutX="263.0" layoutY="228.0" prefHeight="27.0" prefWidth="96.0" />
-      <TextField layoutX="263.0" layoutY="291.0" prefHeight="27.0" prefWidth="96.0" />
-      <Button layoutX="57.0" layoutY="381.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="324.0" text="Clubs Feature Profile" />
+      <TextField fx:id="majorTextField" layoutX="263.0" layoutY="228.0" prefHeight="27.0" prefWidth="96.0" />
+      <TextField fx:id="minorTextField" layoutX="263.0" layoutY="291.0" prefHeight="27.0" prefWidth="96.0" />
+      <Button fx:id="ClubInfoButton" layoutX="57.0" layoutY="381.0" mnemonicParsing="false" onAction="#ClubInfoButtonOnClick" prefHeight="64.0" prefWidth="324.0" text="Clubs Feature Profile" />
       <Button layoutX="57.0" layoutY="481.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="324.0" text="Finance Feature Profile" />
    </children>
    <cursor>

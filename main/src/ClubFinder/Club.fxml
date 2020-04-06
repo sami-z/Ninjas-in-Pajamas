@@ -11,7 +11,7 @@
    <children>
       <VBox layoutX="131.0" layoutY="133.0" prefHeight="178.0" prefWidth="132.0" scaleX="1.1" scaleY="1.1" spacing="50.0">
          <children>
-            <Button fx:id="ClubButton" disable="true" mnemonicParsing="false" onAction="#ClubOnClick" prefHeight="27.0" prefWidth="129.0" text="Get your clubs">
+            <Button fx:id="ClubButton" mnemonicParsing="false" onAction="#ClubOnClick" prefHeight="27.0" prefWidth="129.0" text="Get your clubs">
                <font>
                   <Font size="11.0" />
                </font>

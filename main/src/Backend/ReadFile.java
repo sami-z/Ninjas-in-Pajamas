@@ -91,6 +91,33 @@ public class ReadFile {
 
 
 	}
+	
+	public ArrayList<String> getKeys()
+	{
+		ArrayList<String> keys = new ArrayList<String>();
+
+		BufferedReader readB = getFileReader();
+
+		String line;
+		try {
+		line = readB.readLine(); //like readLine in python
+		do 
+		{
+			String key  = line.split("\\|")[0];
+			keys.add(key);
+
+			line = readB.readLine();
+		}while(line!=null);
+
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Unable to read" + dataFile);
+			return null;
+		}
+
+		return keys;
+	}
 
 	public void displayMap() 
 	{

@@ -27,6 +27,8 @@ import javafx.stage.Stage;
 public class ViewClubController {
 	
 	private Stage currentStage;
+	
+	Scene previousScene;
 
 	@FXML
 	private VBox VBoxLayout;
@@ -93,16 +95,15 @@ public class ViewClubController {
     	currentStage = c;
     }
     
+    public void setPreviousScene(Scene c) 
+    {
+    	previousScene = c;
+    }
+    
     @FXML
     void OnButtonClick(ActionEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/Club.fxml"));
-        Parent root = loader.load();
-        ClubMainInterfaceController controller = loader.<ClubMainInterfaceController>getController();
-        
-        Scene scene = new Scene(root);
-        controller.setStage(currentStage);
         currentStage.setTitle("Club Finder");
-        currentStage.setScene(scene);
+        currentStage.setScene(previousScene);
         currentStage.show();
     }
 

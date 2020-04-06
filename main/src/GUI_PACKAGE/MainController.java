@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import ClubFinder.ClubMainInterfaceController;
 import GUI_PACKAGE.Main;
+import PROFILE.ProfileController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +26,10 @@ public class MainController {
     @FXML
     public Button ClubButton;
     
+    
+    ProfileController getInfoController;
+    
+    Scene profileScene = null;
 /*
     @FXML
     private AnchorPane topBar;
@@ -40,7 +45,7 @@ public class MainController {
   //  }
 */
     
-    @FXML
+   @FXML
    public void displayGPA(ActionEvent event) throws IOException {	
             Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPA.fxml"));
             Scene scene = new Scene(root);
@@ -53,14 +58,30 @@ public class MainController {
     	
     @FXML
     public void displayProfile(ActionEvent event) throws IOException {	
-             Parent root = FXMLLoader.load(getClass().getResource("/PROFILE/Profile.fxml"));
-             Scene scene = new Scene(root);
-             Stage stage = new Stage();
-             stage.setTitle("PROFILE");
-             stage.setScene(scene);
-             stage.show();
+    	if(profileScene == null) {
+    	 	FXMLLoader loader = new FXMLLoader(getClass().getResource("/PROFILE/Profile.fxml"));
+    	 	Parent root = loader.load();
+    	 	getInfoController = loader.<ProfileController>getController();
+            Scene scene = new Scene(root);
+            profileScene = scene;
+            Stage stage = new Stage();
+            getInfoController.setStage(stage);
              
-         }
+            stage.setTitle("PROFILE");
+            stage.setScene(scene);
+            stage.show();
+    	}
+    	else 
+    	{
+            Stage stage = new Stage();
+            getInfoController.setStage(stage);
+             
+            stage.setTitle("PROFILE");
+            stage.setScene(profileScene);
+            stage.show();
+    	}
+             
+      }
     
     @FXML
     public void displayClub(ActionEvent event) throws IOException {	
@@ -73,6 +94,7 @@ public class MainController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         controller.setStage(stage);
+        controller.setPerson(getInfoController.getClubPerson());
         stage.setTitle("Club Finder");
         stage.setScene(scene);
         stage.show();
