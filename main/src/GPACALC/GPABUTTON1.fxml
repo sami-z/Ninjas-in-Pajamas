@@ -6,34 +6,34 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="919.0" prefWidth="975.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
+<AnchorPane prefHeight="775.0" prefWidth="900.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
    <children>
-      <Button fx:id="computeButton" layoutX="417.0" layoutY="663.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
+      <Button fx:id="computeButton" layoutX="409.0" layoutY="633.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
          <font>
             <Font name="Webdings" size="18.0" />
          </font>
       </Button>
-      <Pane layoutX="216.0" layoutY="724.0" prefHeight="97.0" prefWidth="507.0">
+      <Pane layoutX="215.0" layoutY="684.0" prefHeight="61.0" prefWidth="491.0">
          <children>
-            <Text fx:id="output" layoutX="159.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="189.87744140625">
+            <Text fx:id="output" layoutX="159.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="180.60690307617188">
                <font>
                   <Font size="18.0" />
                </font></Text>
          </children>
       </Pane>
-      <TextField fx:id="numCat" layoutX="412.0" layoutY="45.0" onAction="#getNumCat" prefHeight="39.0" prefWidth="104.0" />
+      <TextField fx:id="numCat" layoutX="412.0" layoutY="39.0" onAction="#getNumCat" prefHeight="39.0" prefWidth="100.0" />
       <VBox layoutX="59.0" layoutY="37.0" prefHeight="16.0" prefWidth="224.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many grade categories are in your course thus far?" wrappingWidth="223.76171875" />
          </children>
       </VBox>
-      <TextField fx:id="weightC" layoutX="412.0" layoutY="114.0" onAction="#weightCategory" prefHeight="39.0" prefWidth="104.0" />
+      <TextField fx:id="weightC" layoutX="412.0" layoutY="114.0" onAction="#weightCategory" prefHeight="39.0" prefWidth="100.0" />
       <VBox layoutX="59.0" layoutY="109.0" prefHeight="0.0" prefWidth="299.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each category, enter the weight of the category" wrappingWidth="298.66015625" />
          </children>
       </VBox>
-      <TextField fx:id="components" layoutX="412.0" layoutY="215.0" onAction="#numComponents" prefHeight="39.0" prefWidth="104.0" />
+      <TextField fx:id="components" layoutX="412.0" layoutY="199.0" onAction="#numComponents" prefHeight="39.0" prefWidth="100.0" />
       <VBox layoutX="43.0" layoutY="207.0" prefHeight="39.0" prefWidth="343.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each category, enter the number of components in that category" wrappingWidth="342.205078125" />
@@ -41,14 +41,14 @@
       </VBox>
       <VBox layoutY="281.0" prefHeight="72.0" prefWidth="0.0" />
       <Text layoutX="43.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For each component in each category, enter the component grade" wrappingWidth="270.51953125" />
-      <TextField fx:id="componentG" layoutX="414.0" layoutY="291.0" onAction="#getComponentG" prefHeight="39.0" prefWidth="104.0" />
+      <TextField fx:id="componentG" layoutX="412.0" layoutY="292.0" onAction="#getComponentG" prefHeight="39.0" prefWidth="100.0" />
       <VBox layoutX="42.0" layoutY="404.0" prefHeight="48.0" prefWidth="131.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assessment you would like to use for the calculation" wrappingWidth="237.20703125" />
          </children>
       </VBox>
-      <TextField fx:id="assesment" layoutX="415.0" layoutY="404.0" onAction="#getAssesment" prefHeight="39.0" prefWidth="104.0" />
-      <TextField fx:id="desiredG" layoutX="417.0" layoutY="589.0" onAction="#getVal2" prefHeight="39.0" prefWidth="100.0" />
+      <TextField fx:id="assesment" layoutX="412.0" layoutY="397.0" onAction="#getAssesment" prefHeight="39.0" prefWidth="100.0" />
+      <TextField fx:id="desiredG" layoutX="414.0" layoutY="579.0" onAction="#getVal2" prefHeight="39.0" prefWidth="100.0" />
       <VBox layoutX="36.0" layoutY="589.0" prefHeight="54.0" prefWidth="285.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your desired grade for the class" wrappingWidth="307.205078125" />
@@ -59,7 +59,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the assessment" />
          </children>
       </VBox>
-      <TextField fx:id="weightAssesment" layoutX="414.0" layoutY="513.0" onAction="#getWA" prefHeight="39.0" prefWidth="100.0" />
+      <TextField fx:id="weightAssesment" layoutX="412.0" layoutY="496.0" onAction="#getWA" prefHeight="39.0" prefWidth="100.0" />
       <Text layoutX="567.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are " />
       <Text fx:id="numGCAT" layoutX="653.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="33.0" />
       <Text layoutX="701.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grade categories in your course" />

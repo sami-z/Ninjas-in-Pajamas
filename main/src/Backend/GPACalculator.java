@@ -18,7 +18,7 @@ public class GPACalculator {
 	{
 		allGrade = new ArrayList<Double>();
 	}
-	///////
+	/////////
 	private double calculateCGPA() 
 	{
 		double average = 0;
