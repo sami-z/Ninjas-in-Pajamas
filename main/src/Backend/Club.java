@@ -35,12 +35,12 @@ public class Club {
 	 * */
 	public Club(String Name, String Description,String link, String[] cate) 
 	{
-		setName(Name);
-		setDescription(Description);
-		setLink(link);
+		setName(new String(Name));
+		setDescription(new String(Description));
+		setLink(new String(link));
 		for(int i = 0;i<cate.length;i++) 
 		{
-			categories.add(cate[i]);
+			categories.add(new String(cate[i]));
 		}
 	}
 	
@@ -53,12 +53,12 @@ public class Club {
 	 * */
 	public Club(Club copy) 
 	{
-		setName(copy.name);
-		setDescription(copy.description);
-		setLink(copy.link);
+		setName(new String(copy.name));
+		setDescription(new String(copy.description));
+		setLink(new String(copy.link));
 		for(int i = 0;i<copy.categories.size();i++) 
 		{
-			categories.add(copy.categories.get(i));
+			categories.add(new String(copy.categories.get(i)));
 		}
 		setNumbOfInterest(copy.getNumbOfInterest());
 	}
@@ -115,7 +115,7 @@ public class Club {
 	 * */
 	public String getName() 
 	{
-		return name.replace('_', ' ');
+		return new String(name.replace('_', ' '));
 	}
 	
 	/** setDescription(String)
@@ -124,7 +124,7 @@ public class Club {
 	 * */
 	public void setDescription(String description) 
 	{
-		this.description = description;
+		this.description = new String(description);
 	}
 	
 	/** getDescription()
