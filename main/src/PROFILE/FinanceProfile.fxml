@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="533.0" prefWidth="416.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Text layoutX="39.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your yearly tuition:" wrappingWidth="142.95166015625" />
+      <TextField layoutX="222.0" layoutY="46.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the amount in your savings account:" wrappingWidth="171.22900390625" />
+      <TextField layoutX="222.0" layoutY="103.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter all weekly expenses:" wrappingWidth="150.22900390625" />
+      <TextField layoutX="222.0" layoutY="157.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter all monthly expenses:" wrappingWidth="150.22900390625" />
+      <TextField layoutX="222.0" layoutY="214.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your weekly income:" wrappingWidth="142.95166015625" />
+      <TextField layoutX="222.0" layoutY="271.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your weekly budget:" wrappingWidth="142.95166015625" />
+      <TextField layoutX="222.0" layoutY="325.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your long-term goal amount:" wrappingWidth="178.22900390625" />
+      <TextField layoutX="222.0" layoutY="383.0" prefHeight="34.0" prefWidth="161.0" />
+      <Text layoutX="39.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your long-term goal period in months:" wrappingWidth="128.22900390625" />
+      <TextField layoutX="222.0" layoutY="439.0" prefHeight="34.0" prefWidth="161.0" />
+   </children>
+</AnchorPane>
