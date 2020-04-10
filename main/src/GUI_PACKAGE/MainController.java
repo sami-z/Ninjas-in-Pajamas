@@ -84,7 +84,16 @@ public class MainController {
       }
     
     @FXML
-    void displayFinance(ActionEvent event) {
+    void displayFinance(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/FNCE.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        //controller.setStage(stage);
+        //controller.setPerson(getInfoController.getClubPerson());
+        stage.setTitle("Finance Calculator");
+        stage.setScene(scene);
+        stage.show();
 
     }
     
