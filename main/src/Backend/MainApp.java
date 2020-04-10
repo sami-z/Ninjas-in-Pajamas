@@ -1,5 +1,6 @@
 package Backend;
 import java.util.Scanner;
+
 public interface MainApp {
 
 	public void displayMenu();

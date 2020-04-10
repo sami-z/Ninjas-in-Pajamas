@@ -53,14 +53,18 @@ public class ClubPerson extends MasterPerson {
 	
 	
 	/**
+	 * This method  Initialize the recommendedClubs ClubList and populates the ClubList
+	 * with Clubs based on the number of interests the person and Club have in common
 	 * 
-	 * @param masterList
+	 * @param masterList - A ClubList which contains all the clubs 
 	 */
 	public void InitializeRecommended(ClubList masterList) 
 	{
+		//Creates a new instance of ClubList
 		recommendedClubs = new ClubList();
 		for(int i = 0;i<masterList.getSize();i++) 
 		{
+			
 			int counter = 0;
 			ArrayList<String> clubInterest = masterList.getClub(i).getCategory();
 			for(int j = 0;j<interests.size();j++) 
