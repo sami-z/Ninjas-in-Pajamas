@@ -1,5 +1,11 @@
 package Backend;
 import java.util.*;
+
+
+/**
+ * This class stores the data of each club and provides methods to extract the data
+ * and display the information.
+ */
 public class Club {
 	
 	// Name of the club
@@ -11,21 +17,21 @@ public class Club {
 	//ArrayList of the categories that the club 
 	private ArrayList<String> categories = new ArrayList<String>();
 	
-	// Club website
+	// Club website link stored as a string
 	private String link;
 	
 	//Number of interest that the club and person share
 	private int numbOfInterest = 0;
 	
 	
-	/*
+	/**
 	 * Club Constructor
 	 * 
-	 * Parameters: 
-	 * Name: Name of the club
-	 * Description: The description of the club
-	 * link: The link of the club
-	 * cate: The String array of categories that the club fits
+	 *  
+	 * @param Name - Name of the club
+	 * @param Description - The description of the club
+	 * @param link - The link of the club
+	 * @param cate - The String array of categories that the club fits
 	 * */
 	public Club(String Name, String Description,String link, String[] cate) 
 	{
@@ -39,11 +45,11 @@ public class Club {
 	}
 	
 	
-	/* 
+	/**
 	 * Copy constructor for Club
-	 * 
-	 * Parameters:
-	 * copy: The club that you want to copy from
+	 * @param copy - The club that you want to copy from
+	 * @return A Club object which is a deep copy of the Club passed in as an argument
+	 * does not copy the number of interests in common
 	 * */
 	public Club(Club copy) 
 	{
@@ -58,13 +64,13 @@ public class Club {
 	}
 	
 	
-	/*
+	/**
 	 * Club constructor which takes a club of number of interest in common
 	 * 
-	 * Parameters:
-	 * 
-	 * copy: The club that you want to copy from
-	 * numbOfInterest: The number of interest that the club and person share
+	 * @param copy - The club that you want to copy from
+	 * @param numbOfInterest - The number of interest that the club and person share
+	 * @return A Club object which is a deep copy of the Club passed in as an argument
+	 * copy's the number of interests in common
 	 * */
 	public Club(Club copy, int numbOfInterest) 
 	{
@@ -73,61 +79,88 @@ public class Club {
 	}
 	
 	
-	// Set the number of interest
-	public void setNumbOfInterest(int c) 
+	/** Sets the number of interests a the club and person share.
+	 * @param numbOfInterest - An integer which represents the number of interests
+	 * the club and person share.
+	*/
+	public void setNumbOfInterest(int numbOfInterest) 
 	{
-		numbOfInterest = c;
+		this.numbOfInterest = numbOfInterest;
 	}
 	
-	// Returns the number of interest the person and club share
+	/** Returns the number of interests a the club and person share.
+	 * @return numbOfInterest - An integer which represents the number of interests
+	 * the club and person share.
+	*/
 	public int getNumbOfInterest() 
 	{
 		return numbOfInterest;
 	}
 	
-	// Sets name
+	/** Sets the clubs names.
+	 * @param name - A String containing the name of the club
+	*/
 	public void setName(String name) 
 	{
-		this.name = name;
+		this.name = new String(name);
 	}
 	
-	// Gets name of club
+	/** Returns the name of the Club.
+	 * @return name - A String containing the name of the club with all '_' replaced with
+	 * ' '
+	*/
 	public String getName() 
 	{
 		return name.replace('_', ' ');
 	}
 	
-	// Sets the description of the club
+	/** Sets the description of the Club.
+	 * @param description - A String containing the description of the club
+	*/
 	public void setDescription(String description) 
 	{
 		this.description = description;
 	}
 	
-	// Returns the description of the club
+	/** Returns the description of the Club.
+	 * @return description - A String containing the description of the club
+	*/
 	public String getDescription() 
 	{
-		return description;
+		return new String(description);
 	}
 	
-	// Set the link of the club
+	/**
+	 * Sets the link of the club
+	 * @param link - The link for the clubs website
+	 */
 	public void setLink(String link) 
 	{
-		this.link = link;
+		this.link = new String(link);
 	}
 	
-	// Returns the link of the club
+	/**
+	 * Returns the link of the club
+	 * @return link - The link for the clubs website
+	 */
 	public String getLink() 
 	{
-		return link;
+		return new String(link);
 	}
 	
-	// Adds a category to the club
+	/**
+	 * Method that adds a category the clubs falls under to an ArrayList.
+	 * @param cate - A string containing the clubs fits 
+	 */
 	public void addCategory(String cate) 
 	{
-		categories.add(cate);
+		categories.add(new String(cate));
 	}
 	
-	// Returns a copy of the categories of which the club fits
+	/**
+	 * Returns an ArrayList of the categories that the club falls under
+	 * @return copy - A copy of the categories the club falls under
+	 */
 	public ArrayList<String> getCategory()
 	{
 		ArrayList<String> copy = new ArrayList();
@@ -138,14 +171,21 @@ public class Club {
 		return copy;
 	}
 	
-	// Formats and diplays the inforamtion about the club
-	public void displayInfo()
+	/**
+	 * Returns a formatted string representation of the information stored in the Club
+	 * 
+	 * @return out - A formatted string containing the Name, Description, Link and Interests 
+	 * associated with the club.
+	 */
+	public String toString()
 	{
-		System.out.println("Name: " + name.replace('_', ' '));
-		System.out.println("Description: " + description);
-		System.out.println("Link: " + link);
-		System.out.println("Interests: " + numbOfInterest);
-		System.out.println();
+		String out = "";
+		out += "Name: " + name.replace('_', ' ') + "\n";
+		out+= "Description: " + description+"\n";
+		out += "Link: " + link + "\n";
+		out += "Interests: " + numbOfInterest + "\n";
+		out+="\n";
+		return out;
 	}
 	
 }

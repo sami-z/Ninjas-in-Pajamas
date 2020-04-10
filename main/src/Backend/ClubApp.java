@@ -10,7 +10,6 @@ public class ClubApp implements MainApp{
 	
 	public ClubApp(String data,ClubPerson currentPerson) 
 	{
-		
 		try {
 		masterClubList = ReadData(data);
 		masterClubList.sortClubsByAlphabet();
@@ -196,7 +195,7 @@ public class ClubApp implements MainApp{
 			if(returnedClub==null)
 				System.out.println("Invalid club number");
 			else
-				returnedClub.displayInfo();
+				System.out.println(returnedClub.toString());
 		}while(response!=-1);
 
 
