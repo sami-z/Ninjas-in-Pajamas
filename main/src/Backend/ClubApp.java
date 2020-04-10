@@ -1,6 +1,12 @@
 package Backend;
 import java.util.Scanner;
 
+/**
+ * This class contains the functionality for the club finder feature,
+ * in particular sorting and displaying information about clubs
+ * based on the user's preferences.
+ */
+
 public class ClubApp implements MainApp{
 	
 	// Instance variable which contains all the Clubs
@@ -18,7 +24,7 @@ public class ClubApp implements MainApp{
 	public ClubApp(String data, ClubPerson currentPerson) 
 	{
 		try {
-		masterClubList = ReadData(data);
+		masterClubList = ReadData(new String(data));
 		masterClubList.sortClubsByAlphabet();
 		}
 		catch(Exception e)
@@ -41,7 +47,7 @@ public class ClubApp implements MainApp{
 	 */
 	private ClubList ReadData(String data) throws Exception
 	{
-		ReadFile reader = new ReadFile(data);
+		ReadFile reader = new ReadFile(new String(data));
 		return reader.readClubData();
 	}
 
