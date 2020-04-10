@@ -82,7 +82,7 @@ public class Club {
 	/** Sets the number of interests a the club and person share.
 	 * @param numbOfInterest - An integer which represents the number of interests
 	 * the club and person share.
-	*/
+	 * */
 	public void setNumbOfInterest(int numbOfInterest) 
 	{
 		this.numbOfInterest = numbOfInterest;
@@ -91,7 +91,7 @@ public class Club {
 	/** Returns the number of interests a the club and person share.
 	 * @return numbOfInterest - An integer which represents the number of interests
 	 * the club and person share.
-	*/
+	 * */
 	public int getNumbOfInterest() 
 	{
 		return numbOfInterest;
@@ -99,7 +99,7 @@ public class Club {
 	
 	/** Sets the clubs names.
 	 * @param name - A String containing the name of the club
-	*/
+	 * */
 	public void setName(String name) 
 	{
 		this.name = new String(name);
@@ -108,7 +108,7 @@ public class Club {
 	/** Returns the name of the Club.
 	 * @return name - A String containing the name of the club with all '_' replaced with
 	 * ' '
-	*/
+	 * */
 	public String getName() 
 	{
 		return name.replace('_', ' ');
@@ -116,7 +116,7 @@ public class Club {
 	
 	/** Sets the description of the Club.
 	 * @param description - A String containing the description of the club
-	*/
+	 * */
 	public void setDescription(String description) 
 	{
 		this.description = description;
@@ -124,7 +124,7 @@ public class Club {
 	
 	/** Returns the description of the Club.
 	 * @return description - A String containing the description of the club
-	*/
+	 * */
 	public String getDescription() 
 	{
 		return new String(description);
@@ -133,7 +133,7 @@ public class Club {
 	/**
 	 * Sets the link of the club
 	 * @param link - The link for the clubs website
-	 */
+	 * */
 	public void setLink(String link) 
 	{
 		this.link = new String(link);
@@ -142,7 +142,7 @@ public class Club {
 	/**
 	 * Returns the link of the club
 	 * @return link - The link for the clubs website
-	 */
+	 * */
 	public String getLink() 
 	{
 		return new String(link);
@@ -151,7 +151,7 @@ public class Club {
 	/**
 	 * Method that adds a category the clubs falls under to an ArrayList.
 	 * @param cate - A string containing the clubs fits 
-	 */
+	 * */
 	public void addCategory(String cate) 
 	{
 		categories.add(new String(cate));
@@ -160,7 +160,7 @@ public class Club {
 	/**
 	 * Returns an ArrayList of the categories that the club falls under
 	 * @return copy - A copy of the categories the club falls under
-	 */
+	 * */
 	public ArrayList<String> getCategory()
 	{
 		ArrayList<String> copy = new ArrayList();
@@ -176,7 +176,7 @@ public class Club {
 	 * 
 	 * @return out - A formatted string containing the Name, Description, Link and Interests 
 	 * associated with the club.
-	 */
+	 * */
 	public String toString()
 	{
 		String out = "";
