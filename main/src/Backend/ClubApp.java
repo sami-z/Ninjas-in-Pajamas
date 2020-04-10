@@ -1,8 +1,14 @@
 package Backend;
 import java.util.Scanner;
 
+/**
+ * This class implements the functionality of the Club Finder feature, particularly sorting 
+ * and displaying clubs based on the user's inputted preferences.
+ */
+
 public class ClubApp implements MainApp{
 	
+<<<<<<< HEAD
 	// Instance variable which contains all the Clubs
 	private ClubList masterClubList;
 	
@@ -16,6 +22,25 @@ public class ClubApp implements MainApp{
 	 * @param currentPerson - The object of type ClubPerson for which the ClubApp is using to get the clubs for
 	 */
 	public ClubApp(String data, ClubPerson currentPerson) 
+=======
+	//ClubList containing all clubs
+	ClubList masterClubList;
+	
+	//ClubPerson representing the user's club-related profile
+	ClubPerson currentPerson;
+	
+	//File reader for navigating the file containing clubs
+	ReadFile reader;
+	
+	/** ClubApp(String, ClubPerson)
+	 * ClubApp Constructor
+	 *  
+	 * @param data - Name of the file containing club information
+	 * @param currentPerson - The instance of the user's club-related profile
+	 * */
+	
+	public ClubApp(String data,ClubPerson currentPerson) 
+>>>>>>> 901ab0fc26694e29f34fb47276fd2f02134f0dfa
 	{
 		try {
 		masterClubList = ReadData(data);
@@ -28,7 +53,16 @@ public class ClubApp implements MainApp{
 
 		this.currentPerson = currentPerson;
 	}
+	
+	
+	/** ClubList(String)
+	 * Reads the data in the club information file
+	 * 
+	 * @param data - Name of the file containing club information
+	 * @return A ClubList object containing information about all the clubs in the given file
+	 * */
 
+<<<<<<< HEAD
 	/**
 	 * Helper method used to read Club data from a file and return this data in the form
 	 * of a ClubList
@@ -39,16 +73,26 @@ public class ClubApp implements MainApp{
 	 * 
 	 * @throws Exception
 	 */
+=======
+>>>>>>> 901ab0fc26694e29f34fb47276fd2f02134f0dfa
 	private ClubList ReadData(String data) throws Exception
 	{
 		ReadFile reader = new ReadFile(data);
 		return reader.readClubData();
 	}
+	
+	
+	/** displayMenu()
+	 * Prints the main menu of the club app to the console
+	 * */
 
+<<<<<<< HEAD
 	/**
 	 * Implements the displayMenu() method from the mainApp interface
 	 * the method displays the main menu for ClubApp 
 	 */
+=======
+>>>>>>> 901ab0fc26694e29f34fb47276fd2f02134f0dfa
 	public void displayMenu() 
 	{
 		System.out.println("Please enter an option below: ");
@@ -57,6 +101,11 @@ public class ClubApp implements MainApp{
 		System.out.println("3: Update current information");
 		System.out.println("4: Exit");
 	}
+	
+	
+	/** displayRecommended()
+	 * Prints a list of recommended clubs to the console
+	 * */
 
 	/**
 	 * Displays the list of recommended clubs for the user, then goes to displayClub() to allow user pick out
@@ -73,6 +122,10 @@ public class ClubApp implements MainApp{
 		
 		displayClub(currClubList);
 	}
+	
+	/** displayMasterClub()
+	 * Prints a list of all the clubs to the console
+	 * */
 
 	/**
 	 * Displays the list of all clubs for the user, then goes to displayClub() to allow user pick out
@@ -84,6 +137,10 @@ public class ClubApp implements MainApp{
 		System.out.println(masterClubList.toString());
 		displayClub(masterClubList);
 	}
+	
+	/** displayUpdateUserPrompt()
+	 * Prints the current information of the user's main and club-related profiles
+	 * */
 
 	
 	/**
@@ -95,6 +152,11 @@ public class ClubApp implements MainApp{
 
 		System.out.println();
 	}
+	
+	
+	/** UpdateUser()
+	 * Allows the user to change the values stored in their profile
+	 * */
 
 	
 	/**
@@ -231,6 +293,13 @@ public class ClubApp implements MainApp{
 
 
 	}
+	
+	/** displayClub(ClubList)
+	 * Prints information about a specific, user-chosen club to the console
+	 * 
+	 * @param list - ClubList containing information about the possible clubs the 
+	 * user could choose to view
+	 * */
 
 	/**
 	 * This method takes in a ClubList and allows the user to enter input to view specific clubs
@@ -279,6 +348,16 @@ public class ClubApp implements MainApp{
 
 
 	}
+	
+	
+	/** performAction(int)
+	 * Implements MainApp's method. Allows user to utilize the Club Finder's features
+	 * 
+	 *  
+	 * @param action - Integer (between 1 and 4) indicating which feature in the Club Finder
+	 * the user would like to use
+	 * @return A boolean determining whether or not the input integer was 4
+	 * */
 
 	/**
 	 * Implements the performAction(int action) method from mainApp interface
