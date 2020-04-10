@@ -1,7 +1,7 @@
 package Backend;
 import java.util.ArrayList;
 import java.util.Scanner;
-//random stuff
+
 
 public class Main {
 
@@ -18,20 +18,31 @@ public class Main {
 		System.out.println("1: Get information about clubs you're interested in!");
 		System.out.println("2: Get information about your finances and budget your expenses!");
 		System.out.println("3: GPA Calc");
-		String k  = input.nextLine();
-		int l = Integer.parseInt(k);
 		
-		if(l == 1) 
+		int userChoice = -1;
+		while(userChoice==-1) {
+			String userChoiceString = input.nextLine();
+			try {
+				userChoice = Integer.parseInt(userChoiceString);
+			}
+			catch(NumberFormatException nfe)
+			{
+				System.out.println("Invalid input");
+			}
+			
+		}
+		
+		if(userChoice == 1) 
 		{
 			ClubPerson  p2 = getInitialClubPerson(input,p1);
 			app = new ClubApp("data.txt",p2);
 		}
-		else if(l == 2) 
+		else if(userChoice == 2) 
 		{
 			FinancePerson p3 = getInitialFinancePerson(input,p1);
 			app = new FinanceApp(p3);
 		}
-		else if (l==3) 
+		else if (userChoice==3) 
 		{
 			app = new GPAApp(p1);
 		}
@@ -40,7 +51,16 @@ public class Main {
 
 		do {
 			app.displayMenu();
-			int action = input.nextInt();
+			
+			String actionString = input.nextLine();
+			int action = -1;
+			try {
+				action = Integer.parseInt(actionString);
+			}
+			catch(NumberFormatException nfe) 
+			{
+			}
+			
 			Condition = app.performAction(action);
 		}while(Condition);
 
@@ -58,9 +78,22 @@ public class Main {
 		String name = input.nextLine();
 
 		System.out.println("Enter year of study: ");
-		String YOSString = input.nextLine();
-		int YOS = Integer.parseInt(YOSString);
-
+		String YOSString;	
+		int YOS = -1;
+		while(YOS==-1) {
+			YOSString = input.nextLine();
+			try {
+				YOS = Integer.parseInt(YOSString);
+			}
+			catch(NumberFormatException nfe)
+			{
+				System.out.println("Invalid input");
+			}
+			
+		}
+		
+		
+		
 		System.out.println("Enter your major: ");
 		String Major = input.nextLine();
 		System.out.println("Enter your minor: ");
@@ -120,12 +153,11 @@ public class Main {
 		double currMonthlyExpense;
 		System.out.println("Enter your yearly tuition: ");
 		
-		String strTuition = input.nextLine();
-		double tuition = Double.parseDouble(strTuition);
+		double tuition = ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
 
 		System.out.println("Enter the amount in your savings account: ");
-		String strSavings = input.nextLine();
-		double savings = Double.parseDouble(strSavings);
+		double savings = ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		
 		
 		String expense;
 		String monthExpense;
@@ -135,8 +167,16 @@ public class Main {
 			System.out.println("Enter all weekly expenses: ");
 			expense = input.nextLine();
 			if(!expense.equals("")) {
-				currWeeklyExpense = Double.parseDouble(expense);
-				allWeeklyExpenses.add(currWeeklyExpense);
+				try {
+					currWeeklyExpense = Double.parseDouble(expense);
+					if(currWeeklyExpense<0)
+						throw new NumberFormatException("Negative double");
+					allWeeklyExpenses.add(currWeeklyExpense);
+				}
+				catch(NumberFormatException nfe)
+				{
+					System.out.println("Invalid input: Input must be a positive double");
+				}
 			}
 		}while(!expense.equals(""));
 		
@@ -144,20 +184,29 @@ public class Main {
 		{
 			System.out.println("Enter all monthly expenses: ");
 			monthExpense = input.nextLine();
+			
 			if(!monthExpense.equals("")) {
-				currMonthlyExpense = Double.parseDouble(monthExpense);
-				allMonthlyExpenses.add(currMonthlyExpense);
+				try {
+					currMonthlyExpense = Double.parseDouble(monthExpense);
+					if(currMonthlyExpense<0)
+						throw new NumberFormatException("Negative double");
+					allMonthlyExpenses.add(currMonthlyExpense);
+				}
+				catch(NumberFormatException nfe)
+				{
+					System.out.println("Invalid input: Input must be a positive double");
+				}
 			}
 		}while(!monthExpense.equals(""));
 		
 		System.out.println("Enter your weekly income: ");
-		double weeklyIncome = input.nextDouble();
+		double weeklyIncome =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your weekly budget: ");
-		double weeklyBudget = input.nextDouble();
+		double weeklyBudget =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your long-term goal amount: ");
-		double longTermGoal = input.nextDouble();
+		double longTermGoal =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your long-term goal period in months: ");
 		int longTermGoalMonthBased = input.nextInt();
@@ -165,5 +214,27 @@ public class Main {
 		FinancePerson p3 = new FinancePerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(), tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
 		return p3;
 	} 
+	
+	private static double ValidateFinanceInput(Scanner input,String error) 
+	{
+		double ret = -1;
+		while(ret==-1) {
+			String strRet = input.nextLine();
+			try {
+				ret = Double.parseDouble(strRet);
+				if(ret<0)
+					throw new NumberFormatException("Negative double");
+			}
+			catch(NumberFormatException nfe)
+			{
+				System.out.println(error);
+			}
+			
+		}
+		
+		return ret;
+	}
+	
+	
 
 }
