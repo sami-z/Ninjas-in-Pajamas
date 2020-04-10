@@ -1,12 +1,28 @@
 package Backend;
 import java.util.Scanner;
 
+/**
+ * This class implements the functionality of the Club Finder feature, particularly sorting 
+ * and displaying clubs based on the user's inputted preferences.
+ */
+
 public class ClubApp implements MainApp{
 	
-	//Two instance variables needed to run the application
+	//ClubList containing all clubs
 	ClubList masterClubList;
+	
+	//ClubPerson representing the user's club-related profile
 	ClubPerson currentPerson;
+	
+	//File reader for navigating the file containing clubs
 	ReadFile reader;
+	
+	/** ClubApp(String, ClubPerson)
+	 * ClubApp Constructor
+	 *  
+	 * @param data - Name of the file containing club information
+	 * @param currentPerson - The instance of the user's club-related profile
+	 * */
 	
 	public ClubApp(String data,ClubPerson currentPerson) 
 	{
@@ -21,15 +37,26 @@ public class ClubApp implements MainApp{
 
 		this.currentPerson = currentPerson;
 	}
+	
+	
+	/** ClubList(String)
+	 * Reads the data in the club information file
+	 * 
+	 * @param data - Name of the file containing club information
+	 * @return A ClubList object containing information about all the clubs in the given file
+	 * */
 
-	//Reads the data and returns a ClubList
 	private ClubList ReadData(String data) throws Exception
 	{
 		reader = new ReadFile(data);
 		return reader.readClubData();
 	}
+	
+	
+	/** displayMenu()
+	 * Prints the main menu of the club app to the console
+	 * */
 
-	// Displays main menu
 	public void displayMenu() 
 	{
 		System.out.println("Please enter an option below: ");
@@ -38,6 +65,11 @@ public class ClubApp implements MainApp{
 		System.out.println("3: Update current information");
 		System.out.println("4: Exit");
 	}
+	
+	
+	/** displayRecommended()
+	 * Prints a list of recommended clubs to the console
+	 * */
 
 	private void displayRecommended() 
 	{
@@ -46,12 +78,20 @@ public class ClubApp implements MainApp{
 		System.out.println(currClubList.toString());
 		displayClub(currClubList);
 	}
+	
+	/** displayMasterClub()
+	 * Prints a list of all the clubs to the console
+	 * */
 
 	private void displayMasterClub() 
 	{
 		System.out.println(masterClubList.toString());
 		displayClub(masterClubList);
 	}
+	
+	/** displayUpdateUserPrompt()
+	 * Prints the current information of the user's main and club-related profiles
+	 * */
 
 	private void displayUpdateUserPrompt() 
 	{
@@ -59,6 +99,11 @@ public class ClubApp implements MainApp{
 
 		System.out.println();
 	}
+	
+	
+	/** UpdateUser()
+	 * Allows the user to change the values stored in their profile
+	 * */
 
 	private void UpdateUser() 
 	{
@@ -171,6 +216,13 @@ public class ClubApp implements MainApp{
 
 
 	}
+	
+	/** displayClub(ClubList)
+	 * Prints information about a specific, user-chosen club to the console
+	 * 
+	 * @param list - ClubList containing information about the possible clubs the 
+	 * user could choose to view
+	 * */
 
 	private void displayClub(ClubList list) 
 	{
@@ -200,6 +252,16 @@ public class ClubApp implements MainApp{
 
 
 	}
+	
+	
+	/** performAction(int)
+	 * Implements MainApp's method. Allows user to utilize the Club Finder's features
+	 * 
+	 *  
+	 * @param action - Integer (between 1 and 4) indicating which feature in the Club Finder
+	 * the user would like to use
+	 * @return A boolean determining whether or not the input integer was 4
+	 * */
 
 	public boolean performAction(int action) 
 	{
