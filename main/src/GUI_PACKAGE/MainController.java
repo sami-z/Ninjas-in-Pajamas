@@ -84,6 +84,11 @@ public class MainController {
       }
     
     @FXML
+    void displayFinance(ActionEvent event) {
+
+    }
+    
+    @FXML
     public void displayClub(ActionEvent event) throws IOException {	
         //Parent root = FXMLLoader.load(getClass().getResource("/ClubFinder/Club.fxml"));
         

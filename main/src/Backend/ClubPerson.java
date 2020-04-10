@@ -7,46 +7,55 @@ import java.util.HashMap;
 
 public class ClubPerson extends MasterPerson {
 	
-	// List of interests the person has
+	// List of interests of the person.
 	private ArrayList<String> interests = new ArrayList<String>();
 	
 	private HashMap<String,String> mapOfInterest;
 	
-	// List
+	// List of faculties that the person is apart of
 	private ArrayList<String> faculties = new ArrayList<String>();
 	
 	// The list of recommendedClubs that fit the users interests
 	private ClubList recommendedClubs;
 	
-	/* Person constructor
+	
+	/** ClubPerson constructor
 	 * 
-	 * Parameters:
-	 * 
-	 * name: Name of the person
-	 * age: The age of the person as an int
-	 * major: The major of the person
-	 * minor: the minor of the person
-	 * interests: The String ArrayList which contains all the interest of the person
-	 * faculties: The String ArrayList of the faculties by which the person is apart of
+	 * @param name - Name of the person
+	 * @param age - The age of the person as an int
+	 * @param major - The major of the person
+	 * @param minor - The minor of the person
+	 * @param interests - The String ArrayList which contains all the interest of the person
+	 * @param faculties - The String ArrayList of the faculties by which the person is apart of
 	 * 
 	 * */
 	public ClubPerson(String name, int yos, String major, String minor, ArrayList<String> interests, ArrayList<String> faculties) {
+		
+		// Call to the parent constructor
 		super(name,yos,major,minor);
+		
+		
 		ReadFile reader = new ReadFile("map.txt");
 		mapOfInterest = reader.readMap();
 		
+		// Loops through each interest in interests and adds that interest to ClubPerson
 		for (String d : interests) {
 			addInterest(new String(d));
 		}
+		
 		for (String s : faculties) {
 			addFaculty(new String(s));
 		}
+		
 		recommendedClubs = new ClubList();
 		
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param masterList
+	 */
 	public void InitializeRecommended(ClubList masterList) 
 	{
 		recommendedClubs = new ClubList();

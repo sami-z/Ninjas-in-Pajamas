@@ -50,7 +50,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="167.0" layoutY="366.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="291.0" text="Financial Calculator" wrapText="true">
+            <Button layoutX="167.0" layoutY="366.0" mnemonicParsing="false" onAction="#displayFinance" prefHeight="98.0" prefWidth="291.0" text="Financial Calculator" wrapText="true">
                <font>
                   <Font name="Tahoma Bold" size="22.0" />
                </font>
