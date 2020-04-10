@@ -64,32 +64,45 @@ public class ClubPerson extends MasterPerson {
 		recommendedClubs = new ClubList();
 		for(int i = 0;i<masterList.getSize();i++) 
 		{
-			
+			// A counter is created to count the number of interests in common
 			int counter = 0;
 			ArrayList<String> clubInterest = masterList.getClub(i).getCategory();
 			for(int j = 0;j<interests.size();j++) 
 			{
+				// Loops through the interests and counts the number of interests in common
 				if(clubInterest.contains(interests.get(j)))
 					counter++;
 			}
 			if(counter!=0)
+				// If the clubs do share an interests in common then they are added to the recommendedClubs ClubList
 				recommendedClubs.addClub(new Club(masterList.getClub(i),counter));
 				
 		}
 		
+		// Sorts the recommendedClubs ClubList by the number of interests in common
 		recommendedClubs.sortClubsByNumbInterest();
 		
 		
 	}
 	
 	
-	// Getters and setters for the private variables
 	
+	/**
+	 * Precondition: InitializeRecommended(ClubList masterList) has been called
+	 * Returns the recommendedClubs ClubList
+	 * 
+	 * @return recommendedClubs - The ClubList which contains clubs sorted by the number of interests in common
+	 * 
+	 */
 	public ClubList getRecommended() 
 	{
 		return new ClubList(recommendedClubs);
 	}
 	
+	/** Returns the interests the person has
+	 * 
+	 * @return nInterests - A copy of the interests ArrayList
+	 */
 	public ArrayList<String> getInterests() {
 		ArrayList<String> nInterests = new ArrayList<String>();
 		for (String d : interests) {
@@ -99,6 +112,10 @@ public class ClubPerson extends MasterPerson {
 		
 	}
 	
+	/** Returns the faculties the person is apart of
+	 * 
+	 * @return nFaculties - A copy of the faculties ArrayList
+	 */
 	public ArrayList<String> getFaculties() {
 		ArrayList<String> nFaculties = new ArrayList<String>();
 		for (String s : faculties) {
@@ -108,6 +125,10 @@ public class ClubPerson extends MasterPerson {
 		
 	}
 	
+	/**
+	 * Adds an interest to the interests ArrayList
+	 * @param newInterest - An interest the person has
+	 */
 	public void addInterest(String newInterest) {
 		if(mapOfInterest.containsKey(newInterest))
 			interests.add(new String(newInterest));
@@ -117,21 +138,36 @@ public class ClubPerson extends MasterPerson {
 		
 	}
 	
+	/**
+	 * Adds faculty to the faculties ArrayList
+	 * @param newFaculty - A faculty the person is apart of
+	 */
 	public void addFaculty(String newFaculty) {
 		faculties.add(new String(newFaculty));
 		
 	}
 	
+	/**
+	 * The method removes a interest from the interests ArrayList
+	 * @param unwanted - The interest that is to be removed
+	 */
 	public void removeInterest(String unwanted) {
 		interests.remove(new String(unwanted));
 		
 	}
 	
+	/**
+	 * The method removes a faculty from the interests ArrayList
+	 * @param unwanted - The faculty that is to be removed
+	 */
 	public void removeFaculty(String unwanted) {
 		faculties.remove(new String(unwanted));
 		
 	}
 	
+	/**
+	 * Displays the current interests the person has
+	 */
 	private void  displayInterests() 
 	{
 		for(int i = 0;i<interests.size();i++) 
@@ -141,6 +177,9 @@ public class ClubPerson extends MasterPerson {
 		
 	}
 	
+	/**
+	 * Displays the current information stored within ClubPerson and MasterPerson classes
+	 */
 	public void displayInfo() 
 	{
 		super.displayInfo();
