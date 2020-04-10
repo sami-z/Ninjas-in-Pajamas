@@ -1,20 +1,28 @@
 package Backend;
 import java.util.*;
+
+/**
+ * This is a wrapper class for the data structure ArrayList<Club>. The class provides 
+ * methods to sort the ArrayList, add elements to the ArrayList, and return the information
+ * stored in the ArrayList
+ */
+
 public class ClubList {
 	
 	// The ArrayList that stores all of the Club is the ClubList
 	private ArrayList<Club> listOfClubs;
 	
-	//Constructor which initializes and empty ClubList 
+	/**
+	 * ClubList constructor which initializes an empty ArrayList of Clubs
+	 */
 	public ClubList() 
 	{
 		listOfClubs = new ArrayList<Club> ();
 	}
 	
-	/* Copy constructor for ClubList
+	/** Copy constructor for ClubList
 	 * 
-	 * Parameters:
-	 * copy: The ClubList that you want to copy from
+	 * @param copy - The ClubList that you want to copy from
 	 * */
 	public ClubList(ClubList copy) 
 	{
@@ -26,19 +34,30 @@ public class ClubList {
 		}
 	}
 	
-	// Returns the size of the listOfClubs ArrayList
+	/**
+	 * Returns the number of Clubs contained within listOfClubs
+	 * 
+	 * @return An integer representing the size of listOfClubs
+	 */
 	public int getSize() 
 	{
 		return listOfClubs.size();
 	}
 	
-	// Adds a club to the listOfClubs ArrayList
+	/**
+	 * A method for adding a Club into the ClubList
+	 * 
+	 * @param newClub -  A club that is added to listOfClubs
+	 */
 	public void addClub(Club newClub) 
 	{
 		listOfClubs.add(new Club(newClub));
 	}
 	
-	//Sorts the Clubs in listOfClubs by alphabetical order order
+	/**
+	 * A method that sorts the Clubs in listOfClubs in alphabetical order from the 
+	 * names
+	 */
 	public void sortClubsByAlphabet() 
 	{
 		Collections.sort(listOfClubs, new Comparator<Club>() {
@@ -48,7 +67,9 @@ public class ClubList {
 		});
 	}
 	
-	//Sorts the Clubs in listOfClubs by the numbOfInterest in the Club class
+	/**
+	 * A method that sorts the Clubs in listOfClubs by the number of interests in common
+	 */
 	public void sortClubsByNumbInterest() 
 	{
 		Collections.sort(listOfClubs, Collections.reverseOrder(new Comparator<Club>() {
@@ -59,7 +80,12 @@ public class ClubList {
 
 	}
 	
-	// Returns a copy of listOfClubs
+	/**
+	 * Returns a copy of listOfClubs
+	 * 
+	 * @return copy -  A copy of the ArrayList listOfClubs, which contains all the clubs
+	 * that ClubList stores
+	 */
 	public ArrayList<Club> getClubs() 
 	{
 		ArrayList<Club> copy = new ArrayList<Club> ();
@@ -70,19 +96,27 @@ public class ClubList {
 		return copy;
 	}
 	
-	// Displays all of the clubs in listOfClubs
-	public void displayClubList() 
+	/**
+	 * Returns the string representation of ClubList, 
+	 * 
+	 * @return out - A formatted String which displays the index of which the club is in
+	 * in list of Clubs followed by the name of the club
+	 */
+	public String toString() 
 	{
+		String out="";
 		for(int i = 0;i<listOfClubs.size();i++) 
 		{
-			System.out.println((i+1) + ": " + listOfClubs.get(i).getName());
+			out+= (i+1) + ": " + listOfClubs.get(i).getName() + "\n";
 		}
+		return out;
 	}
 	
-	/* Returns a club from listOfClubs based on interests
+	/** Returns a club from listOfClubs from a given index. If the index is not 
+	 * valid, the method returns null
 	 * 
-	 * Parameters:
-	 * index: the index of the Club that is the be returned
+	 * @param index - the index of the Club that is the be returned
+	 * @return The club stored at the index
 	 * */
 	public Club getClub(int index) 
 	{

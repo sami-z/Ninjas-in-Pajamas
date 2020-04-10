@@ -43,13 +43,13 @@ public class ClubApp implements MainApp{
 	{
 		currentPerson.InitializeRecommended(masterClubList);
 		ClubList currClubList = currentPerson.getRecommended();
-		currClubList.displayClubList();
+		System.out.println(currClubList.toString());
 		displayClub(currClubList);
 	}
 
 	private void displayMasterClub() 
 	{
-		masterClubList.displayClubList();
+		System.out.println(masterClubList.toString());
 		displayClub(masterClubList);
 	}
 
