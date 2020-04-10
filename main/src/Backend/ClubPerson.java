@@ -6,9 +6,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 
 /**
- * 
- *
+ * This class controls the user's club-related profile, in particular 
+ * managing getters and setters for club-related information and 
+ * arranging the recommended clubs based on their inputs.
  */
+
 public class ClubPerson extends MasterPerson {
 	
 	// List of interests of the person.
@@ -116,7 +118,7 @@ public class ClubPerson extends MasterPerson {
 		
 	}
 	
-	/** Returns the faculties the person is apart of
+	/** Returns the faculties the person is a part of
 	 * 
 	 * @return nFaculties - A copy of the faculties ArrayList
 	 */
