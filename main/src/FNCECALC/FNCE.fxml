@@ -14,38 +14,23 @@
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
-         <effect>
-            <DropShadow />
-         </effect>
       </Button>
       <Button layoutX="69.0" layoutY="125.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display weekly savings">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
-         <effect>
-            <DropShadow />
-         </effect>
       </Button>
       <Button layoutX="69.0" layoutY="196.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display weekly budget progress">
-         <effect>
-            <DropShadow />
-         </effect>
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
       <Button layoutX="69.0" layoutY="269.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display long-term goal">
-         <effect>
-            <DropShadow />
-         </effect>
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
       <Button layoutX="69.0" layoutY="404.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Go back to main menu">
-         <effect>
-            <DropShadow />
-         </effect>
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
