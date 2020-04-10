@@ -4,13 +4,22 @@ import java.util.*;
 
 public class GPAApp implements MainApp{
 	
-	MasterPerson p1;
+	private MasterPerson person;
 	
-	public GPAApp(MasterPerson p1) 
+	/**
+	 * GPAApp constructor
+	 * 
+	 * @param person - The person object that is using the GPAAapp
+	 */
+	public GPAApp(MasterPerson person) 
 	{
-		this.p1 = p1;
+		this.person = person;
 	}
 
+	/**
+	 * Implements the displayMenu() method from the mainApp interface
+	 * the method displays the main menu for GPAApp 
+	 */
 	public void displayMenu() {
 		System.out.println("Which function would you like to use?");
 		System.out.println("Enter 1, to calculate what grade you need on a grade category to achieve a certain grade.");
@@ -18,11 +27,22 @@ public class GPAApp implements MainApp{
 	}
 	
 	
+	/**
+	 * Implements the performAction(int action) method from mainApp interface
+	 * The method takes in an integer and based on the integer performs either 
+	 * 1. Calculates the grade needed in a class to maintain a certain GPA in that class
+	 * 2. Checks the grades need to maintain a certain GPA
+	 * 
+	 * @param action - the integer value which decides what action to perform
+	 * @return A boolean value is returned to signal whether the program should continue
+	 * taking input or terminate execute of the program
+	 */
 	public boolean performAction(int action) 
 	{
 		switch(action) 
 		{
 		case 1:
+			// If the users input is 1 the GPAApp w
 			maintainCurrGPA();
 			break;
 		case 2:
@@ -97,11 +117,7 @@ public void maintainCurrGPA(){
 	System.out.println(info);
 
 	
-	
-	
-	
-	
-}////////////////////////////////////
+}
 
 
 

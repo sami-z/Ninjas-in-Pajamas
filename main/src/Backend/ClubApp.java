@@ -1,6 +1,7 @@
 package Backend;
 import java.util.Scanner;
 
+
 public class ClubApp implements MainApp{
 	
 	// Instance variable which contains all the Clubs
