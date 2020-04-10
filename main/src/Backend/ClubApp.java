@@ -3,12 +3,19 @@ import java.util.Scanner;
 
 public class ClubApp implements MainApp{
 	
-	//Two instance variables needed to run the application
-	ClubList masterClubList;
-	ClubPerson currentPerson;
-	ReadFile reader;
+	// Instance variable which contains all the Clubs
+	private ClubList masterClubList;
 	
-	public ClubApp(String data,ClubPerson currentPerson) 
+	// Instance variable which contains the information pertaining to the currentPerson using ClubApp
+	private ClubPerson currentPerson;
+	
+	
+	/**
+	 * ClubApp constructor  
+	 * @param data - The filename for the file which contains the data on the Clubs
+	 * @param currentPerson - The object of type ClubPerson for which the ClubApp is using to get the clubs for
+	 */
+	public ClubApp(String data, ClubPerson currentPerson) 
 	{
 		try {
 		masterClubList = ReadData(data);
@@ -22,14 +29,26 @@ public class ClubApp implements MainApp{
 		this.currentPerson = currentPerson;
 	}
 
-	//Reads the data and returns a ClubList
+	/**
+	 * Helper method used to read Club data from a file and return this data in the form
+	 * of a ClubList
+	 * 
+	 * @param data - The filename for the file which contains the data on the Clubs
+	 * 
+	 * @return A ClubList which contains all Clubs that were stored within the file
+	 * 
+	 * @throws Exception
+	 */
 	private ClubList ReadData(String data) throws Exception
 	{
-		reader = new ReadFile(data);
+		ReadFile reader = new ReadFile(data);
 		return reader.readClubData();
 	}
 
-	// Displays main menu
+	/**
+	 * Implements the displayMenu() method from the mainApp interface
+	 * the method displays the main menu for ClubApp 
+	 */
 	public void displayMenu() 
 	{
 		System.out.println("Please enter an option below: ");
@@ -39,20 +58,37 @@ public class ClubApp implements MainApp{
 		System.out.println("4: Exit");
 	}
 
+	/**
+	 * Displays the list of recommended clubs for the user, then goes to displayClub() to allow user pick out
+	 * individual clubs 
+	 */
 	private void displayRecommended() 
 	{
+		// Initializes the list of recommended Clubs
 		currentPerson.InitializeRecommended(masterClubList);
 		ClubList currClubList = currentPerson.getRecommended();
+		
+		// Displays the recommended clubs
 		System.out.println(currClubList.toString());
+		
 		displayClub(currClubList);
 	}
 
+	/**
+	 * Displays the list of all clubs for the user, then goes to displayClub() to allow user pick out
+	 * individual clubs
+	 */
+	
 	private void displayMasterClub() 
 	{
 		System.out.println(masterClubList.toString());
 		displayClub(masterClubList);
 	}
 
+	
+	/**
+	 * Displays the current user information
+	 */
 	private void displayUpdateUserPrompt() 
 	{
 		currentPerson.displayInfo();
@@ -60,6 +96,10 @@ public class ClubApp implements MainApp{
 		System.out.println();
 	}
 
+	
+	/**
+	 * This method allows the user to update there Name, Year of Study, Major, Minor, Interests and faculty
+	 */
 	private void UpdateUser() 
 	{
 		displayUpdateUserPrompt();
@@ -73,49 +113,67 @@ public class ClubApp implements MainApp{
 		System.out.println();
 
 		Scanner scan = new Scanner(System.in);
-		int option = scan.nextInt();
+		String optionString = scan.nextLine();
+		int option = -1;
+		try {
+			option = Integer.parseInt(optionString);
+		}
+		catch(NumberFormatException nfe) 
+		{
+			System.out.println("Input is not an integer");
+		}
 
 		switch (option) {
+		// Takes input from the user and changes the name of the user
 		case 1:
-			Scanner name = new Scanner(System.in);
 			System.out.println("Enter Name: ");
-			String newName = name.nextLine();
+			String newName = scan.nextLine();
 			currentPerson.setName(newName);
-		break;
-
-		case 2:
-			Scanner YOS = new Scanner(System.in);
-			System.out.println("Enter Year of Study: ");
-			int newYOS = YOS.nextInt();
-			currentPerson.setYOS(newYOS);
-
 			break;
 
+		// Takes input from the user and changes their year of study
+		case 2:
+			System.out.println("Enter Year of Study: ");
+			String newYOSString = scan.nextLine();
+			int newYOS;
+			// Checks if the input entered is an integer
+			try {
+				newYOS = Integer.parseInt(newYOSString);
+			}
+			catch (NumberFormatException nfe) {
+				System.out.println("Input is not a number");
+				break;
+		    }
+			currentPerson.setYOS(newYOS);
+			break;
+
+		// Takes input from the user and changes their major
 		case 3: 
-			Scanner major = new Scanner(System.in);
 			System.out.println("Enter Major: ");
-			String newMajor = major.nextLine();
+			String newMajor = scan.nextLine();
 			currentPerson.setMajor(newMajor);
 			break;
-
+		
+		// Takes input from the user and changes their minor
 		case 4:
-			Scanner minor = new Scanner(System.in);
 			System.out.println("Enter Minor: ");
-			String newMinor = minor.nextLine();
+			String newMinor = scan.nextLine();
 			currentPerson.setMinor(newMinor);
 			break;
 
 
+		// Takes input to add/rem interests from the users interests
 		case 5:
-			Scanner interests = new Scanner(System.in);
 			System.out.println("Do you want to add or remove interests? (add/rem): ");
-			String response = interests.nextLine();
+			String response = scan.nextLine();
 			String newInterest;
 			String remInterest;
+			
+			//Adds an interest to the currentPerson object
 			if (response.equals("add")) {
 				do {
 				System.out.println("Enter interest(s) to add: ");
-				newInterest = interests.nextLine();	
+				newInterest = scan.nextLine();	
 				if(!newInterest.equals(""))
 					currentPerson.addInterest(newInterest);
 				}
@@ -123,27 +181,28 @@ public class ClubApp implements MainApp{
 
 			}
 
+			//removes an interest from the currentPerson object
 			if (response.equals("rem")) {
 				do {
 					System.out.println("Enter interest(s) to remove: ");
-					remInterest = interests.nextLine();
+					remInterest = scan.nextLine();
 					currentPerson.removeInterest(remInterest);
 
 				}while(!remInterest.contentEquals(""));
 
 			}
-
-
-
 			break;
 
-
+		
+		// Takes input to add/rem faculties from the faculties the user is apart of
 		case 6:
 			Scanner fac = new Scanner(System.in);
 			System.out.println("Do you want to add or remove a faculty? (add/rem): ");
 			String response2 = fac.nextLine();
 			String newFac;
 			String remFac;
+			
+			// Adds a faculty to the currentPerson object
 			if (response2.equals("add")) {
 				do {
 				System.out.println("Enter faculty to add: ");
@@ -153,7 +212,8 @@ public class ClubApp implements MainApp{
 				while(!newFac.contentEquals("")); 
 
 			}
-
+			
+			// Removes a a faculty from the currentPerson object
 			if (response2.equals("rem")) {
 				do {
 					System.out.println("Enter faculty to remove: ");
@@ -172,54 +232,90 @@ public class ClubApp implements MainApp{
 
 	}
 
+	/**
+	 * This method takes in a ClubList and allows the user to enter input to view specific clubs
+	 * from a ClubsList
+	 * @param list - the ClubList that the user wants to view individual Clubs from
+	 */
 	private void displayClub(ClubList list) 
 	{
 		Scanner input = new Scanner(System.in);
 		String responseStr;
-		int response;
+		int response = -1;
 
 		do 
 		{
 			System.out.println("Enter -1 to get back to menu");
 			System.out.println("Enter the number of the club to see info");
 			System.out.println();
-			responseStr = input.nextLine();
-			response = Integer.parseInt(responseStr);
 			
+			//Takes in user input
+			responseStr = input.nextLine();
+			
+			// Try's to convert user input into integer. If the user does not enter an integer it will
+			// throw and exception and go back to the main menu
+			try {
+			response = Integer.parseInt(responseStr);
+			}
+			catch (NumberFormatException nfe) {
+				System.out.println("Input is not a number");
+				response = -1;
+		    }
+			
+			// If the users input is -1 then the program will go back to the main menu
 			if(response==-1)
 				break;
 
+			//Gets the Club at the index specified
 			Club returnedClub = list.getClub(response-1);
 			
-			
+			//If the index is not in the range of list null is returned and the club number is invalid
 			if(returnedClub==null)
 				System.out.println("Invalid club number");
 			else
+				// Display the information of the club at the specified index
 				System.out.println(returnedClub.toString());
 		}while(response!=-1);
 
 
 	}
 
+	/**
+	 * Implements the performAction(int action) method from mainApp interface
+	 * The method takes in an integer and based on the integer performs either 
+	 * 1. Displaying the recommended clubs
+	 * 2. Displaying all of the clubs
+	 * 3. Updating user information
+	 * 4. Exits the program
+	 * 
+	 * @param action - the integer value which decides what action to perform
+	 * @return A boolean value is returned to signal whether the program should continue
+	 * taking input or terminate execute of the program
+	 */
 	public boolean performAction(int action) 
 	{
 		switch(action) 
 		{
 		case 1:
+			// If the user inputs 1 the ClubApp will display the recommended clubs
 			displayRecommended();
 			break;
 		case 2:
+			// If the user inputs 2 the ClubApp will display all of the clubs
 			displayMasterClub();
 			break;
 		case 3:
+			// If the user inputs 4 the ClubApp will allow the user to change their information
 			UpdateUser();
 			break;
 		case 4:
+			// If the user inputs 4 the method returns false and the program execution is terminated
 			return false;
 		default:
 			System.out.println("Invalid input");
 		}
 
+		// Allows the user to continue to enter input for the program
 		return true;
 	}
 }
