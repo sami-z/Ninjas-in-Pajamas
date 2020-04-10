@@ -1,13 +1,33 @@
 package Backend;
 
+/**
+ * This class contains the functionality for the financial calculator
+ * feature, in particular displaying the finance menu and performing
+ * the four features of the financial calculator.
+ */
+
 public class FinanceApp implements MainApp{
 	
+	// Instance variable of the user's financial calculator
+	// used to perform the four features of the FinanceApp
 	FinancialCalculator CalcOfPerson;
+	
+	/** FinanceApp(FinancePerson)
+	 * FinanceApp Constructor
+	 * 
+	 * @param p1 - The object of type FinancePerson (the user), whom the FinancialCalculator
+	 * is created for
+	 * */
 	
 	public FinanceApp(FinancePerson p1) 
 	{
 		CalcOfPerson = new FinancialCalculator(p1);
 	}
+	
+	/** displayMenu()
+	 * Implements the displayMenu() method from the MainApp interface.
+	 * This method displays the main menu for FinanceApp
+	 * */
 	
 	public void displayMenu() 
 	{
@@ -19,6 +39,21 @@ public class FinanceApp implements MainApp{
 		System.out.println("4: Display long term goal");
 		System.out.println("5: exit");
 	}
+	
+	
+	/** performAction(int)
+	 * Implements the performAction(int action) method from MainApp interface
+	 * The method takes in an integer and based on the integer, performs either:
+	 * 1. Displaying the user's weekly expenditure
+	 * 2. Displaying the user's weekly savings
+	 * 3. Displaying the user's success at maintaining their weekly budget
+	 * 4. Displaying the user's long term goal information
+	 * 5. Exits the program
+	 * 
+	 * @param action - the integer value which decides what action to perform
+	 * @return A boolean value is returned to signal whether the program should continue
+	 * taking input or terminate execute of the program
+	 */
 	
 	public boolean performAction(int action) 
 	{

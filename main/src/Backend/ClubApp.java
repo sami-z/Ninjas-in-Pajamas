@@ -52,8 +52,8 @@ public class ClubApp implements MainApp{
 	}
 
 	/**
-	 * Implements the displayMenu() method from the mainApp interface
-	 * the method displays the main menu for ClubApp 
+	 * Implements the displayMenu() method from the MainApp interface
+	 * The method displays the main menu for ClubApp 
 	 */
 	public void displayMenu() 
 	{
@@ -287,7 +287,7 @@ public class ClubApp implements MainApp{
 	}
 
 	/**
-	 * Implements the performAction(int action) method from mainApp interface
+	 * Implements the performAction(int action) method from MainApp interface
 	 * The method takes in an integer and based on the integer performs either 
 	 * 1. Displaying the recommended clubs
 	 * 2. Displaying all of the clubs

@@ -1,11 +1,11 @@
 package Backend;
 import java.util.*;
 
-
 /**
  * This class stores the data of each club and provides methods to extract the data
  * and display the information.
  */
+
 public class Club {
 	
 	// Name of the club
