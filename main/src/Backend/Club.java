@@ -24,7 +24,7 @@ public class Club {
 	private int numbOfInterest = 0;
 	
 	
-	/**
+	/** Club(String, String, String, String[])
 	 * Club Constructor
 	 * 
 	 *  
@@ -45,7 +45,7 @@ public class Club {
 	}
 	
 	
-	/**
+	/** Club(Club)
 	 * Copy constructor for Club
 	 * @param copy - The club that you want to copy from
 	 * @return A Club object which is a deep copy of the Club passed in as an argument
@@ -64,7 +64,7 @@ public class Club {
 	}
 	
 	
-	/**
+	/** Club(Club, int)
 	 * Club constructor which takes a club of number of interest in common
 	 * 
 	 * @param copy - The club that you want to copy from
@@ -79,7 +79,8 @@ public class Club {
 	}
 	
 	
-	/** Sets the number of interests a the club and person share.
+	/** setNumbOfInterest(int)
+	 * Sets the number of interests a the club and person share.
 	 * @param numbOfInterest - An integer which represents the number of interests
 	 * the club and person share.
 	 * */
@@ -88,7 +89,8 @@ public class Club {
 		this.numbOfInterest = numbOfInterest;
 	}
 	
-	/** Returns the number of interests a the club and person share.
+	/** getNumbOfInterest()
+	 * Returns the number of interests a the club and person share.
 	 * @return numbOfInterest - An integer which represents the number of interests
 	 * the club and person share.
 	 * */
@@ -97,7 +99,8 @@ public class Club {
 		return numbOfInterest;
 	}
 	
-	/** Sets the clubs names.
+	/** setName(String)
+	 * Sets the clubs names.
 	 * @param name - A String containing the name of the club
 	 * */
 	public void setName(String name) 
@@ -105,7 +108,8 @@ public class Club {
 		this.name = new String(name);
 	}
 	
-	/** Returns the name of the Club.
+	/** getName()
+	 * Returns the name of the Club.
 	 * @return name - A String containing the name of the club with all '_' replaced with
 	 * ' '
 	 * */
@@ -114,7 +118,8 @@ public class Club {
 		return name.replace('_', ' ');
 	}
 	
-	/** Sets the description of the Club.
+	/** setDescription(String)
+	 * Sets the description of the Club.
 	 * @param description - A String containing the description of the club
 	 * */
 	public void setDescription(String description) 
@@ -122,7 +127,8 @@ public class Club {
 		this.description = description;
 	}
 	
-	/** Returns the description of the Club.
+	/** getDescription()
+	 * Returns the description of the Club.
 	 * @return description - A String containing the description of the club
 	 * */
 	public String getDescription() 
@@ -130,7 +136,7 @@ public class Club {
 		return new String(description);
 	}
 	
-	/**
+	/** setLink(String)
 	 * Sets the link of the club
 	 * @param link - The link for the clubs website
 	 * */
@@ -139,7 +145,7 @@ public class Club {
 		this.link = new String(link);
 	}
 	
-	/**
+	/** getLink()
 	 * Returns the link of the club
 	 * @return link - The link for the clubs website
 	 * */
@@ -148,7 +154,7 @@ public class Club {
 		return new String(link);
 	}
 	
-	/**
+	/** addCategory(String)
 	 * Method that adds a category the clubs falls under to an ArrayList.
 	 * @param cate - A string containing the clubs fits 
 	 * */
@@ -157,7 +163,7 @@ public class Club {
 		categories.add(new String(cate));
 	}
 	
-	/**
+	/** getCategory()
 	 * Returns an ArrayList of the categories that the club falls under
 	 * @return copy - A copy of the categories the club falls under
 	 * */
@@ -171,7 +177,7 @@ public class Club {
 		return copy;
 	}
 	
-	/**
+	/** toString()
 	 * Returns a formatted string representation of the information stored in the Club
 	 * 
 	 * @return out - A formatted string containing the Name, Description, Link and Interests 
