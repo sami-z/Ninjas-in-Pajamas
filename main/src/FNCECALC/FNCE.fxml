@@ -7,30 +7,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="508.0" prefWidth="369.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="508.0" prefWidth="369.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="69.0" layoutY="54.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display weekly expenditure">
+      <Button fx:id="weekExpButton" layoutX="69.0" layoutY="54.0" mnemonicParsing="false" onAction="#weekExpButtonOnClick" prefHeight="42.0" prefWidth="232.0" text="Display weekly expenditure">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="125.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display weekly savings">
+      <Button fx:id="weekSavButton" layoutX="69.0" layoutY="125.0" mnemonicParsing="false" onAction="#weekSavButtonOnClick" prefHeight="42.0" prefWidth="232.0" text="Display weekly savings">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="196.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display weekly budget progress">
+      <Button fx:id="weekBudButton" layoutX="69.0" layoutY="196.0" mnemonicParsing="false" onAction="#weekBudButtonOnClick" prefHeight="42.0" prefWidth="232.0" text="Display weekly budget progress">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="269.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Display long-term goal">
+      <Button fx:id="longButton" layoutX="69.0" layoutY="269.0" mnemonicParsing="false" onAction="#longButtonOnClick" prefHeight="42.0" prefWidth="232.0" text="Display long-term goal">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="404.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="232.0" text="Go back to main menu">
+      <Button fx:id="backButton" layoutX="69.0" layoutY="404.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="42.0" prefWidth="232.0" text="Go back to main menu">
          <font>
             <Font name="Corsiva Hebrew" size="15.0" />
          </font>
