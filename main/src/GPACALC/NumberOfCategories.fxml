@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.NumberOfCategoriesController">
+   <children>
+      <Button fx:id="buttonA" layoutX="178.0" layoutY="584.0" mnemonicParsing="false" onAction="#buttonADD" prefHeight="39.0" prefWidth="154.0" text="Next Category" />
+      <Text layoutX="185.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Category " textAlignment="CENTER" translateX="5.0" underline="true">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font></Text>
+      <Text fx:id="numCat" fill="RED" layoutX="228.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="38.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <VBox layoutX="43.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="306.0" prefWidth="196.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the number of components in the category" wrappingWidth="148.94921875" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the grade of each component in the category" translateY="125.0" wrappingWidth="195.6259765625" />
+         </children>
+      </VBox>
+      <VBox layoutX="258.0" layoutY="264.0" prefHeight="294.0" prefWidth="203.0">
+         <children>
+            <TextField fx:id="inputComponent" onAction="#displayComponent" prefHeight="39.0" prefWidth="162.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Components: " textAlignment="CENTER" translateX="35.0" />
+            <Text fx:id="numComp" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="60.0" wrappingWidth="60.0">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="inputGrades" onAction="#displayGrades" prefHeight="39.0" prefWidth="156.0" translateY="80.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grades:" textAlignment="CENTER" translateX="60.0" translateY="80.0" wrappingWidth="72.205078125" />
+            <Text fx:id="gradesArray" strokeType="OUTSIDE" strokeWidth="0.0" translateX="6.0" translateY="80.0" wrappingWidth="190.0">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <VBox layoutX="43.0" layoutY="126.0" prefHeight="81.0" prefWidth="149.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter  the weight of the category" wrappingWidth="153.9912109375" />
+         </children>
+      </VBox>
+      <VBox layoutX="258.0" layoutY="119.0" prefHeight="95.0" prefWidth="203.0">
+         <children>
+            <TextField fx:id="weightCategory" onAction="#displayWeight" prefHeight="39.0" prefWidth="234.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" translateX="75.0" />
+            <Text fx:id="displayWeight" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="35.0" wrappingWidth="119.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

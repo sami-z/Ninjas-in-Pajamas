@@ -1,176 +1,141 @@
 package GPACALC;
 
 import Backend.GPACalculator;
+import ClubFinder.ClubMainInterfaceController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import GPACALC.NumberOfCategoriesController;
 
 
 public class GpaButton1Controller {
 	
 	
-	@FXML
-    private Text desiredGRADE;
-	
-	@FXML
-	private Text weightA;
-	
-	@FXML
-    private Text upCOMING;
-	
-	@FXML
-	private Text compGRADE;
-	
-	@FXML
-    private Text numGCAT;
+	private NumberOfCategoriesController controller;
+
+	private static int numOfCategories;
 	
     @FXML
-    private Text wCAT;
+    private TextField weightAssignment;
+	
+	@FXML
+    private Text upcomingAssign;
+	
+	@FXML
+    private Text displayWeight;
+	
+    @FXML
+    private TextField typeA;
     
     @FXML
-    private Text catNUM;
-	
-	
-	@FXML
-    private Text output;
-	
-	@FXML
-	private Text requiredG;
-	
-	@FXML
-	private TextField weightAssesment;
-	
-	@FXML
-	private TextField assesment;
-	
-	@FXML
-	private TextField componentG;
-	 
-	@FXML
-    private TextField components;
-
-	@FXML
-    private TextField weightC;
-
-	@FXML
-    private TextField numCat;
-	
-	@FXML
-	private Button computeButton;
-	
-	@FXML
-    private Text maintainOutput;
-
-  
-	
-    @FXML
-    private TextField upcomingAssign;
+    private TextField numCate;
 
     @FXML
-    private Button clearButton;
+    private Button enterD;
     
     @FXML
-    private Button clearButton2;
-
+    private Text displayResult;
+    
+    @FXML
+    private Button buttonC;
+    
     @FXML
     private TextField desiredG;
-
-    @FXML
-    private TextField previousAssign;
-
-    @FXML
-    private TextField weightAssign;
-    
-    
-    private double desiredClassGrade;
-    private double numCategory;
-    GPACalculator calc1 = new GPACalculator();
     
     
     
-	int numGradeCategories;
-	ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
-	ArrayList<Double> allGrades = new ArrayList<Double>();
-	ArrayList<Double> categoryWeights = new ArrayList<Double>();
-	double neededCategoryWeight;
-	double desiredCourseGrade;
-	String nameOfAssessment;
-	Double assesmentWeight;
-
     
     
 
     @FXML
-    void getVal2(ActionEvent event) {
-    	this.desiredClassGrade = Double.parseDouble(desiredG.getText());
-    	calc1.desiredCourseGrade = this.desiredClassGrade;
-    	desiredGRADE.setText(desiredG.getText());
+    void numCategories(ActionEvent event) {
+    	int getNumCat = Integer.parseInt(numCate.getText());
+    	setNumOfCategories(getNumCat);
     	
 
     }
-    
-    @FXML
-    void weightCategory(ActionEvent event) {
-    	double weight = Double.parseDouble(weightC.getText());
-    	calc1.categoryWeights.add(weight);
-    	weightC.clear();
-    	wCAT.setText(calc1.categoryWeights.toString());
-    	
-    }
 
     @FXML
-    void computeGrade(ActionEvent event) {
-    	String res = calc1.calculatePercentNeeded();
-    	output.setText(res);
-    	
-    }
+    void enterData(ActionEvent event) throws IOException {
+    	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GPACALC/NumberOfCategories.fxml"));
+         Parent root = loader.load();
+    	 controller = loader.<NumberOfCategoriesController>getController();
+         Scene scene = new Scene(root);
+         Stage stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+         
+         
+     }
     
     @FXML
-    void getNumCat(ActionEvent event) {
-    	this.numCategory = Double.parseDouble(numCat.getText());
-    	numGCAT.setText(numCat.getText());
-    
-    }
-    
-    @FXML
-    void numComponents(ActionEvent event) {
-    	int component = Integer.parseInt(components.getText());
-    	calc1.numCategoryComponents.add(component);
-    	components.clear();
-    	catNUM.setText(calc1.numCategoryComponents.toString());
+    void getAsess(ActionEvent event) {
+    	upcomingAssign.setText(typeA.getText());
+    	getGPACalc().nameOfAssessment = typeA.getText();
+    	typeA.clear();
 
     }
     
     
     @FXML
-    void getComponentG(ActionEvent event) {
-    	double cG = Double.parseDouble(componentG.getText());
-    	calc1.allGrades.add(cG);
-    	componentG.clear();
-    	compGRADE.setText(calc1.allGrades.toString());
-    }
-    
-    
-    @FXML
-    void getAssesment(ActionEvent event) {
-    	String strAssesment= assesment.getText();
-    	calc1.nameOfAssessment = strAssesment;
-    	upCOMING.setText(strAssesment);
-    	
-
-    }
-    
-    @FXML
-    void getWA(ActionEvent event) {
-    	this.assesmentWeight = Double.parseDouble(weightAssesment.getText());
-    	calc1.neededCategoryWeight = this.assesmentWeight;
-    	weightA.setText(this.assesmentWeight.toString());
+    void getWeightAssignment(ActionEvent event) {
+    	displayWeight.setText(weightAssignment.getText());
+    	getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
+    	weightAssignment.clear();
     }
 
+	public static int getNumOfCategories() {
+		return numOfCategories;
+	}
+
+	public void setNumOfCategories(int numOfCategories) {
+		GpaButton1Controller.numOfCategories = numOfCategories;
+	}
+	
+	public GPACalculator getGPACalc() {
+		return controller.calc1;
+		
+	}
+	
+	
+	@FXML
+    void calculateGrade(ActionEvent event) {
+		
+		displayResult.setText(getGPACalc().calculatePercentNeeded());
+
+    }
+	
+	
+
+    @FXML
+    void getDesiredG(ActionEvent event) {
+    	getGPACalc().desiredCourseGrade = Double.parseDouble(desiredG.getText());
+    }
+	
+	
+
+	
 
 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+

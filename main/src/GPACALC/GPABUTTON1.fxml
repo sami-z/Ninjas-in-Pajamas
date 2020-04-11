@@ -1,79 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="775.0" prefWidth="900.0" style="-fx-background-color: #fdf5e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="908.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
    <children>
-      <Button fx:id="computeButton" layoutX="409.0" layoutY="633.0" mnemonicParsing="false" onAction="#computeGrade" text="COMPUTE">
+      <Button fx:id="enterD" layoutX="178.0" layoutY="175.0" mnemonicParsing="false" onAction="#enterData" prefHeight="48.0" prefWidth="145.0" text="Enter Data" />
+      <HBox layoutX="44.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many grade categories are in your course thus far?" translateY="20.0" wrappingWidth="188.7578125" />
+            <TextField fx:id="numCate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#numCategories" prefHeight="39.0" prefWidth="145.0" translateX="20.0" translateY="20.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assesment you would like to use for the calculation" wrappingWidth="164.8896484375" />
+            <TextField fx:id="typeA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getAsess" prefHeight="39.0" prefWidth="146.0" translateX="50.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="549.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the type of assesment" wrappingWidth="135.4951171875" />
+            <Text fx:id="displayWeight" strokeType="OUTSIDE" strokeWidth="0.0" translateX="210.0" translateY="60.0" wrappingWidth="93.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" translateX="135.0" translateY="40.0" />
+            <TextField fx:id="weightAssignment" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getWeightAssignment" prefHeight="39.0" prefWidth="142.0" translateX="35.0" />
+         </children>
+      </HBox>
+      <Text layoutX="162.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are calculating what you need on an upcoming " textAlignment="CENTER" wrappingWidth="157.8486328125" />
+      <Text fx:id="upcomingAssign" layoutX="192.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="135.4951171875">
          <font>
-            <Font name="Webdings" size="18.0" />
+            <Font name="System Italic" size="14.0" />
          </font>
-      </Button>
-      <Pane layoutX="215.0" layoutY="684.0" prefHeight="61.0" prefWidth="491.0">
-         <children>
-            <Text fx:id="output" layoutX="159.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="180.60690307617188">
-               <font>
-                  <Font size="18.0" />
-               </font></Text>
-         </children>
-      </Pane>
-      <TextField fx:id="numCat" layoutX="412.0" layoutY="39.0" onAction="#getNumCat" prefHeight="39.0" prefWidth="100.0" />
-      <VBox layoutX="59.0" layoutY="37.0" prefHeight="16.0" prefWidth="224.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many grade categories are in your course thus far?" wrappingWidth="223.76171875" />
-         </children>
-      </VBox>
-      <TextField fx:id="weightC" layoutX="412.0" layoutY="114.0" onAction="#weightCategory" prefHeight="39.0" prefWidth="100.0" />
-      <VBox layoutX="59.0" layoutY="109.0" prefHeight="0.0" prefWidth="299.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each category, enter the weight of the category" wrappingWidth="298.66015625" />
-         </children>
-      </VBox>
-      <TextField fx:id="components" layoutX="412.0" layoutY="199.0" onAction="#numComponents" prefHeight="39.0" prefWidth="100.0" />
-      <VBox layoutX="43.0" layoutY="207.0" prefHeight="39.0" prefWidth="343.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For each category, enter the number of components in that category" wrappingWidth="342.205078125" />
-         </children>
-      </VBox>
-      <VBox layoutY="281.0" prefHeight="72.0" prefWidth="0.0" />
-      <Text layoutX="43.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For each component in each category, enter the component grade" wrappingWidth="270.51953125" />
-      <TextField fx:id="componentG" layoutX="412.0" layoutY="292.0" onAction="#getComponentG" prefHeight="39.0" prefWidth="100.0" />
-      <VBox layoutX="42.0" layoutY="404.0" prefHeight="48.0" prefWidth="131.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assessment you would like to use for the calculation" wrappingWidth="237.20703125" />
-         </children>
-      </VBox>
-      <TextField fx:id="assesment" layoutX="412.0" layoutY="397.0" onAction="#getAssesment" prefHeight="39.0" prefWidth="100.0" />
-      <TextField fx:id="desiredG" layoutX="414.0" layoutY="579.0" onAction="#getVal2" prefHeight="39.0" prefWidth="100.0" />
-      <VBox layoutX="36.0" layoutY="589.0" prefHeight="54.0" prefWidth="285.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your desired grade for the class" wrappingWidth="307.205078125" />
-         </children>
-      </VBox>
-      <VBox layoutX="36.0" layoutY="513.0" prefHeight="54.0" prefWidth="257.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the assessment" />
-         </children>
-      </VBox>
-      <TextField fx:id="weightAssesment" layoutX="412.0" layoutY="496.0" onAction="#getWA" prefHeight="39.0" prefWidth="100.0" />
-      <Text layoutX="567.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are " />
-      <Text fx:id="numGCAT" layoutX="653.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="33.0" />
-      <Text layoutX="701.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="grade categories in your course" />
-      <Text layoutX="580.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The weight of each category in order is " />
-      <Text fx:id="wCAT" layoutX="677.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="94.0" />
-      <Text layoutX="575.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The number of components of each category in order is " wrappingWidth="324.6357421875" />
-      <Text fx:id="catNUM" layoutX="651.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="146.0" />
-      <Text layoutX="565.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The grades of each component in order are" />
-      <Text fx:id="compGRADE" layoutX="660.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="129.0" />
-      <Text layoutX="575.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are calculating what you need on an upcoming" wrappingWidth="324.6357421875" />
-      <Text fx:id="upCOMING" layoutX="629.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.0" />
-      <Text layoutX="609.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The weight of the assessment is " />
-      <Text fx:id="weightA" layoutX="645.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.0" />
-      <Text layoutX="651.0" layoutY="596.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your desired grade is " />
-      <Text fx:id="desiredGRADE" layoutX="618.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="213.0" />
+      </Text>
+      <Text fx:id="displayResult" layoutX="181.0" layoutY="848.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="157.8486328125" />
+      <Button fx:id="buttonC" layoutX="211.0" layoutY="781.0" mnemonicParsing="false" onAction="#calculateGrade" text="Calculate" />
+      <Text layoutX="35.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your desired grade for the class" wrappingWidth="113.9013671875" />
+      <TextField fx:id="desiredG" layoutX="241.0" layoutY="709.0" onAction="#getDesiredG" />
    </children>
 </AnchorPane>
