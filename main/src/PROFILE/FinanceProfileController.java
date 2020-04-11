@@ -24,9 +24,9 @@ public class FinanceProfileController {
 	private double longAmountInputFinal;
 	private int months;
 	
-	Scene previousScene;
+	private Scene previousScene;
 	
-	Stage currentStage;
+	private Stage currentStage;
 	
     @FXML
     private TextField monthExpInput;
@@ -154,6 +154,7 @@ public class FinanceProfileController {
 	    		allMonthlyExpense.add(expDouble);
 	    	}
 	    	allMonthlyExpenses = allMonthlyExpense;
+	    	monthlyCommasText.setText(allMonthlyExpenses.toString());
     	}
     	catch(Exception e) 
     	{
