@@ -46,10 +46,13 @@ public class FinanceCalculatorController {
 		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/WeeklyExpend.fxml"));
 		Parent root = loader.load();
-		weeklyExpenditureController c2 = loader.<weeklyExpenditureController>getController();
+		weeklyExpenditureController weeklyExpenditureControllerIn = loader.<weeklyExpenditureController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayWeeklyExpenditure();
-		c2.setText(s);
+		s = c1.displayLongTermGoalInfo();
+		weeklyExpenditureControllerIn.setText(s);
+		weeklyExpenditureControllerIn.setStage(main);
+		weeklyExpenditureControllerIn.setPreviousScene(weekBudButton.getScene());
+		
 		main.setScene(scene1);
 		main.show();
 		
@@ -57,15 +60,18 @@ public class FinanceCalculatorController {
 	
 	@FXML
 	void weekSavButtonOnClick(ActionEvent event) throws IOException {
-
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/WeeklySavings.fxml"));
 		Parent root = loader.load();
-		weeklySavingsController c2 = loader.<weeklySavingsController>getController();
+		weeklySavingsController weeklySavingsControllerIn = loader.<weeklySavingsController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayWeeklySavings();
-		c2.setText(s);
+		s = c1.displayLongTermGoalInfo();
+		weeklySavingsControllerIn.setText(s);
+		weeklySavingsControllerIn.setStage(main);
+		weeklySavingsControllerIn.setPreviousScene(weekBudButton.getScene());
+		
 		main.setScene(scene1);
 		main.show();
+		
 	}
 
 	@FXML
@@ -73,10 +79,13 @@ public class FinanceCalculatorController {
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/WeeklyBudget.fxml"));
 		Parent root = loader.load();
-		weeklyBudgetController c2 = loader.<weeklyBudgetController>getController();
+		weeklyBudgetController weeklyBudgetControllerIn = loader.<weeklyBudgetController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayWeeklyBudgetDiff();
-		c2.setText(s);
+		s = c1.displayLongTermGoalInfo();
+		weeklyBudgetControllerIn.setText(s);
+		weeklyBudgetControllerIn.setStage(main);
+		weeklyBudgetControllerIn.setPreviousScene(weekBudButton.getScene());
+		
 		main.setScene(scene1);
 		main.show();
 	}
@@ -86,17 +95,20 @@ public class FinanceCalculatorController {
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/LongtermGoal.fxml"));
 		Parent root = loader.load();
-		longtermController c2 = loader.<longtermController>getController();
+		longtermController longTermControllerIn = loader.<longtermController>getController();
 		Scene scene1 = new Scene(root);
 		s = c1.displayLongTermGoalInfo();
-		c2.setText(s);
+		longTermControllerIn.setText(s);
+		longTermControllerIn.setStage(main);
+		longTermControllerIn.setPreviousScene(weekBudButton.getScene());
+		
 		main.setScene(scene1);
 		main.show();
 	}
 
 	@FXML
 	void backButtonOnClick(ActionEvent event) {
-
+		main.close();
 	}
 	
 	public void createFinancialCalculator()
@@ -109,8 +121,8 @@ public class FinanceCalculatorController {
 		this.person = person;
 	}
 	
-	public void setStage(Stage or) {
-    	main = or;
+	public void setStage(Stage currentStage) {
+    	main = currentStage;
     }
 	
 	

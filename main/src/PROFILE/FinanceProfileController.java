@@ -24,9 +24,9 @@ public class FinanceProfileController {
 	private double longAmountInputFinal;
 	private int months;
 	
-	Scene previousScene;
+	private Scene previousScene;
 	
-	Stage currentStage;
+	private Stage currentStage;
 	
     @FXML
     private TextField monthExpInput;

@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="91.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FNCECALC.weeklySavingsController">
    <children>
-      <Text fx:id="displayResult2" layoutX="33.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="325.22900390625" />
+      <Text fx:id="WeeklSavingsResult" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="325.22900390625" />
+      <Button mnemonicParsing="false" onAction="#buttonOnClick" prefHeight="15.0" prefWidth="31.0">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/back-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
