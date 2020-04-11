@@ -7,12 +7,20 @@ import javafx.scene.control.TextField;
 import PROFILE.ProfileController;
 import FNCECALC.FinanceCalculatorController;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Backend.FinancePerson;
 import Backend.MasterPerson;
 
 public class FinanceProfileController {
 
+	private double tuitionInputFinal;
+	private double savingsInputFinal;
+	private double weekIncomeInputFinal;
+	private double weeklyBuget;
+	private double longAmountInputFinal;
+	private int months;
+	
     @FXML
     private TextField monthExpInput;
 
@@ -48,15 +56,20 @@ public class FinanceProfileController {
 	ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
 
     @FXML
-    public double tuitionInputPressed(ActionEvent event) {
-    	
-    	double tuition = Double.parseDouble(tuitionInput.getText());
-    	return tuition;
+    void tuitionInputPressed(ActionEvent event) {
+    	if(ValidateFinanceInput(savingsInput.getText())) 
+    		tuitionInputFinal = Double.parseDouble(savingsInput.getText());
+    	else 
+    		savingsInput.setText("INVALID INPUT");
     }
+    
 
     @FXML
     void savingsInputPressed(ActionEvent event) {
-
+    	if(ValidateFinanceInput(tuitionInput.getText())) 
+    		savingsInputFinal = Double.parseDouble(tuitionInput.getText());
+    	else 
+    		tuitionInput.setText("INVALID INPUT");
     }
     
     
@@ -69,51 +82,87 @@ public class FinanceProfileController {
     @FXML
     void weekExpInputPressed(ActionEvent event) {
 
-    	ArrayList<Double> allWeeklyExpense = new ArrayList<Double>();
-    	String weekExp = weekExpInput.getText();
-    	String[] weekExpArray = weekExp.split(",");
-    	
-    	for (String exp : weekExpArray) {
-    		String exp1 = exp.trim();
-    		Double expDouble = Double.parseDouble(exp1);
-    		allWeeklyExpense.add(expDouble);
+    	try {
+	    	ArrayList<Double> allWeeklyExpense = new ArrayList<Double>();
+	    	String weekExp = weekExpInput.getText();
+	    	String[] weekExpArray = weekExp.split(",");
+	    	
+	    	for (String exp : weekExpArray) {
+	    		String exp1 = exp.trim();
+	    		Double expDouble = Double.parseDouble(exp1);
+	    		if(expDouble<0)
+	    			throw new NumberFormatException("Negative double");
+	    		allWeeklyExpense.add(expDouble);
+	    	}
+	    	allWeeklyExpenses = allWeeklyExpense;
     	}
-    	allWeeklyExpenses = allWeeklyExpense;
+    	catch(Exception e) 
+    	{
+    		weekExpInput.setText("INVALID INPUT");
+    	}
     }
 
     @FXML
     void monthExpInputPressed(ActionEvent event) {
-
-    	ArrayList<Double> allMonthlyExpense = new ArrayList<Double>();
-    	String monthExp = monthExpInput.getText();
-    	String[] monthExpArray = monthExp.split(",");
-    	
-    	for (String exp : monthExpArray) {
-    		String exp1 = exp.trim();
-    		Double expDouble = Double.parseDouble(exp1);
-    		allMonthlyExpense.add(expDouble);
+    	try {
+	    	ArrayList<Double> allMonthlyExpense = new ArrayList<Double>();
+	    	String monthExp = monthExpInput.getText();
+	    	String[] monthExpArray = monthExp.split(",");
+	    	
+	    	for (String exp : monthExpArray) {
+	    		String exp1 = exp.trim();
+	    		Double expDouble = Double.parseDouble(exp1);
+	    		if(expDouble<0)
+	    			throw new NumberFormatException("Negative double");
+	    		allMonthlyExpense.add(expDouble);
+	    	}
+	    	allMonthlyExpenses = allMonthlyExpense;
     	}
-    	allMonthlyExpenses = allMonthlyExpense;
+    	catch(Exception e) 
+    	{
+    		monthExpInput.setText("INVALID INPUT");;
+    	}
     }
 
     @FXML
     void weekIncomeInputPressed(ActionEvent event) {
-
+    	if(ValidateFinanceInput(weekIncomeInput.getText())) 
+    		weekIncomeInputFinal = Double.parseDouble(weekIncomeInput.getText());
+    	else 
+    		weekIncomeInput.setText("INVALID INPUT");
     }
 
     @FXML
     void weekBudInputPressed(ActionEvent event) {
-
+    	if(ValidateFinanceInput(weekBudInput.getText())) 
+    		weeklyBuget = Double.parseDouble(weekBudInput.getText());
+    	else 
+    		weekBudInput.setText("INVALID INPUT");
     }
 
     @FXML
     void longAmountInputPressed(ActionEvent event) {
-
+    	if(ValidateFinanceInput(longAmountInput.getText())) 
+    		longAmountInputFinal = Double.parseDouble(longAmountInput.getText());
+    	else 
+    		longAmountInput.setText("INVALID INPUT");
     }
 
     @FXML
     void longMonthInputPressed(ActionEvent event) {
-
+    	try 
+    	{
+    		int month = Integer.parseInt(longMonthInput.getText());
+    		if(month<1)
+    			throw new NumberFormatException("Negative Integer");
+    		else
+    			months = month;
+    			
+    	}
+    	catch(NumberFormatException nfe)
+    	{
+    		longMonthInput.setText("INVALID INPUT");
+    	}
     }
 
     @FXML
@@ -124,8 +173,23 @@ public class FinanceProfileController {
     
     public FinancePerson getFinancePerson() 
     {
-    	return new FinancePerson(p1.getName(), p1.getYOS(), p1.getMajor(), p1.getMinor(), Double.parseDouble(tuitionInput.getText()), Double.parseDouble(savingsInput.getText()), allWeeklyExpenses, allMonthlyExpenses, Double.parseDouble(longAmountInput.getText()), Integer.parseInt(longMonthInput.getText()), Double.parseDouble(weekIncomeInput.getText()), Double.parseDouble(weekBudInput.getText()));
+    	return new FinancePerson(p1.getName(), p1.getYOS(), p1.getMajor(), p1.getMinor(), tuitionInputFinal, savingsInputFinal, allWeeklyExpenses, allMonthlyExpenses, longAmountInputFinal, months, weekIncomeInputFinal, weeklyBuget);
     }
+    
+	private boolean ValidateFinanceInput(String input) 
+	{
+		double ret = -1;
+		try {
+			ret = Double.parseDouble(input);
+			if(ret<0)
+				throw new NumberFormatException("Negative double");
+			return true;
+		}
+		catch(NumberFormatException nfe)
+		{
+			return false;
+		}
+	}
 
 }
 

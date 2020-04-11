@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="91.0" prefWidth="381.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="91.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FNCECALC.weeklyBudgetController">
+   <children>
+      <Text fx:id="displayResult3" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="362.22900390625" />
+   </children>
 </AnchorPane>
