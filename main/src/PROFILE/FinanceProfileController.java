@@ -9,6 +9,7 @@ import FNCECALC.FinanceCalculatorController;
 import java.util.ArrayList;
 
 import Backend.FinancePerson;
+import Backend.MasterPerson;
 
 public class FinanceProfileController {
 
@@ -38,6 +39,9 @@ public class FinanceProfileController {
 
     @FXML
     private TextField tuitionInput;
+    
+    MasterPerson p1;
+    
 
     FinancePerson p3;
 	ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
@@ -54,6 +58,13 @@ public class FinanceProfileController {
     void savingsInputPressed(ActionEvent event) {
 
     }
+    
+    
+    public void setMasterPerson(MasterPerson person) 
+    {
+    	p1 = new MasterPerson(person);
+    }
+    
 
     @FXML
     void weekExpInputPressed(ActionEvent event) {
@@ -63,7 +74,7 @@ public class FinanceProfileController {
     	String[] weekExpArray = weekExp.split(",");
     	
     	for (String exp : weekExpArray) {
-    		String exp1 = exp.strip();
+    		String exp1 = exp.trim();
     		Double expDouble = Double.parseDouble(exp1);
     		allWeeklyExpense.add(expDouble);
     	}
@@ -78,7 +89,7 @@ public class FinanceProfileController {
     	String[] monthExpArray = monthExp.split(",");
     	
     	for (String exp : monthExpArray) {
-    		String exp1 = exp.strip();
+    		String exp1 = exp.trim();
     		Double expDouble = Double.parseDouble(exp1);
     		allMonthlyExpense.add(expDouble);
     	}
@@ -109,6 +120,11 @@ public class FinanceProfileController {
     void finishedButtonOnClick(ActionEvent event) {
 
     	
+    }
+    
+    public FinancePerson getFinancePerson() 
+    {
+    	return null;
     }
 
 }

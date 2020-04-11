@@ -21,6 +21,14 @@ public class MasterPerson {
 		this.minor = new String(minor);
 	}
 	
+	public MasterPerson(MasterPerson copy) 
+	{
+		this.name = copy.getName();
+		this.yos = copy.getYOS();
+		this.major = copy.getMajor();
+		this.minor = copy.getMinor();
+	}
+	
 	public String getName() {
 		return new String(name);
 		

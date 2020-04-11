@@ -6,6 +6,7 @@ import java.util.HashMap;
 import Backend.MasterPerson;
 import Backend.ClubList;
 import Backend.ClubPerson;
+import Backend.FinancePerson;
 import Backend.ReadFile;
 import ClubFinder.ViewClubController;
 import javafx.collections.FXCollections;
@@ -30,6 +31,10 @@ public class ProfileController {
 	Stage CurrentStage;
 	
 	Scene ClubInfoScene;
+	
+	Scene FinanceScene;
+	
+	FinanceProfileController FinanceController;
 	
 	ClubInfoProfileController ClubController;
 	
@@ -96,6 +101,10 @@ public class ProfileController {
         }
         ClubInfoScene = new Scene(root);
         
+        FXMLLoader FinanceLoader = new FXMLLoader(getClass().getResource("/PROFILE/FinanceProfile.fxml"));
+        Parent FinanceRoot = FinanceLoader.load();
+        FinanceController = FinanceLoader.<FinanceProfileController>getController();
+        FinanceScene = new Scene(FinanceRoot);
 
 	}
 	
@@ -120,7 +129,13 @@ public class ProfileController {
 	
 	@FXML
     void financeButtonOnClick(ActionEvent event) {
-		
+		CurrentStage.setScene(FinanceScene);
+		FinanceController.setMasterPerson(new MasterPerson(nameField.getText(), 1, majorTextField.getText(), minorTextField.getText()));
+		CurrentStage.show();
     }
 	
+	public FinancePerson getFinancePerson() 
+	{
+		return FinanceController.getFinancePerson();
+	}
 }

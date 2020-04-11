@@ -142,23 +142,22 @@ public void maintainGPA()  {
 	
 	for (int i = 0; i < numOfClasses - 1; i++) {
 	
-	System.out.println("Please enter the final GPA achieved in a course: ");
-	String classGrade = input.nextLine();
-	calc.addGrade(Double.parseDouble(classGrade));
-	
-	gradeNeeded = calc.gradeNeededToMaintain(numOfClasses,desiredGPA);
-	if(gradeNeeded == -1) 
-	{
-		System.out.println("You cannot get that grade from one class");
-	}else {
-	
-	System.out.println("The GPA in your course required to maintain a " + desiredGPA + " is " +gradeNeeded  + " in " + (numOfClasses-i-1) + " classes");
-	}
-	
-	}
-	
+		System.out.println("Please enter the final GPA achieved in a course: ");
+		String classGrade = input.nextLine();
+		calc.addGrade(Double.parseDouble(classGrade));
+		
+		gradeNeeded = calc.gradeNeededToMaintain(numOfClasses,desiredGPA);
+		if(gradeNeeded == -1) 
+		{
+			System.out.println("You cannot get that grade from" + (numOfClasses-i-1) + "classes");
+		}
+		else 
+		{
+			System.out.println("The GPA in your course required to maintain a " + desiredGPA + " is " +gradeNeeded  + " in " + (numOfClasses-i-1) + " classes");
+		}
 	
 	}
-
-
+	
+	
+	}
 }

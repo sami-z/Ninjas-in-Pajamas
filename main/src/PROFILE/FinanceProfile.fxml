@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="597.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="597.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.FinanceProfileController">
    <children>
       <Text layoutX="39.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your yearly tuition:" wrappingWidth="142.95166015625" />
       <TextField fx:id="tuitionInput" layoutX="222.0" layoutY="46.0" onAction="#tuitionInputPressed" prefHeight="34.0" prefWidth="161.0" />

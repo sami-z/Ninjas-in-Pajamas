@@ -30,4 +30,9 @@ public class FinanceCalculatorController {
 		Parent root = loader.load();
 		
 	}
+	
+	public void setFinancePerson(FinancePerson person) 
+	{
+		this.person = person;
+	}
 }
