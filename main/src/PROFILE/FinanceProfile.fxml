@@ -6,25 +6,33 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="597.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.FinanceProfileController">
+<AnchorPane prefHeight="665.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PROFILE.FinanceProfileController">
    <children>
       <Text layoutX="39.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your yearly tuition:" wrappingWidth="142.95166015625" />
-      <TextField fx:id="tuitionInput" layoutX="222.0" layoutY="46.0" onAction="#tuitionInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="tuitionInput" layoutX="268.0" layoutY="46.0" onAction="#tuitionInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <Text fx:id="tuitionText" layoutX="85.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.22900390625" />
       <Text layoutX="39.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the amount in your savings account:" wrappingWidth="171.22900390625" />
-      <TextField fx:id="savingsInput" layoutX="222.0" layoutY="103.0" onAction="#savingsInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="savingsInput" layoutX="268.0" layoutY="103.0" onAction="#savingsInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="39.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter each weekly expense separated by commas:" wrappingWidth="150.22900390625" />
-      <TextField fx:id="weekExpInput" layoutX="222.0" layoutY="165.0" onAction="#weekExpInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="weekExpInput" layoutX="268.0" layoutY="165.0" onAction="#weekExpInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="39.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter each monthly expense separated by commas:" wrappingWidth="150.22900390625" />
-      <TextField fx:id="monthExpInput" layoutX="222.0" layoutY="230.0" onAction="#monthExpInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="monthExpInput" layoutX="268.0" layoutY="230.0" onAction="#monthExpInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="39.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your weekly income:" wrappingWidth="142.95166015625" />
-      <TextField fx:id="weekIncomeInput" layoutX="222.0" layoutY="289.0" onAction="#weekIncomeInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="weekIncomeInput" layoutX="268.0" layoutY="296.0" onAction="#weekIncomeInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="39.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your weekly budget:" wrappingWidth="142.95166015625" />
-      <TextField fx:id="weekBudInput" layoutX="222.0" layoutY="342.0" onAction="#weekBudInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="weekBudInput" layoutX="268.0" layoutY="351.0" onAction="#weekBudInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="40.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your long-term goal amount:" wrappingWidth="178.22900390625" />
-      <TextField fx:id="longAmountInput" layoutX="222.0" layoutY="399.0" onAction="#longAmountInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="longAmountInput" layoutX="268.0" layoutY="408.0" onAction="#longAmountInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Text layoutX="39.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your long-term goal period in months:" wrappingWidth="128.22900390625" />
-      <TextField fx:id="longMonthInput" layoutX="222.0" layoutY="455.0" onAction="#longMonthInputPressed" prefHeight="34.0" prefWidth="161.0" />
+      <TextField fx:id="longMonthInput" layoutX="268.0" layoutY="465.0" onAction="#longMonthInputPressed" prefHeight="34.0" prefWidth="161.0" />
       <Button fx:id="finishedButton" layoutX="319.0" layoutY="532.0" mnemonicParsing="false" onAction="#finishedButtonOnClick" text="Finished" />
       <Text layoutX="40.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Once you have filled in all required input fields, click the button on the right" wrappingWidth="253.22900390625" />
+      <Text fx:id="incomeText" layoutX="85.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.22900390625" />
+      <Text fx:id="weeklyBudgetText" layoutX="91.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="171.22900390625" />
+      <Text fx:id="longTermGoalText" layoutX="87.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.22900390625" />
+      <Text fx:id="monthsText" layoutX="93.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="171.22900390625" />
+      <Text fx:id="savingText" layoutX="150.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
+      <Text fx:id="WeeklyCommasText" layoutX="103.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="310.2060546875" />
+      <Text fx:id="monthlyCommasText" layoutX="103.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="329.2060546875" />
    </children>
 </AnchorPane>

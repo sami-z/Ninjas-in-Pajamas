@@ -2,8 +2,11 @@ package PROFILE;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import PROFILE.ProfileController;
 import FNCECALC.FinanceCalculatorController;
 import java.util.ArrayList;
@@ -20,6 +23,10 @@ public class FinanceProfileController {
 	private double weeklyBuget;
 	private double longAmountInputFinal;
 	private int months;
+	
+	Scene previousScene;
+	
+	Stage currentStage;
 	
     @FXML
     private TextField monthExpInput;
@@ -48,6 +55,30 @@ public class FinanceProfileController {
     @FXML
     private TextField tuitionInput;
     
+    @FXML
+    private Text incomeText;
+    
+    @FXML
+    private Text monthsText;
+
+    @FXML
+    private Text longTermGoalText;
+    
+    @FXML
+    private Text weeklyBudgetText;
+    
+    @FXML
+    private Text WeeklyCommasText;
+
+    @FXML
+    private Text monthlyCommasText;
+
+    @FXML
+    private Text tuitionText;
+    
+    @FXML
+    private Text savingText;
+    
     MasterPerson p1;
     
 
@@ -57,19 +88,24 @@ public class FinanceProfileController {
 
     @FXML
     void tuitionInputPressed(ActionEvent event) {
-    	if(ValidateFinanceInput(savingsInput.getText())) 
-    		tuitionInputFinal = Double.parseDouble(savingsInput.getText());
+    	if(ValidateFinanceInput(tuitionInput.getText())) {
+    		tuitionInputFinal = Double.parseDouble(tuitionInput.getText());
+    		tuitionText.setText(" " + tuitionInputFinal);
+    	}
     	else 
-    		savingsInput.setText("INVALID INPUT");
+    		tuitionInput.setText("INVALID INPUT");
     }
     
 
     @FXML
     void savingsInputPressed(ActionEvent event) {
-    	if(ValidateFinanceInput(tuitionInput.getText())) 
-    		savingsInputFinal = Double.parseDouble(tuitionInput.getText());
+    	if(ValidateFinanceInput(savingsInput.getText())) {
+    		savingsInputFinal = Double.parseDouble(savingsInput.getText());
+    		savingText.setText(" " + savingsInputFinal);
+    	}
+    	
     	else 
-    		tuitionInput.setText("INVALID INPUT");
+    		savingsInput.setText("INVALID INPUT");
     }
     
     
@@ -95,6 +131,7 @@ public class FinanceProfileController {
 	    		allWeeklyExpense.add(expDouble);
 	    	}
 	    	allWeeklyExpenses = allWeeklyExpense;
+	    	WeeklyCommasText.setText(allWeeklyExpenses.toString());
     	}
     	catch(Exception e) 
     	{
@@ -126,24 +163,31 @@ public class FinanceProfileController {
 
     @FXML
     void weekIncomeInputPressed(ActionEvent event) {
-    	if(ValidateFinanceInput(weekIncomeInput.getText())) 
+    	if(ValidateFinanceInput(weekIncomeInput.getText())) {
     		weekIncomeInputFinal = Double.parseDouble(weekIncomeInput.getText());
+    		incomeText.setText(" " + weekIncomeInputFinal);
+    	}
+    	
     	else 
     		weekIncomeInput.setText("INVALID INPUT");
     }
 
     @FXML
     void weekBudInputPressed(ActionEvent event) {
-    	if(ValidateFinanceInput(weekBudInput.getText())) 
+    	if(ValidateFinanceInput(weekBudInput.getText())) {
     		weeklyBuget = Double.parseDouble(weekBudInput.getText());
+    		weeklyBudgetText.setText(" "+ weeklyBuget);
+    	}
     	else 
     		weekBudInput.setText("INVALID INPUT");
     }
 
     @FXML
     void longAmountInputPressed(ActionEvent event) {
-    	if(ValidateFinanceInput(longAmountInput.getText())) 
+    	if(ValidateFinanceInput(longAmountInput.getText())) {
     		longAmountInputFinal = Double.parseDouble(longAmountInput.getText());
+    		longTermGoalText.setText(" " + longAmountInputFinal);
+    	}
     	else 
     		longAmountInput.setText("INVALID INPUT");
     }
@@ -155,8 +199,10 @@ public class FinanceProfileController {
     		int month = Integer.parseInt(longMonthInput.getText());
     		if(month<1)
     			throw new NumberFormatException("Negative Integer");
-    		else
+    		else {
     			months = month;
+    			monthsText.setText(" " + months);
+    		}
     			
     	}
     	catch(NumberFormatException nfe)
@@ -168,7 +214,8 @@ public class FinanceProfileController {
     @FXML
     void finishedButtonOnClick(ActionEvent event) {
 
-    	
+    	currentStage.setScene(previousScene);
+    	currentStage.show();
     }
     
     public FinancePerson getFinancePerson() 
@@ -189,6 +236,16 @@ public class FinanceProfileController {
 		{
 			return false;
 		}
+	}
+	
+	public void setStage(Stage c) 
+	{
+		currentStage = c;
+	}
+	
+	public void setPreviousScene(Scene c) 
+	{
+		previousScene = c;
 	}
 
 }

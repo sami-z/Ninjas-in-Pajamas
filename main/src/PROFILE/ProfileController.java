@@ -38,6 +38,10 @@ public class ProfileController {
 	
 	ClubInfoProfileController ClubController;
 	
+
+    @FXML
+    private Text tuitionText;
+	
     @FXML
     private TextField minorTextField;
     
@@ -131,6 +135,8 @@ public class ProfileController {
     void financeButtonOnClick(ActionEvent event) {
 		CurrentStage.setScene(FinanceScene);
 		FinanceController.setMasterPerson(new MasterPerson(nameField.getText(), 1, majorTextField.getText(), minorTextField.getText()));
+		FinanceController.setPreviousScene(nameField.getScene());
+		FinanceController.setStage(CurrentStage);
 		CurrentStage.show();
     }
 	
