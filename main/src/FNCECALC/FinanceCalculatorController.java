@@ -48,7 +48,7 @@ public class FinanceCalculatorController {
 		Parent root = loader.load();
 		weeklyExpenditureController weeklyExpenditureControllerIn = loader.<weeklyExpenditureController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayLongTermGoalInfo();
+		s = c1.displayWeeklyExpenditure();
 		weeklyExpenditureControllerIn.setText(s);
 		weeklyExpenditureControllerIn.setStage(main);
 		weeklyExpenditureControllerIn.setPreviousScene(weekBudButton.getScene());
@@ -64,7 +64,7 @@ public class FinanceCalculatorController {
 		Parent root = loader.load();
 		weeklySavingsController weeklySavingsControllerIn = loader.<weeklySavingsController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayLongTermGoalInfo();
+		s = c1.displayWeeklySavings();
 		weeklySavingsControllerIn.setText(s);
 		weeklySavingsControllerIn.setStage(main);
 		weeklySavingsControllerIn.setPreviousScene(weekBudButton.getScene());
@@ -81,7 +81,7 @@ public class FinanceCalculatorController {
 		Parent root = loader.load();
 		weeklyBudgetController weeklyBudgetControllerIn = loader.<weeklyBudgetController>getController();
 		Scene scene1 = new Scene(root);
-		s = c1.displayLongTermGoalInfo();
+		s = c1.displayWeeklyBudgetDiff();
 		weeklyBudgetControllerIn.setText(s);
 		weeklyBudgetControllerIn.setStage(main);
 		weeklyBudgetControllerIn.setPreviousScene(weekBudButton.getScene());

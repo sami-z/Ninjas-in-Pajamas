@@ -92,14 +92,21 @@ public class MainController {
         
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        //controller.setStage(stage);
-        //controller.setPerson(getInfoController.getClubPerson());
         controller1.setStage(stage);
+        if(getInfoController == null) {
+        	
+        }else if(getInfoController.getFinancePerson() == null)
+        {
+        	
+        }
+        else
+        {
         controller1.setFinancePerson(getInfoController.getFinancePerson());
         controller1.createFinancialCalculator();
         stage.setTitle("Finance Calculator");
         stage.setScene(scene);
         stage.show();
+        }
 
     }
     
@@ -114,10 +121,15 @@ public class MainController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         controller.setStage(stage);
-        controller.setPerson(getInfoController.getClubPerson());
-        stage.setTitle("Club Finder");
-        stage.setScene(scene);
-        stage.show();
+        if(getInfoController == null) {
+        	displayProfile(new ActionEvent());
+        }else
+        {
+	        controller.setPerson(getInfoController.getClubPerson());
+	        stage.setTitle("Club Finder");
+	        stage.setScene(scene);
+	        stage.show();
+        }
         
     }
      	
