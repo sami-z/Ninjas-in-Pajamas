@@ -209,7 +209,21 @@ public class Main {
 		double longTermGoal =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your long-term goal period in months: ");
-		int longTermGoalMonthBased = input.nextInt();
+		
+		int longTermGoalMonthBased = -1;
+		while(longTermGoalMonthBased==-1) {
+			String strLongTermGoalMonthBased = input.nextLine();
+			try {
+				longTermGoalMonthBased = Integer.parseInt(strLongTermGoalMonthBased);
+				if(longTermGoalMonthBased<0)
+					throw new NumberFormatException("Negative double");
+			}
+			catch(NumberFormatException nfe)
+			{
+				System.out.println("Please enter a positive integer");
+			}
+			
+		}
 		
 		FinancePerson p3 = new FinancePerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(), tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
 		return p3;
