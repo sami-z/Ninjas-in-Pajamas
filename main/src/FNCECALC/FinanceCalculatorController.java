@@ -46,7 +46,7 @@ public class FinanceCalculatorController {
 		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/WeeklyExpend.fxml"));
 		Parent root = loader.load();
-		weeklyExpenditureController c2 = new weeklyExpenditureController();
+		weeklyExpenditureController c2 = loader.<weeklyExpenditureController>getController();
 		Scene scene1 = new Scene(root);
 		s = c1.displayWeeklyExpenditure();
 		c2.setText(s);
