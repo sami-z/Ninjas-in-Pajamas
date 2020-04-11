@@ -18,26 +18,18 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Text>
-      <VBox layoutX="43.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="306.0" prefWidth="196.0">
+      <VBox layoutX="43.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="74.0" prefWidth="196.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the number of components in the category" wrappingWidth="148.94921875" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the grade of each component in the category" translateY="125.0" wrappingWidth="195.6259765625" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the number of components in the category" wrappingWidth="147.94921875" />
          </children>
       </VBox>
-      <VBox layoutX="258.0" layoutY="264.0" prefHeight="294.0" prefWidth="203.0">
+      <VBox layoutX="258.0" layoutY="264.0" prefHeight="60.0" prefWidth="203.0">
          <children>
-            <TextField fx:id="inputComponent" onAction="#displayComponent" prefHeight="39.0" prefWidth="162.0" />
+            <TextField fx:id="inputComponent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#displayComponent" prefHeight="39.0" prefWidth="204.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Components: " textAlignment="CENTER" translateX="35.0" />
-            <Text fx:id="numComp" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="60.0" wrappingWidth="60.0">
+            <Text fx:id="numComp" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="15.0" wrappingWidth="170.0">
                <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Text>
-            <TextField fx:id="inputGrades" onAction="#displayGrades" prefHeight="39.0" prefWidth="156.0" translateY="80.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grades:" textAlignment="CENTER" translateX="60.0" translateY="80.0" wrappingWidth="72.205078125" />
-            <Text fx:id="gradesArray" strokeType="OUTSIDE" strokeWidth="0.0" translateX="6.0" translateY="80.0" wrappingWidth="190.0">
-               <font>
-                  <Font name="System Italic" size="15.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
          </children>
@@ -53,9 +45,25 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" translateX="75.0" />
             <Text fx:id="displayWeight" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="35.0" wrappingWidth="119.0">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Text>
+         </children>
+      </VBox>
+      <VBox layoutX="265.0" layoutY="430.0" prefHeight="102.0" prefWidth="133.0">
+         <children>
+            <TextField fx:id="inputGrades" onAction="#displayGrades" prefHeight="39.0" prefWidth="156.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grades:" textAlignment="CENTER" translateX="55.0" wrappingWidth="72.205078125" />
+            <Text fx:id="gradesArray" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="190.0">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <VBox layoutX="43.0" layoutY="422.0" prefHeight="81.0" prefWidth="196.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the grade of each component in the category" wrappingWidth="162.6259765625" />
          </children>
       </VBox>
    </children>

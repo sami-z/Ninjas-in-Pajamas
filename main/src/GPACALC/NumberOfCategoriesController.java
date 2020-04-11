@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
+import java.util.ArrayList;
+
 import Backend.GPACalculator;
 import GPACALC.GpaButton1Controller;
 
@@ -12,8 +15,9 @@ import GPACALC.GpaButton1Controller;
 
 public class NumberOfCategoriesController {
 	
-		
-	 	GPACalculator calc1 = new GPACalculator();
+		public ArrayList <Double> newGrades = new ArrayList<Double>();
+	 	public GPACalculator calc1 = new GPACalculator();
+	 	
 		private int num1 = 1;
 		
 		@FXML
@@ -51,6 +55,10 @@ public class NumberOfCategoriesController {
 	    		numCat.setText(Integer.toString(num1));
 	    	}
 	    	
+	    	if (num1 == num0) {
+	    		buttonA.setText("Finish");
+	    	}
+	    	
 	    	
 	    	weightCategory.clear();
 	    	displayWeight.setText(null);
@@ -58,6 +66,7 @@ public class NumberOfCategoriesController {
 	    	numComp.setText(null);
 	    	inputGrades.clear();
 	    	gradesArray.setText(null);
+	    	newGrades.clear();
 	    	
 	    	
 	    	
@@ -66,9 +75,15 @@ public class NumberOfCategoriesController {
 	    @FXML
 	    void displayGrades(ActionEvent event) {
 	    	double grade = Double.parseDouble(inputGrades.getText());
-	    	calc1.allGrades.add(grade);
-	    	gradesArray.setText(calc1.allGrades.toString());
-	    	inputGrades.clear();
+	    	if (grade >= 0 && grade <= 100) {
+	    		calc1.allGrades.add(grade);
+	    		newGrades.add(grade);
+		    	gradesArray.setText(newGrades.toString());
+		    	inputGrades.clear();	
+	    	}else {
+	    		gradesArray.setText("Grade must be between 0 and 100");
+	    	}
+	    	
 
 	    }
 	    
@@ -76,22 +91,39 @@ public class NumberOfCategoriesController {
 	    @FXML
 	    void displayComponent(ActionEvent event) {
 	    	int comp = Integer.parseInt(inputComponent.getText()); // not necessary?
-	    	calc1.numCategoryComponents.add(comp);
-	    	numComp.setText(inputComponent.getText());
-	    	inputComponent.clear();
+	    	if (comp >= 1) {
+	    		calc1.numCategoryComponents.add(comp);
+		    	numComp.setText(inputComponent.getText());
+		    	inputComponent.clear();
+	    	}else {
+	    		numComp.setText("Invalid input: must have at least 1 component");
+	    		inputComponent.clear();
+	    	}
 
 	    }
 	    
 	    @FXML
 	    void displayWeight(ActionEvent event) {
-	    	double weight = Double.parseDouble(weightCategory.getText());
-	    	displayWeight.setText(weightCategory.getText());
-	    	calc1.categoryWeights.add(weight);
-	    	weightCategory.clear();
+	    	double weight = 0;
+	    	try {
+	    		 weight = Double.parseDouble(weightCategory.getText());
+	    		 if (weight >= 1 && weight <=99) {
+	 	    		displayWeight.setText(weightCategory.getText());
+	 		    	calc1.categoryWeights.add(weight);
+	 		    	weightCategory.clear();
+	 	    }else {
+	 	    	displayWeight.setText("Invalid weight: must be a number between 1 and 99");
+	 	    }
+	    	}catch( Exception e) {
+	    		displayWeight.setText("Invalid weight: must be a number between 1 and 99");
+	    	}
+	    	
+	    
+	   
+
+
 
 	    }
-
-
 	}
 
 
