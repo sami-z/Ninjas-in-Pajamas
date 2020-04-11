@@ -3,7 +3,7 @@ package PROFILE;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import Backend.MasterPerson;
 import Backend.ClubList;
 import Backend.ClubPerson;
 import Backend.ReadFile;
@@ -21,6 +21,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import FNCECALC.FinanceCalculatorController;
+
 
 public class ProfileController {
 	
@@ -48,10 +50,34 @@ public class ProfileController {
     @FXML
     private Button ClubInfoButton;
 			
+    @FXML
+    private Button financeButton;
+    
 	@FXML
-	void enterName() {
-	}
+	void nameFieldPressed(ActionEvent event) {
 		
+		String strName = nameField.getText();
+		
+	}
+	
+	@FXML
+    void majorPressed(ActionEvent event) {
+		
+		String strMajor = majorTextField.getText();
+    }
+	
+	@FXML
+    void minorPressed(ActionEvent event) {
+		
+		String strMinor = minorTextField.getText();
+	
+    }
+	
+	public MasterPerson getMasterPerson()
+	{
+		return new MasterPerson(nameField.getText(), 1, majorTextField.getText(), minorTextField.getText());
+	}
+	
 	@FXML
 	private void initialize() throws Exception{
 		YOSchoiceBox.setValue("Select");
@@ -92,6 +118,9 @@ public class ProfileController {
 		return new ClubPerson(nameField.getText(), 1, majorTextField.getText(), minorTextField.getText(), ClubController.getInterests(),  ClubController.getFaculties());
 	}
 	
+	@FXML
+    void financeButtonOnClick(ActionEvent event) {
 		
+    }
 	
 }

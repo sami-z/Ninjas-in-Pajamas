@@ -4,6 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import PROFILE.ProfileController;
+import FNCECALC.FinanceCalculatorController;
+import java.util.ArrayList;
+
+import Backend.FinancePerson;
 
 public class FinanceProfileController {
 
@@ -34,10 +39,15 @@ public class FinanceProfileController {
     @FXML
     private TextField tuitionInput;
 
+    FinancePerson p3;
+	ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
+	ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
+
     @FXML
-    void tuitionInputPressed(ActionEvent event) {
+    public double tuitionInputPressed(ActionEvent event) {
     	
     	double tuition = Double.parseDouble(tuitionInput.getText());
+    	return tuition;
     }
 
     @FXML
@@ -48,11 +58,31 @@ public class FinanceProfileController {
     @FXML
     void weekExpInputPressed(ActionEvent event) {
 
+    	ArrayList<Double> allWeeklyExpense = new ArrayList<Double>();
+    	String weekExp = weekExpInput.getText();
+    	String[] weekExpArray = weekExp.split(",");
+    	
+    	for (String exp : weekExpArray) {
+    		String exp1 = exp.strip();
+    		Double expDouble = Double.parseDouble(exp1);
+    		allWeeklyExpense.add(expDouble);
+    	}
+    	allWeeklyExpenses = allWeeklyExpense;
     }
 
     @FXML
     void monthExpInputPressed(ActionEvent event) {
 
+    	ArrayList<Double> allMonthlyExpense = new ArrayList<Double>();
+    	String monthExp = monthExpInput.getText();
+    	String[] monthExpArray = monthExp.split(",");
+    	
+    	for (String exp : monthExpArray) {
+    		String exp1 = exp.strip();
+    		Double expDouble = Double.parseDouble(exp1);
+    		allMonthlyExpense.add(expDouble);
+    	}
+    	allMonthlyExpenses = allMonthlyExpense;
     }
 
     @FXML
@@ -78,6 +108,7 @@ public class FinanceProfileController {
     @FXML
     void finishedButtonOnClick(ActionEvent event) {
 
+    	
     }
 
 }
