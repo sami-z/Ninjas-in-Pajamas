@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import FNCECALC.FinanceCalculatorController;
 
 
 public class MainController {
@@ -87,10 +88,15 @@ public class MainController {
     void displayFinance(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/FNCE.fxml"));
         Parent root = loader.load();
+        FinanceCalculatorController controller1 = loader.<FinanceCalculatorController>getController();
+        
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         //controller.setStage(stage);
         //controller.setPerson(getInfoController.getClubPerson());
+        controller1.setStage(stage);
+        controller1.setFinancePerson(getInfoController.getFinancePerson());
+        controller1.createFinancialCalculator();
         stage.setTitle("Finance Calculator");
         stage.setScene(scene);
         stage.show();

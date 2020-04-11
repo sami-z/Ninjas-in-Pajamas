@@ -36,7 +36,7 @@ public class FinancialCalculator extends FinancePerson {
 	
 	public String displayWeeklyExpenditure()
 	{
-		String infoWeeklyExpenditure = "\n" + getName() + ", your weekly expenditure is $ " + String.format("%.2f", calculateWeeklyExpenditure()); 
+		String infoWeeklyExpenditure = "\n" + getName() + ", your weekly expenditure is $" + String.format("%.2f", calculateWeeklyExpenditure()); 
 		return infoWeeklyExpenditure;
 	}
 	
@@ -51,10 +51,10 @@ public class FinancialCalculator extends FinancePerson {
 		String infoWeeklySavings = "";
 		
 		if (calculateWeeklySavings() >= 0) {
-			infoWeeklySavings = "\n" + "Terrific, " + getName() + "! Your weekly savings is $ " + String.format("%.2f", calculateWeeklySavings());
+			infoWeeklySavings = "\n" + "Terrific, " + getName() + "! Your weekly savings is $" + String.format("%.2f", calculateWeeklySavings());
 		} else {
 			double positiveValue = calculateWeeklySavings() * (-1);
-			infoWeeklySavings = "\n" + "Uh oh, " + getName() + " :( Your weekly savings is -$ " + String.format("%.2f", positiveValue);
+			infoWeeklySavings = "\n" + "Uh oh, " + getName() + " :( Your weekly savings is -$" + String.format("%.2f", positiveValue);
 		}
 		return infoWeeklySavings;
 	}
@@ -76,10 +76,10 @@ public class FinancialCalculator extends FinancePerson {
 		String infoWeeklyBudgetDiff = "";
 		
 		if (calculateBudgetDiff() >= 0) {
-			infoWeeklyBudgetDiff = "\n" + "Yay, " + getName() + "! You are spending $ " + String.format("%.2f", calculateBudgetDiff()) + " less than your weekly budget";
+			infoWeeklyBudgetDiff = "\n" + "Yay, " + getName() + "! You are spending $" + String.format("%.2f", calculateBudgetDiff()) + " less than your weekly budget";
 		} else {
 			double positiveValue = calculateBudgetDiff() * (-1);
-			infoWeeklyBudgetDiff = "\n" + "Crap, " + getName() + " :( You are spending $ " + String.format("%.2f", positiveValue) + " more than your weekly budget";
+			infoWeeklyBudgetDiff = "\n" + "Crap, " + getName() + " :( You are spending $" + String.format("%.2f", positiveValue) + " more than your weekly budget";
 		}
 		return infoWeeklyBudgetDiff;
 	}

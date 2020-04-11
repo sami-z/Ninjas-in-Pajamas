@@ -124,7 +124,7 @@ public class FinanceProfileController {
     
     public FinancePerson getFinancePerson() 
     {
-    	return null;
+    	return new FinancePerson(p1.getName(), p1.getYOS(), p1.getMajor(), p1.getMinor(), Double.parseDouble(tuitionInput.getText()), Double.parseDouble(savingsInput.getText()), allWeeklyExpenses, allMonthlyExpenses, Double.parseDouble(longAmountInput.getText()), Integer.parseInt(longMonthInput.getText()), Double.parseDouble(weekIncomeInput.getText()), Double.parseDouble(weekBudInput.getText()));
     }
 
 }
