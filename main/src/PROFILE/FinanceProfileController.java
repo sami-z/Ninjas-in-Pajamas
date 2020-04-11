@@ -154,6 +154,7 @@ public class FinanceProfileController {
 	    		allMonthlyExpense.add(expDouble);
 	    	}
 	    	allMonthlyExpenses = allMonthlyExpense;
+	    	monthlyCommasText.setText(allMonthlyExpenses.toString());
     	}
     	catch(Exception e) 
     	{
