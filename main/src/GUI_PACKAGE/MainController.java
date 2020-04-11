@@ -94,10 +94,10 @@ public class MainController {
         Stage stage = new Stage();
         controller1.setStage(stage);
         if(getInfoController == null) {
-        	
+        	displayProfile(new ActionEvent());
         }else if(getInfoController.getFinancePerson() == null)
         {
-        	
+        	displayProfile(new ActionEvent());
         }
         else
         {

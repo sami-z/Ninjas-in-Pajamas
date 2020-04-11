@@ -142,6 +142,7 @@ public class ProfileController {
 	
 	public FinancePerson getFinancePerson() 
 	{
+		FinanceController.setMasterPerson(new MasterPerson(nameField.getText(), 1, majorTextField.getText(), minorTextField.getText()));
 		return FinanceController.getFinancePerson();
 	}
 }

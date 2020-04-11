@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="196.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FNCECALC.weeklyExpenditureController">
+<AnchorPane prefHeight="100.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FNCECALC.weeklyExpenditureController">
    <children>
-      <Text fx:id="WeeklExpResult" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="406.22900390625" />
-      <Button mnemonicParsing="false" onAction="#buttonOnClick">
+      <Text fx:id="WeeklExpResult" layoutX="10.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="330.22900390625" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonOnClick" prefHeight="23.0" prefWidth="31.0">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="15.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/back-arrow.png" />
                </image>
