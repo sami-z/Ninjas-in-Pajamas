@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,12 @@ public class NumberOfCategoriesController {
 	    @FXML
 	    void buttonADD(ActionEvent event) {
 	    	int num0 = GpaButton1Controller.getNumOfCategories();
+	    	if (num1 == num0) {
+	    		buttonA.setText("Finish");
+	    		Stage stage = (Stage)buttonA.getScene().getWindow();
+	    		stage.close();
+	    	}
+	    	
 	    	if (num1 < num0) {
 	    		num1 = num1+1;
 	    		numCat.setText(Integer.toString(num1));
@@ -74,14 +81,19 @@ public class NumberOfCategoriesController {
 	    
 	    @FXML
 	    void displayGrades(ActionEvent event) {
-	    	double grade = Double.parseDouble(inputGrades.getText());
+	    	double grade = 0;
+	    	try {
+	    	grade =Double.parseDouble(inputGrades.getText());
 	    	if (grade >= 0 && grade <= 100) {
 	    		calc1.allGrades.add(grade);
 	    		newGrades.add(grade);
 		    	gradesArray.setText(newGrades.toString());
 		    	inputGrades.clear();	
 	    	}else {
-	    		gradesArray.setText("Grade must be between 0 and 100");
+	    		gradesArray.setText("Grade must be a value between 0 and 100");
+	    	}
+	    	}catch (Exception e) {
+	    		gradesArray.setText("Grade must be a value between 0 and 100");
 	    	}
 	    	
 
@@ -90,15 +102,24 @@ public class NumberOfCategoriesController {
 	    
 	    @FXML
 	    void displayComponent(ActionEvent event) {
-	    	int comp = Integer.parseInt(inputComponent.getText()); // not necessary?
-	    	if (comp >= 1) {
-	    		calc1.numCategoryComponents.add(comp);
-		    	numComp.setText(inputComponent.getText());
-		    	inputComponent.clear();
-	    	}else {
-	    		numComp.setText("Invalid input: must have at least 1 component");
-	    		inputComponent.clear();
+	    	int comp = 0;
+	    	try {
+	    		comp =Integer.parseInt(inputComponent.getText()); // not necessary?
+		    	if (comp >= 1) {
+		    		calc1.numCategoryComponents.add(comp);
+			    	numComp.setText(inputComponent.getText());
+			    	inputComponent.clear();
+		    	}else {
+		    		numComp.setText("Invalid input: must be a number greater than or equal to 1");
+		    		inputComponent.clear();
+		    	}
+
+	    		
+	    	}catch (Exception e) {
+	    		numComp.setText("Invalid input: must be a number greater than or equal to 1");
+	    		
 	    	}
+	    	
 
 	    }
 	    

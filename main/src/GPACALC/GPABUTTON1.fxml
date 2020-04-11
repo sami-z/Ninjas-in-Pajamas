@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.GpaButton1Controller">
    <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="494.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="478.0">
          <children>
-            <Button fx:id="enterD" layoutX="178.0" layoutY="162.0" mnemonicParsing="false" onAction="#enterData" prefHeight="28.0" prefWidth="126.0" text="Enter Data" />
+            <Button fx:id="enterD" layoutX="181.0" layoutY="175.0" mnemonicParsing="false" onAction="#enterData" prefHeight="28.0" prefWidth="126.0" text="Enter Data" />
             <HBox layoutX="44.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many grade categories are in your course thus far?" translateY="20.0" wrappingWidth="188.7578125" />
-                  <TextField fx:id="numCate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#numCategories" prefHeight="39.0" prefWidth="145.0" translateX="20.0" translateY="20.0">
+                  <Text fx:id="errorCat" strokeType="OUTSIDE" strokeWidth="0.0" translateX="30.0" translateY="60.0" wrappingWidth="131.0" />
+                  <TextField fx:id="numCate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#numCategories" prefHeight="39.0" prefWidth="145.0" translateX="-110.0" translateY="20.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -26,27 +26,28 @@
             <HBox layoutX="43.0" layoutY="253.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the type of assesment you would like to use for the calculation" wrappingWidth="164.8896484375" />
-                  <TextField fx:id="typeA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getAsess" prefHeight="39.0" prefWidth="146.0" translateX="45.0" />
+                  <TextField fx:id="typeA" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getAsess" prefHeight="39.0" prefWidth="146.0" translateX="45.0" />
                </children>
             </HBox>
-            <HBox layoutX="43.0" layoutY="491.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
+            <HBox layoutX="44.0" layoutY="452.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the type of assesment" wrappingWidth="135.4951171875" />
-                  <Text fx:id="displayWeight" strokeType="OUTSIDE" strokeWidth="0.0" translateX="130.0" translateY="60.0" wrappingWidth="93.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" textAlignment="CENTER" translateX="25.0" translateY="40.0" />
-                  <TextField fx:id="weightAssignment" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getWeightAssignment" prefHeight="39.0" prefWidth="146.0" translateX="-60.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the weight of the type of assesment" translateY="5.0" wrappingWidth="135.4951171875" />
+                  <Text fx:id="displayWeight" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="100.0" translateY="60.0" wrappingWidth="93.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" textAlignment="CENTER" translateX="30.0" translateY="40.0" />
+                  <TextField fx:id="weightAssignment" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getWeightAssignment" prefHeight="39.0" prefWidth="146.0" translateX="-60.0" />
                </children>
             </HBox>
-            <Text layoutX="170.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are calculating what you need on an upcoming " textAlignment="CENTER" wrappingWidth="157.8486328125" />
-            <Text fx:id="upcomingAssign" layoutX="182.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="135.4951171875">
+            <Text fx:id="errorAsses" layoutX="160.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are calculating what you need on an upcoming " textAlignment="CENTER" wrappingWidth="157.8486328125" />
+            <Text fx:id="upcomingAssign" layoutX="171.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="135.4951171875">
                <font>
                   <Font name="System Italic" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="displayResult" layoutX="181.0" layoutY="745.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="157.8486328125" />
-            <Button fx:id="buttonC" layoutX="211.0" layoutY="687.0" mnemonicParsing="false" onAction="#calculateGrade" text="Calculate" />
-            <Text layoutX="43.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your desired grade for the class" wrappingWidth="113.9013671875" />
-            <TextField fx:id="desiredG" layoutX="253.0" layoutY="623.0" onAction="#getDesiredG" prefHeight="39.0" prefWidth="149.0" />
+            <Text fx:id="displayResult" layoutX="160.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="157.8486328125" />
+            <Button fx:id="buttonC" disable="true" layoutX="200.0" layoutY="650.0" mnemonicParsing="false" onAction="#calculateGrade" text="Calculate" />
+            <Text layoutX="43.0" layoutY="586.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your desired grade for the class" wrappingWidth="113.9013671875" />
+            <TextField fx:id="desiredG" disable="true" layoutX="253.0" layoutY="567.0" onAction="#getDesiredG" prefHeight="39.0" prefWidth="149.0" />
+            <Text fx:id="errorDG" layoutX="290.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" translateX="-35.0" translateY="35.0" wrappingWidth="145.0" />
          </children>
       </AnchorPane>
    </content>

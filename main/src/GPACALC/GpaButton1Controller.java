@@ -52,6 +52,12 @@ public class GpaButton1Controller {
     @FXML
     private TextField desiredG;
     
+    @FXML
+    private Text errorCat;
+    
+    @FXML
+    private Text errorDG;
+    
     
     
     
@@ -59,8 +65,18 @@ public class GpaButton1Controller {
 
     @FXML
     void numCategories(ActionEvent event) {
-    	int getNumCat = Integer.parseInt(numCate.getText());
-    	setNumOfCategories(getNumCat);
+    	int getNumCat = 0;
+    	try {
+    		getNumCat =Integer.parseInt(numCate.getText());
+    		if(getNumCat >= 1) {
+    			setNumOfCategories(getNumCat);
+    			errorCat.setText("");
+    		}else {
+    			errorCat.setText("Number of categories must be a number >= 1");
+    		}
+    	}catch (Exception e) {
+    		errorCat.setText("Number of categories must be a number >= 1");
+    	}
     	
 
     }
@@ -74,6 +90,10 @@ public class GpaButton1Controller {
          Stage stage = new Stage();
          stage.setScene(scene);
          stage.show();
+         typeA.setDisable(false);
+         weightAssignment.setDisable(false);
+         desiredG.setDisable(false);
+         buttonC.setDisable(false);
          
          
      }
@@ -89,9 +109,20 @@ public class GpaButton1Controller {
     
     @FXML
     void getWeightAssignment(ActionEvent event) {
-    	displayWeight.setText(weightAssignment.getText());
-    	getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
-    	weightAssignment.clear();
+    	double d = 0;
+    	try {
+    		d = Double.parseDouble(weightAssignment.getText());
+    		if (d >= 1 && d <= 99) {
+    			displayWeight.setText(weightAssignment.getText());
+    			getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
+    			weightAssignment.clear();
+    		}else {
+    			displayWeight.setText("Weight must be between 1 and 99");
+    		}
+    	}catch(Exception e) {
+    		displayWeight.setText("Weight must be between 1 and 99");
+    	}
+    	
     }
 
 	public static int getNumOfCategories() {
@@ -119,7 +150,22 @@ public class GpaButton1Controller {
 
     @FXML
     void getDesiredG(ActionEvent event) {
-    	getGPACalc().desiredCourseGrade = Double.parseDouble(desiredG.getText());
+    	double d = 0;
+    	try {
+    		d = Double.parseDouble(desiredG.getText());
+    		if ( d>= 0 && d <= 100) {
+    			getGPACalc().desiredCourseGrade = Double.parseDouble(desiredG.getText());
+    			errorDG.setText("");
+    			
+    		}else {
+    			errorDG.setText("Desired grade must be between 0 and 100");
+    			
+    		}
+    		
+    	}catch (Exception e) {
+    		errorDG.setText("Desired grade must be between 0 and 100");
+    	}
+    	
     }
 	
 	
