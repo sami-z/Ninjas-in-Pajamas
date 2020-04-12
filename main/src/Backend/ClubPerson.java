@@ -90,7 +90,22 @@ public class ClubPerson extends MasterPerson {
 		
 		
 	}
-	
+	 
+	/**
+	 * Copy constructor for ClubPerson
+	 * 
+	 * @param copy - the club that you want to copy from
+	 */
+	public ClubPerson(ClubPerson copy) 
+	{
+		super(copy.getName(),copy.getYOS(),copy.getMajor(),copy.getMinor());
+		ReadFile reader = new ReadFile("map.txt");
+		mapOfInterest = reader.readMap();
+		
+		this.interests = new ArrayList<String>(copy.getInterests());
+		this.faculties = new ArrayList<String>(copy.getFaculties());
+		
+	}
 	
 	
 	/**

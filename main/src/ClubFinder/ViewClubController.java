@@ -28,7 +28,7 @@ public class ViewClubController {
 	
 	private Stage currentStage;
 	
-	Scene previousScene;
+	private Scene previousScene;
 
 	@FXML
 	private VBox VBoxLayout;
