@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="522.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPACALC.AddCoursesController">
+   <children>
+      <Text layoutX="165.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For Course:" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="courseNum" fill="RED" layoutX="199.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="53.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <VBox layoutX="45.0" layoutY="154.0" prefHeight="55.0" prefWidth="100.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the final GPA achieved" wrappingWidth="130.2880859375" />
+         </children>
+      </VBox>
+      <TextField fx:id="gpaAchieved" layoutX="200.0" layoutY="154.0" onAction="#getGPAAcheived" />
+      <Text fx:id="displayGPA" layoutX="199.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="149.0" />
+      <VBox layoutX="45.0" layoutY="275.0" prefHeight="55.0" prefWidth="100.0" />
+      <Text fx:id="result" layoutX="138.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="174.205078125" />
+      <VBox layoutX="165.0" layoutY="357.0" prefHeight="86.0" prefWidth="122.0">
+         <children>
+            <Button fx:id="nextC" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButton" prefHeight="37.0" prefWidth="122.0" text="Next Course" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

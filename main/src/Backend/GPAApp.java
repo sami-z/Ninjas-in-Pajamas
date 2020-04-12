@@ -149,7 +149,7 @@ public void maintainGPA()  {
 		gradeNeeded = calc.gradeNeededToMaintain(numOfClasses,desiredGPA);
 		if(gradeNeeded == -1) 
 		{
-			System.out.println("You cannot get that grade from" + (numOfClasses-i-1) + "classes");
+			System.out.println("You cannot get that grade from " + (numOfClasses-i-1) + " classes");
 		}
 		else 
 		{

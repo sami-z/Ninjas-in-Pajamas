@@ -1,92 +1,106 @@
 package GPACALC;
 
-import java.util.ArrayList;
-import Backend.*;
+import java.io.IOException;
 
+import Backend.GPACalculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
+import javafx.stage.Stage;
 
 public class GpaButton2Controller {
 	
+	private AddCoursesController controller;
 	
-
-	@FXML
-	private Text dGPA;
+	private static int numberOfEnrolled;
+	
+	private static double newDesiredGrade;
+	
 	
     @FXML
-    private Text textGPA;
-	
-	@FXML
-	private Text numCourses;
+    private TextField numEnroll;
 
     @FXML
-    private Text maintainG;
-
+    private Text displayCourse;
+    
     @FXML
-    private Text neededG;
-
+    private Button addButton;
+    
     @FXML
-    private TextField finalG;
-
+    private Text displayDesiredG;
+    
     @FXML
     private TextField desiredG;
+    
+    
 
     @FXML
-    private TextField enrolledC;
-    
-    @FXML
-    private Button buttonC;
-    
-    GPACalculator calc = new GPACalculator();
-    
-    private ArrayList<Double> allGrade = new ArrayList<Double>();
-    private int numGradeCategories;
-	private double desiredGPA;
-	private double gradeNeeded;
-
-    @FXML
-    void getEC(ActionEvent event) {
-    	this.numGradeCategories = Integer.parseInt(enrolledC.getText());
-    	numCourses.setText(enrolledC.getText());
-    	enrolledC.clear();
-    	
+    void getNumEnroll(ActionEvent event) {
+    	int d = 0;
+    	try {
+    		d = Integer.parseInt(numEnroll.getText());
+    		if (d >= 2) {
+    			displayCourse.setText("You are enrolled in " + numEnroll.getText() + " courses");
+    			numberOfEnrolled = d;
+    		}
+    		else {
+    			displayCourse.setText("Number of courses must be an integer >= 2");
+    		}
+    	}catch(Exception e) {
+    		displayCourse.setText("Number of courses must be an integer >= 2");
+    	}
     }
+    
+    
 
     @FXML
-    void getFG(ActionEvent event) {
-    	if(!finalG.getText().equals("")) {
-    		double initialV = Double.parseDouble(finalG.getText());
-	    	calc.allGrade.add(initialV);
-	    	finalG.clear();  
-	    	textGPA.setText(calc.allGrade.toString());
-	    
+    void goAddButton(ActionEvent event) throws IOException {
+    	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GPACALC/AddCourses.fxml"));
+         Parent root = loader.load();
+    	 controller = loader.<AddCoursesController>getController();
+         Scene scene = new Scene(root);
+         Stage stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+    }
+    
+    
+    public void setNumOfEnrolled(int numOfE) {
+    	GpaButton2Controller.numberOfEnrolled = numOfE;
+    }
+    
+    public static int getNumEnrolled() {
+    	return numberOfEnrolled;
+    }
+    
+    public static double getNewDesiredGrade() {
+    	return newDesiredGrade;
+    }
+    
+    
+    @FXML
+    void getDesiredG(ActionEvent event) {
+    	double d = 0;
+    	try {
+    		d = Double.parseDouble(desiredG.getText());
+    		if (d >= 0.0 && d<= 4.0) {
+    			displayDesiredG.setText("You wish to acheive a " + d);
+    			newDesiredGrade = d;
+    			addButton.setDisable(false);
+    		}else {
+    			displayDesiredG.setText("Desired grade must be between 0.0 and 4.0");
+    		}
+    	}catch(Exception e) {
+    		displayDesiredG.setText("Desired grade must be between 0.0 and 4.0");	
     	}
     	
-    }
-
-    @FXML
-    void getDG(ActionEvent event) {
-    	this.desiredGPA = Double.parseDouble(desiredG.getText());
-    	dGPA.setText(desiredG.getText());
-    }
-
-    
-    @FXML
-    void clickC(ActionEvent event) {
-    
-    //////////////////////////////////////////
     	
-    	maintainG.setText(""+this.desiredGPA);
-    	double gradeNeeded = calc.gradeNeededToMaintain(numGradeCategories,this.desiredGPA);
-    	if(gradeNeeded==-1.0)
-    		neededG.setText("You cannot obtain that GPA");
-    	else
-    		neededG.setText(""+gradeNeeded);
     }
-	}
 
+}
 
