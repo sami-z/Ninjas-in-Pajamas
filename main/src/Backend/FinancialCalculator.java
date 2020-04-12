@@ -7,18 +7,68 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
+/**
+ * This class calculates financial information based on the user input, in particular 
+ * displaying messages, such as the user's weekly expenditure, weekly savings, weekly budget
+ * progress, and long-term goal progress and predictions 
+ */
 public class FinancialCalculator extends FinancePerson {
 	
+	/** FinancialCalculator constructor
+	 * This constructor takes in all information related to the user and their financial profile 
+	 * and creates an instance of FinancePerson
+	 * 
+	 * @param name - Name of the person
+	 * @param year of study - The user's current year of study
+	 * @param major - The major of the person
+	 * @param minor - The minor of the person
+	 * @param tuition - The user's yearly tuition
+	 * @param savings - The amount in the user's savings account
+	 * @param allWeeklyExpenses - The Double ArrayList which contains all weekly expenses of the user
+	 * @param allMonthlyExpenses - The Double ArrayList which contains all monthly expenses of the user
+	 * @param longTermGoal - The amount the user wants to save over a period of time
+	 * @param longTermGoalMonthBased - The amount of time the user wants to achieve long-term goal by
+	 * @param weeklyIncome - The user's weekly income
+	 * @param weeklyBudget - The user's weekly budget
+	 * 
+	 * 
+	 * */
 	public FinancialCalculator(String name, int yos, String major, String minor, double tuition, double savings, ArrayList<Double> allWeeklyExpenses, ArrayList<Double> allMonthlyExpenses, double longTermGoal, int longTermGoalMonthBased, double weeklyIncome, double weeklyBudget)
 	{
+		// Call to the parent constructor
 		super(name, yos, major, minor, tuition, savings, allWeeklyExpenses, allMonthlyExpenses, longTermGoal, longTermGoalMonthBased, weeklyIncome, weeklyBudget);
 	}
 	
+	/** FinancialCalculator copy constructor
+	 * This copy constructor takes in a copy of FinancePerson  
+	 * and creates an instance of FinancePerson
+	 * 
+	 * @param name - Name of the person
+	 * @param year of study - The user's current year of study
+	 * @param major - The major of the person
+	 * @param minor - The minor of the person
+	 * @param tuition - The user's yearly tuition
+	 * @param savings - The amount in the user's savings account
+	 * @param allWeeklyExpenses - The Double ArrayList which contains all weekly expenses of the user
+	 * @param allMonthlyExpenses - The Double ArrayList which contains all monthly expenses of the user
+	 * @param longTermGoal - The amount the user wants to save over a period of time
+	 * @param longTermGoalMonthBased - The amount of time the user wants to achieve long-term goal by
+	 * @param weeklyIncome - The user's weekly income
+	 * @param weeklyBudget - The user's weekly budget
+	 * 
+	 * 
+	 * */
 	public FinancialCalculator(FinancePerson p) 
 	{
+		// Call to the parent constructor
 		super(p.getName(), p.getYOS(), p.getMajor(), p.getMinor(), p.getTuition(), p.getSavings(), p.getAllWeeklyExpenses(), p.getAllMonthlyExpenses(), p.getLongTermGoal(), p.getLongTermGoalMonthBased(), p.getWeeklyIncome(), p.getWeeklyBudget());
 	}
 	
+	/** double calculateWeeklyExpenditure()
+	 * This method calculates the user's weekly expenditure based on their input about 
+	 * their weekly expenses and monthly expenses
+	 * @return weeklyExpenditure - A double which represents the total amount the user spent in a week
+	 */
 	public double calculateWeeklyExpenditure()
 	{
 		double weeklyExpenditure = 0;
@@ -34,18 +84,35 @@ public class FinancialCalculator extends FinancePerson {
 		return weeklyExpenditure;
 	}
 	
+	/** String displayWeeklyExpenditure()
+	 * This method calls calculateWeeklyExpenditure() method, then stores the return value with a  
+	 * message regarding the user's weekly expenditure in a String and returns it
+	 * @return infoWeeklyExpenditure - A String which is an informative message
+	 * regarding the total amount the user spent in a week
+	 */
 	public String displayWeeklyExpenditure()
 	{
 		String infoWeeklyExpenditure = "\n" + getName() + ", your weekly expenditure is $" + String.format("%.2f", calculateWeeklyExpenditure()); 
 		return infoWeeklyExpenditure;
 	}
 	
+	/** double calculateWeeklySavings()
+	 * This method calculates the user's weekly savings based on the user's weekly income
+	 * and the return value of calculateWeeklyExpenditure() method
+	 * @return weeklySavings - A double which represents the amount the user is saving each week
+	 */
 	public double calculateWeeklySavings()
 	{
 		double weeklySavings = getWeeklyIncome() - calculateWeeklyExpenditure();
 		return weeklySavings;
 	}
 	
+	/** String displayWeeklySavings()
+	 * This method calls calculateWeeklySavings() method, then stores the return value with a  
+	 * message regarding the user's weekly savings in a String and returns it
+	 * @return infoWeeklySavings - A String which is an informative message
+	 * regarding the total amount the user saves each week
+	 */
 	public String displayWeeklySavings()
 	{
 		String infoWeeklySavings = "";
@@ -59,18 +126,35 @@ public class FinancialCalculator extends FinancePerson {
 		return infoWeeklySavings;
 	}
 	
+	/** double calculateDailySavings()
+	 * This method calculates the user's daily savings based on the return value of 
+	 * calculateWeeklySavings() method
+	 * @return dailySavings - A double which represents the amount the user is saving each day
+	 */
 	public double calculateDailySavings()
 	{
 		double dailySavings = calculateWeeklySavings() / 7;
 		return dailySavings;
 	}
 	
+	/** double calculateBudgetDiff()
+	 * This method calculates the difference of the user's weekly budget and their weekly
+	 * expenditure based on the return value of calculateWeeklyExpenditure() method
+	 * @return weeklyBudgetDiff - A double which represents the difference of the user's weekly budget
+	 * and their weekly expenditure
+	 */
 	public double calculateBudgetDiff()
 	{
 		double weeklyBudgetDiff = getWeeklyBudget() - calculateWeeklyExpenditure();
 		return weeklyBudgetDiff;
 	}
 	
+	/** String displayWeeklyBudgetDiff()
+	 * This method calls calculateWeeklyBudgetDiff() method, then stores the return value with a  
+	 * message regarding the user's weekly budget difference in a String and returns it
+	 * @return infoWeeklyBudgetDiff - A String which is an informative message
+	 * regarding the difference between the user's weekly budget and their weekly expenditure
+	 */
 	public String displayWeeklyBudgetDiff()
 	{
 		String infoWeeklyBudgetDiff = "";
@@ -84,6 +168,20 @@ public class FinancialCalculator extends FinancePerson {
 		return infoWeeklyBudgetDiff;
 	}
 	
+	/** String displayLongTermGoalInfo()
+	 * This method calculates the progress for the user's long term goal based on their financial 
+	 * profile. There are 3 different scenarios. 1: The user is saving more than they are spending each
+	 * week and they will meet their long-term goal by their desired long-term goal period. 2: The user is 
+	 * saving more than they are spending each week, but they won't be able to meet their goal by the desired
+	 * period they provided. So the method suggests that the user saves more each week to be able to meet their
+	 * goal. 3: They are spending more than they are saving each week, and it is not possible for them to meet 
+	 * their goal at all. The method suggests that the user saves more each week to be able to meet their goal.
+	 * When calculating the date of their expected long-term goal period, the method creates a current local
+	 * date time instance and adds the amount of days needed to reach the goal and displays the calculated
+	 * date in the infoLongTermGoal String.
+	 * @return infoLongTermGoal - A String which is an informative message
+	 * regarding the expected long-term goal period based on the calculations done above.
+	 */
 	public String displayLongTermGoalInfo()
 	{
 		int totalDays = getLongTermGoalMonthBased() * 30;
