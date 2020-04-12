@@ -7,6 +7,7 @@ import java.util.*;
  * managing getters and setters for financial information and 
  * adding and removing based on their inputs.
  */
+
 public class FinancePerson extends MasterPerson{
 	
 	// Yearly tuition of the person
