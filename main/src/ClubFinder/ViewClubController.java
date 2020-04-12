@@ -25,9 +25,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * 
- * @author manbirsandhu
- *
+ * This class is a controller for the ViewClubs.fxml scene. It populates the scene with a list of clubs 
+ * and allows the user to click on any club to see details about that club
  */
 public class ViewClubController {
 	
