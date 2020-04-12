@@ -83,7 +83,7 @@ public class ClubMainInterfaceController {
     }
     
     /**
-     * 
+     * This method handles the OnAction event for the AllButton. 
      * 
      * @param event - The ActionEvent object that is passed into the method when the AllButton is clicked
      * @throws IOException - IOException that can be caused when reading file
