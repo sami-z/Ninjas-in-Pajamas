@@ -27,74 +27,103 @@ public class ClubMainInterfaceController {
 	// ClubPerson object used to get information about the recommended clubs
 	private ClubPerson person;
 	
+	// Button object for the "Get your clubs" button
     @FXML
     private Button ClubButton;
 
+    // Button object to list all of the clubs
     @FXML
     private Button AllButton;
 
+    // Button object to exit the club finder
     @FXML
     private Button ExitButton;
 
     
     /**
-     * 
-     * @param event
-     * @throws Exception
+     * This method handles the OnAction event for the ClubButton. 
+     * @param event - The ActionEvent object that is passed into the method when the ClubButton is clicked
+     * @throws IOException - IOException that can be caused when reading file
      */
     @FXML
-    public void ClubOnClick(ActionEvent event) throws Exception{
+    public void ClubOnClick(ActionEvent event) throws IOException{
+    	
+    	//Loads the FXML scene for viewClubs
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/ViewClubs.fxml"));
         Parent root = loader.load();
+        
+        //Creates an instance of the controller of the ViewClubs
         ViewClubController controller = loader.<ViewClubController>getController();
         
+        //Reads the data for clubs so we can get the recommended clubs
         ReadFile reader = new ReadFile("data.txt");
         ClubList AllClubs  = reader.readClubData();
+        
+        //Passes the data for all clubs into the person to get the recommended clubs
         person.InitializeRecommended(AllClubs);
         
+        
+        // For each club the we called the createClub method in ViewClubController that creates the club in the scene
         ClubList recommendedClubs = person.getRecommended();
-        System.out.println(recommendedClubs.getSize());
         for(int i = 0;i<recommendedClubs.getSize();i++) 
         {
         	controller.createClub(recommendedClubs.getClub(i));
         }
         
         controller.addToScroll();
+        
+        // Using setter methods to set the stage and previous scene variables in ViewClubController
         controller.setStage(main);
         controller.setPreviousScene(ClubButton.getScene());
         
+        // Creates the new scene and displays it
         Scene scene = new Scene(root);
         main.setScene(scene);
         main.show();
     }
+    
+    /**
+     * 
+     * 
+     * @param event - The ActionEvent object that is passed into the method when the AllButton is clicked
+     * @throws IOException - IOException that can be caused when reading file
+     */
 
     @FXML
     public void AllOnClick(ActionEvent event) throws IOException {
     	
-        
+    	//Loads the FXML scene for viewClubs
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/ViewClubs.fxml"));
         Parent root = loader.load();
         ViewClubController controller = loader.<ViewClubController>getController();
         
+        // Reads the data for all clubs and creates a ClubList
         ReadFile reader = new ReadFile("data.txt");
         ClubList AllClubs  = reader.readClubData();
+        
+        // Sorts all the clubs alphabetically
         AllClubs.sortClubsByAlphabet();
+        
+        // Loops through all the Clubs in AllClubs and creates a clubs interface in the scene
         for(int i = 0;i<AllClubs.getSize();i++) 
         {
         	controller.createClub(AllClubs.getClub(i));
         }
         
         controller.addToScroll();
+        
+        // Using setter methods to set the stage and previous scene variables in ViewClubController
         controller.setStage(main);
         controller.setPreviousScene(ClubButton.getScene());
         
+        // Creates the new scene and displays it
         Scene scene = new Scene(root);
         main.setScene(scene);
         main.show();
     }
 
     /**
-     * This method handle the onClick event for the ExitButton
+     * This method handles the onClick event for the ExitButton
      * @param event - The ActionEvent object that is passed into the method when the ExitButton is clicked
      */
     @FXML
@@ -115,11 +144,12 @@ public class ClubMainInterfaceController {
     }
     
     /**
+     * Setter method that is used to pass the ClubPerson for which the application will get the recommended clubs for
      * 
+     * @param person - Club person that the ClubFinder application is going to run on
      * */
     public void setPerson(ClubPerson person) 
     {
-    	System.out.println(person.getInterests().toString());
     	this.person = new ClubPerson(person);
     }
 

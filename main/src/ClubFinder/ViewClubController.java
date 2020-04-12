@@ -101,7 +101,7 @@ public class ViewClubController {
     }
     
     @FXML
-    void OnButtonClick(ActionEvent event) throws IOException {
+    public void OnButtonClick(ActionEvent event) throws IOException {
         currentStage.setTitle("Club Finder");
         currentStage.setScene(previousScene);
         currentStage.show();
