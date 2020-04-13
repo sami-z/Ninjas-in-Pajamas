@@ -48,6 +48,9 @@ public class GPAApp implements MainApp{
 		case 2:
 			maintainGPA();
 			break;
+		default:
+			System.out.println("Invalid input");
+			break;
 		}
 		
 		return true;
@@ -62,8 +65,19 @@ public void maintainCurrGPA(){
 	String num0;
 	
 	System.out.println("How many grade categories are in your course thus far?");
-	num0 = input.nextLine();
-	int numCate = Integer.parseInt(num0);
+	int numCate = -1;
+	
+	while(numCate==-1)
+	try {
+		num0 = input.nextLine();
+		numCate = Integer.parseInt(num0);
+		if(numCate<1)
+			throw new NumberFormatException();
+	}catch(NumberFormatException nfe)
+	{
+		System.out.println("Invalid input");
+		numCate = -1;
+	}
 	
 	String num1;
 	String num2;
@@ -74,6 +88,7 @@ public void maintainCurrGPA(){
 		
 		System.out.println("Enter one of the " + numCate + " grade categories weight: ");
 		num1 = input.nextLine();
+		
 		double currNum1 = Double.parseDouble(num1);
 		calc1.categoryWeights.add(currNum1);
 		
@@ -125,26 +140,65 @@ public void maintainGPA()  {
 	
 	Scanner input = new Scanner(System.in);
 
-	int numOfClasses = 0;
-	double desiredGPA = 0;
+	int numOfClasses = -1;
+	double desiredGPA = -1;
 	double gradeNeeded;
 	
 	System.out.println("Please enter the number of courses you are currently enrolled in: ");
-	String numbOfClassString = input.nextLine();
-	numOfClasses = Integer.parseInt(numbOfClassString);
+	
+	
+	while(numOfClasses==-1)
+	try {
+		String numbOfClassString = input.nextLine();
+		numOfClasses = Integer.parseInt(numbOfClassString);
+		if(numOfClasses<1)
+			throw new NumberFormatException();
+	}catch(NumberFormatException nfe)
+	{
+		System.out.println("Invalid input - Please type a positive integer");
+		numOfClasses = -1;
+	}
 	
 	
 	GPACalculator calc = new GPACalculator();
 	
 	System.out.println("Please enter your desired GPA: ");
-	String desiredString = input.nextLine();
-	desiredGPA = Double.parseDouble(desiredString);
+	
+	while(desiredGPA<0) {
+		try 
+		{
+			String desiredString = input.nextLine();
+			desiredGPA = Double.parseDouble(desiredString);
+			if(!(desiredGPA<=4.0&&desiredGPA>=0))
+				throw new NumberFormatException();
+		}
+		catch(NumberFormatException nfe) 
+		{
+			System.out.println("Invalid input - Please type a positive  number between 0 and 4.0");
+		}
+	}
 	
 	for (int i = 0; i < numOfClasses - 1; i++) {
 	
 		System.out.println("Please enter the final GPA achieved in a course: ");
-		String classGrade = input.nextLine();
-		calc.addGrade(Double.parseDouble(classGrade));
+		double classGradeInt = -1;
+		
+		while(classGradeInt<0) 
+		{
+			try 
+			{
+				String classGradeStr = input.nextLine();
+				classGradeInt = Double.parseDouble(classGradeStr);
+				if(!(desiredGPA<=4.0&&desiredGPA>=0))
+				{
+					throw new NumberFormatException();
+				}
+				calc.addGrade(Double.parseDouble(classGradeStr));
+			}
+			catch(NumberFormatException nfe){
+				System.out.println("Invalid input - Please type a positive  number between 0 and 4.0");
+			}
+		}
 		
 		gradeNeeded = calc.gradeNeededToMaintain(numOfClasses,desiredGPA);
 		if(gradeNeeded == -1) 
