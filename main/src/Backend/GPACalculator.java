@@ -2,9 +2,17 @@ package Backend;
 import java.util.ArrayList;
 import java.lang.*;
 
+/**
+ * This class calculates GPA-related information based on the user input. Its two main
+ * functions are to calculate the grade needed on an assessment to maintain a certain grade
+ * in the course, and to calculate the grade needed in a course to maintain a certain
+ * overall GPA.
+ */
+
+
 public class GPACalculator {
 
-	// List of all grades of the person
+	// List of each course's grade, inputted by the user
 	public ArrayList<Double> allGrade;
 	
 	// Number of grade categories for a course of the person
@@ -13,7 +21,7 @@ public class GPACalculator {
 	// List of how many components are in a grade category
 	public ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
 	
-	// List of all grades in a category 
+	// List containing the user's current grades in course assessments
 	public ArrayList<Double> allGrades = new ArrayList<Double>();
 	
 	// List of the weights of all the categories
@@ -28,17 +36,22 @@ public class GPACalculator {
 	// The name of the assessment to be calculated
 	public String nameOfAssessment;
 	
-	/** GPA Calculator constructor 
-	 * **/
+	/**
+	 * GPACalculator constructor
+	 * This constructor creates an instance of GPACalculator and initializes the allGrade 
+	 * variable as an ArrayList containing doubles.
+	 */
+
 	public GPACalculator() 
 	{
 		allGrade = new ArrayList<Double>();
 	}
 
 	/** calculateCGPA() 
-	 * Returns the calculated GPA of the user
+	 * Returns the current total GPA of the user
 	 * @return average/allGrade.size() - a double which represents the calculated GPA of the user
 	 */
+
 	private double calculateCGPA() 
 	{
 		double average = 0;
@@ -50,13 +63,15 @@ public class GPACalculator {
 		return average/allGrade.size();
 	}
 	
-	/** gradeNeededToMaintain(int enrolledCourses,double GPAwanted) 
-	 * Returns the calculated grade needed to maintain the desired GPA of the user
+	/** gradeNeededToMaintain(int,double) 
+	 * This method calculates the mark the user needs in a specific course
+	 * to maintain a certain overall GPA.
 	 * @param enrolledCourses - number of courses that the user is enrolled in
 	 * @param GPAwanted - the desired GPA of the user
 	 * 
 	 * @return gradeNeeded - a double which represents the grade needed to maintain the user's desired GPA
 	 */
+
 	public double gradeNeededToMaintain(int enrolledCourses,double GPAwanted) 
 	{
 		double currentGPA = calculateCGPA();
@@ -73,6 +88,7 @@ public class GPACalculator {
 	 * Adds a grade to the ArrayList allGrade
 	 * @param grade - a double which represents the grade to add to allGrade
 	 */
+
 	public void addGrade(double grade) {
 		if(grade>=0.0 && grade<=4.0)
 			allGrade.add(grade);
@@ -84,7 +100,7 @@ public class GPACalculator {
 	 */
 	public String calculatePercentNeeded()
 	{
-		
+		// Calculate the sum of all the weights the user has entered so far
 		double totalGrade = 0;
 		double totalWeight = 0;
 		
@@ -95,6 +111,9 @@ public class GPACalculator {
 		
 		double finalWeight = totalWeight + neededCategoryWeight;
 		double multiplyWeight = 1 / finalWeight;
+
+		// Calculate the user's total current grade based on the assessment
+		// categories and weightings
 		
 		for (int i = 0 ; i < categoryWeights.size() ; i++) {
 			
@@ -115,6 +134,8 @@ public class GPACalculator {
 		double dob = neededGrade * 100;
 		long newLong = Math.round(dob);
 		double dob2 = newLong / 100;
+
+		// return a string describing the above information
 		
 		String infoMessage = "You need to get " + dob2 + "% on the next " + nameOfAssessment + " to get " + desiredCourseGrade + "% in the course.";
 		
