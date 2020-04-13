@@ -2,11 +2,27 @@ package Backend;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/** Main class
+ * Makes use of other classes in the Backend package to tie the 
+ * whole program together, including profile information and
+ * feature functionality.
+ */
 
 public class Main {
 
+	// Instance variable of type MainApp for the functionality of the program
 	private static MainApp app;
+
+	// Instance variable to read the file(s) for club information
 	private static ReadFile reader;
+
+	/** main(String[] args)
+	 * This method runs the program by first creating a user profile and printing out the 
+	 * main menu, then calling on other classes and methods to execute the functionality
+	 * of the three features.
+	 * 
+	 * @param args - Unused.
+	 * */
 
 	public static void main(String[] args) 
 	{
@@ -17,7 +33,7 @@ public class Main {
 		System.out.println("Which of the following 3 features would you like to use?");
 		System.out.println("1: Get information about clubs you're interested in!");
 		System.out.println("2: Get information about your finances and budget your expenses!");
-		System.out.println("3: GPA Calc");
+		System.out.println("3: GPA Calculator");
 		
 		int userChoice = -1;
 		while(userChoice==-1) {
@@ -66,11 +82,26 @@ public class Main {
 
 	}
 
+
+	/** displayInterestMapping()
+	 * Reads the file containing the list of interest options and prints 
+	 * it to the console.
+	 * */
+
+
 	public static void displayInterestMapping() 
 	{
 		reader = new ReadFile("map.txt");
 		reader.displayMap();
 	}
+
+	/** getInitialMasterPerson(Scanner)
+	 * Creates an instance of MasterPerson representing the current user
+	 * 
+	 * @param input - A Scanner object used to gather profile
+	 * information from the user
+	 */
+
 
 	public static MasterPerson getInitialMasterPerson(Scanner input)
 	{
