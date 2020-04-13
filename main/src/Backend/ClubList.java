@@ -109,7 +109,7 @@ public class ClubList {
 		{
 			out+= (i+1) + ": " + listOfClubs.get(i).getName() + "\n";
 		}
-		return out;
+		return new String(out);
 	}
 	
 	/** Returns a club from listOfClubs from a given index. If the index is not 
