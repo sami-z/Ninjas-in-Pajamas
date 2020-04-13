@@ -71,6 +71,22 @@ public class FinancePerson extends MasterPerson{
 		setWeeklyBudget(weeklyBudget);
 	}
 	
+	
+	public FinancePerson(FinancePerson toCopy) 
+	{
+		super(toCopy.getName(),toCopy.getYOS(),toCopy.getMajor(),toCopy.getMinor());
+		setTuition(toCopy.getTuition());
+		setSavings(toCopy.getSavings());
+		
+		allWeeklyExpenses = new ArrayList<Double>(toCopy.getAllWeeklyExpenses());
+		allMonthlyExpenses = new ArrayList<Double>(toCopy.getAllMonthlyExpenses());
+		setLongTermGoal(toCopy.getLongTermGoal());
+		setLongTermGoalMonthBased(toCopy.getLongTermGoalMonthBased());
+		setWeeklyIncome(toCopy.getWeeklyIncome());
+		setWeeklyBudget(toCopy.getWeeklyIncome());
+		
+	}
+	
 	/** getTuition()
 	 * Returns the yearly tuition of the user
 	 * @return tuition - A double which represents the yearly tuition of the user
