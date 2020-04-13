@@ -93,7 +93,7 @@ public class FinancialCalculator extends FinancePerson {
 	public String displayWeeklyExpenditure()
 	{
 		String infoWeeklyExpenditure = "\n" + getName() + ", your weekly expenditure is $" + String.format("%.2f", calculateWeeklyExpenditure()); 
-		return infoWeeklyExpenditure;
+		return new String(infoWeeklyExpenditure);
 	}
 	
 	/** double calculateWeeklySavings()
@@ -123,7 +123,7 @@ public class FinancialCalculator extends FinancePerson {
 			double positiveValue = calculateWeeklySavings() * (-1);
 			infoWeeklySavings = "\n" + "Uh oh, " + getName() + " :( Your weekly savings is -$" + String.format("%.2f", positiveValue);
 		}
-		return infoWeeklySavings;
+		return new String(infoWeeklySavings);
 	}
 	
 	/** double calculateDailySavings()
@@ -165,7 +165,7 @@ public class FinancialCalculator extends FinancePerson {
 			double positiveValue = calculateBudgetDiff() * (-1);
 			infoWeeklyBudgetDiff = "\n" + "Crap, " + getName() + " :( You are spending $" + String.format("%.2f", positiveValue) + " more than your weekly budget";
 		}
-		return infoWeeklyBudgetDiff;
+		return new String(infoWeeklyBudgetDiff);
 	}
 	
 	/** String displayLongTermGoalInfo()
@@ -218,6 +218,6 @@ public class FinancialCalculator extends FinancePerson {
 			infoLongTermGoal = "\n" + "Very bad news, " + getName() + " :( At the rate of your income and expenditure, it seems like you are spending more than you are earning. In order to reach your long-term goal by your desired long-term goal period, which is " + myFormat.format(periodDateTime) + ". You will need to up your weekly savings game by $" + String.format("%.2f",  suggestedWeeklySavings2);
 		}
 	
-		return infoLongTermGoal;
+		return new String(infoLongTermGoal);
 	}
 }
