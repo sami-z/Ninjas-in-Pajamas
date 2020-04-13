@@ -79,7 +79,7 @@ public class GpaButton1Controller {
      
     
     /**
-     * This method takes in an event as a parameter and stores the number entered in numCate as the variable
+     * This method stores the number entered in numCate as the variable
      * getNumCat to be accessed later
      * 
      * @param event - An action event that is triggered when something is entered in numCate
@@ -110,7 +110,7 @@ public class GpaButton1Controller {
     }
     
     /**
-     * This method takes in an event as a parameter and loads the scene NumberOfCategories.fxml 
+     * This method loads the scene NumberOfCategories.fxml 
      * 
      * @param event - An action event that is triggered when the button enterD is pressed
      */
@@ -133,7 +133,7 @@ public class GpaButton1Controller {
      }
     
     /**
-     * This method takes in an event as a parameter and displays the assessment entered in textfield typeA in
+     * This method displays the assessment entered in textfield typeA in
      * text upcomingAssign
      * 
      * @param event - An action event that is triggered when input is entered in textfield typeA
@@ -152,7 +152,7 @@ public class GpaButton1Controller {
     }
     
     /**
-     * This method takes in an event as a parameter and displays the weight of the assessment entered in textfield weightAssignment in
+     * This method displays the weight of the assessment entered in textfield weightAssignment in
      * text displayWeight
      * 
      * @param event - An action event that is triggered when input is entered in textfield weightAssignment
@@ -184,6 +184,7 @@ public class GpaButton1Controller {
     /**
      * This method returns the instance variable numOfCategories
      * 
+     * @return numOfCategories - returns the number of categories 
      */
 	public static int getNumOfCategories() {
 		return numOfCategories;
@@ -192,6 +193,7 @@ public class GpaButton1Controller {
 	/**
      * This method sets the instance variable numOfCategories
      * 
+     * @param numOfCategories - the number of categories currently enrolled in
      */
 	public void setNumOfCategories(int numOfCategories) {
 		GpaButton1Controller.numOfCategories = numOfCategories;
@@ -200,6 +202,7 @@ public class GpaButton1Controller {
 	/**
      * This method returns the instance of GPACalculator
      * 
+     * @return controller.calc1 - returns the instance of GPACalculator
      */
 	public GPACalculator getGPACalc() {
 		return controller.calc1;
@@ -207,7 +210,7 @@ public class GpaButton1Controller {
 	}
 	
 	/**
-     * This method takes in an event as a parameter and displays the percent needed to maintain a grade in text displayResult
+     * This method displays the percent needed to maintain a grade in text displayResult
      * when button buttonC is pressed
      * 
      * @param event - An action event that is triggered when button buttonC is pressed
@@ -221,7 +224,7 @@ public class GpaButton1Controller {
 	
 	
 	/**
-     * This method takes in an event as a parameter and displays the desired grade entered in textfield desiredG in
+     * This method displays the desired grade entered in textfield desiredG in
      * text errorDG
      * 
      * @param event - An action event that is triggered when input is entered in textfield desiredG
