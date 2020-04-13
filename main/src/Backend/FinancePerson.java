@@ -213,7 +213,7 @@ public class FinancePerson extends MasterPerson{
 		for (Double d : allWeeklyExpenses) {
 			newAllWeeklyExpenses.add(new Double(d));
 		}
-		return newAllWeeklyExpenses;
+		return new ArrayList<Double>(newAllWeeklyExpenses);
 	}
 	
 	/** addWeeklyExpense(Double newExpense)
@@ -244,7 +244,7 @@ public class FinancePerson extends MasterPerson{
 		for (Double d : allMonthlyExpenses) {
 			newAllMonthlyExpenses.add(new Double(d));
 		}
-		return newAllMonthlyExpenses;
+		return new ArrayList<Double>(newAllMonthlyExpenses);
 	}
 	
 	/** addMonthlyExpense(Double newExpense)
