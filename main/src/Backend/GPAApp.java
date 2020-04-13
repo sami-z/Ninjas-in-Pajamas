@@ -192,7 +192,7 @@ public void maintainCurrGPA(){
 	
 	// Takes input from the user for the desired course grade
 	// and adds the desired course grade to the calc1 object
-	while(currNum4 <0) {
+	while(currNum5 <0) {
 		try {
 			num5 = input.nextLine();
 			currNum5 = Double.parseDouble(num5);

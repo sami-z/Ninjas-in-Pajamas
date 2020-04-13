@@ -33,7 +33,7 @@ public class ViewClubController {
 	// Instance variable of the current Stage that is being displayed
 	private Stage currentStage;
 	
-	// The instance varibale of contains the previous scene
+	// The instance variable of contains the previous scene
 	private Scene previousScene;
 
 	// The VBox which contains the list of all of the Clubs

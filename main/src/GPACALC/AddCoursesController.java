@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class AddCoursesController {
 	
 	//Instance of GPACalculator used for calculations  
-	private GPACalculator calc = new GPACalculator();			 ////PRIVACY LEAK!!!!
+	private GPACalculator calc = new GPACalculator();
 
 	//Number used to loop through each enrolled course
 	private int num1 = 1;
