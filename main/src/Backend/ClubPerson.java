@@ -129,7 +129,7 @@ public class ClubPerson extends MasterPerson {
 		for (String d : interests) {
 			nInterests.add(new String(d));
 		}
-		return nInterests;
+		return new ArrayList<String>(nInterests);
 		
 	}
 	
@@ -142,7 +142,7 @@ public class ClubPerson extends MasterPerson {
 		for (String s : faculties) {
 			nFaculties.add(new String(s));
 		}
-		return nFaculties;
+		return new ArrayList<String>(nFaculties);
 		
 	}
 	
