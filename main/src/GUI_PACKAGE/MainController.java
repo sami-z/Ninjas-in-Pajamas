@@ -15,39 +15,40 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import FNCECALC.FinanceCalculatorController;
 
-
+/**
+ * The MainController class is the controller for the GUI.fxml file.
+ * This class allows the user to pick what feature they would like to use, and loads the appropriate 
+ * scene
+ */
 public class MainController {
 
+	//gpaClick, is the button in the GUI.fxml file that the user presses to display GPA.fxml
     @FXML
-    public Button gpaClick; //private?????????
+    private Button gpaClick; 
     
+    //profileClick, is the button in the GUI.fxml file that the user presses to display Profile.fxml
     @FXML
-    public Button profileClick;
+    private Button profileClick;
     
+    //ClubButton, is the button in the GUI.fxml file that the user presses to display Club.fxml
     @FXML
-    public Button ClubButton;
+    private Button ClubButton;
     
+    //Controller to access ProfileController
+    private ProfileController getInfoController;
     
-    ProfileController getInfoController;
-    
-    Scene profileScene = null;
-/*
-    @FXML
-    private AnchorPane topBar;
+    //Initialized profileScene to null
+    private Scene profileScene = null;
 
-    @FXML
-    void a12525(ActionEvent event) {
-
-    }
-
-   // @FXML
-   // void 070707(ActionEvent event) {
-
-  //  }
-*/
-    
+   
+    /**
+     * This method loads the scene GPA.fxml 
+     * 
+     * @param event - An action event that is triggered when the button gpaClick is pressed
+     */
    @FXML
    public void displayGPA(ActionEvent event) throws IOException {	
+	   		//Load scene
             Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPA.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
@@ -56,10 +57,17 @@ public class MainController {
             stage.show();
             
         }
-    	
+   
+   /**
+    * This method loads the scene Profile.fxml 
+    * 
+    * @param event - An action event that is triggered when the button profleClick is pressed
+    */	
     @FXML
     public void displayProfile(ActionEvent event) throws IOException {	
+    	//Check if scene is initialized yet
     	if(profileScene == null) {
+    		//Load scene
     	 	FXMLLoader loader = new FXMLLoader(getClass().getResource("/PROFILE/Profile.fxml"));
     	 	Parent root = loader.load();
     	 	getInfoController = loader.<ProfileController>getController();
@@ -84,21 +92,32 @@ public class MainController {
              
       }
     
+    /**
+     * This method loads the scene FNCE.fxml 
+     * 
+     * @param event - An action event that is triggered when the finance button is pressed
+     */
     @FXML
     void displayFinance(ActionEvent event) throws IOException {
+    	//Load Scene 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/FNCE.fxml"));
         Parent root = loader.load();
+        //Get controller for finance scene
         FinanceCalculatorController controller1 = loader.<FinanceCalculatorController>getController();
         
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         controller1.setStage(stage);
+        //Checks if profile has been opened
         if(getInfoController == null) {
         	displayProfile(new ActionEvent());
+       
+        //Checks is finance person has been created
         }else if(getInfoController.getFinancePerson() == null)
         {
         	displayProfile(new ActionEvent());
         }
+        //sets scene to finance scene
         else
         {
         controller1.setFinancePerson(getInfoController.getFinancePerson());
@@ -110,10 +129,14 @@ public class MainController {
 
     }
     
+    /**
+     * This method loads the scene Club.fxml 
+     * 
+     * @param event - An action event that is triggered when the button ClubButtonis pressed
+     */
     @FXML
     public void displayClub(ActionEvent event) throws IOException {	
-        //Parent root = FXMLLoader.load(getClass().getResource("/ClubFinder/Club.fxml"));
-        
+        //Load Scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClubFinder/Club.fxml"));
         Parent root = loader.load();
         ClubMainInterfaceController controller = loader.<ClubMainInterfaceController>getController();
@@ -121,6 +144,8 @@ public class MainController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         controller.setStage(stage);
+        
+        //Checks if profile has been opened
         if(getInfoController == null) {
         	displayProfile(new ActionEvent());
         }else
