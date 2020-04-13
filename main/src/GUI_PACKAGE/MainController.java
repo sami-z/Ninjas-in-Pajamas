@@ -100,7 +100,7 @@ public class MainController {
      * @param event - An action event that is triggered when the finance button is pressed
      */
     @FXML
-    void displayFinance(ActionEvent event) throws IOException {
+    public void displayFinance(ActionEvent event) throws IOException {
     	//Load Scene 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FNCECALC/FNCE.fxml"));
         Parent root = loader.load();

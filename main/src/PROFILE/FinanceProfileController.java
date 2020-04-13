@@ -79,12 +79,12 @@ public class FinanceProfileController {
     @FXML
     private Text savingText;
     
-    MasterPerson p1;
+    private MasterPerson p1;
     
 
-    FinancePerson p3;
-	ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
-	ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
+    private FinancePerson p3;
+	private ArrayList<Double> allWeeklyExpenses = new ArrayList<Double>();
+	private ArrayList<Double> allMonthlyExpenses = new ArrayList<Double>();
 
     @FXML
     void tuitionInputPressed(ActionEvent event) {
