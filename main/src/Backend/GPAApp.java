@@ -2,6 +2,14 @@ package Backend;
 
 import java.util.*;
 
+/**
+ * This class makes use of GPACalculator to implement the functionality for the GPA 
+ * Calculator feature, which consists of two main parts: calculating the grade needed
+ * on an assessment to maintain a course grade, and calculating the grade needed in a 
+ * course to maintain a certain GPA.
+ */
+
+
 public class GPAApp implements MainApp{
 	
 	private MasterPerson person;
@@ -20,6 +28,7 @@ public class GPAApp implements MainApp{
 	 * Implements the displayMenu() method from the mainApp interface
 	 * the method displays the main menu for GPAApp 
 	 */
+
 	public void displayMenu() {
 		System.out.println("Which function would you like to use?");
 		System.out.println("Enter 1, to calculate what grade you need on a grade category to achieve a certain grade.");
