@@ -10,7 +10,7 @@ public class FinanceApp implements MainApp{
 	
 	// Instance variable of the user's financial calculator
 	// used to perform the four features of the FinanceApp
-	FinancialCalculator CalcOfPerson;
+	private FinancialCalculator CalcOfPerson;
 	
 	/** FinanceApp(FinancePerson)
 	 * FinanceApp Constructor
