@@ -80,8 +80,10 @@ public class MainController {
             stage.setScene(scene);
             stage.show();
     	}
+    	// If the scene has already been initialized the program loads the previous scene
     	else 
     	{
+    		//creates new stage and loads previous scene
             Stage stage = new Stage();
             getInfoController.setStage(stage);
              
@@ -150,6 +152,7 @@ public class MainController {
         	displayProfile(new ActionEvent());
         }else
         {
+        	// Opens and displays clubs scene
 	        controller.setPerson(getInfoController.getClubPerson());
 	        stage.setTitle("Club Finder");
 	        stage.setScene(scene);

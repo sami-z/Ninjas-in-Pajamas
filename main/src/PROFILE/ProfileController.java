@@ -38,10 +38,6 @@ public class ProfileController {
 	
 	ClubInfoProfileController ClubController;
 	
-
-    @FXML
-    private Text tuitionText;
-	
     @FXML
     private TextField minorTextField;
     
