@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
  * displaying messages, such as the user's weekly expenditure, weekly savings, weekly budget
  * progress, and long-term goal progress and predictions 
  */
+
 public class FinancialCalculator extends FinancePerson {
 	
 	/** FinancialCalculator constructor
