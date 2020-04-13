@@ -26,10 +26,10 @@ public class GpaButton1Controller {
 	//Controller to access NumberOfCategoriesController
 	private NumberOfCategoriesController controller;
 	
-	//Store number of catergories to be used by NumberOfCategoriesController.java
+	//Store number of categories to be used by NumberOfCategoriesController.java
 	private static int numOfCategories;
 	
-	//weightAssignment, is the TextField in the GPABUTTON1.fxml file where the user inputs the weight of an upcoming assesment
+	//weightAssignment, is the TextField in the GPABUTTON1.fxml file where the user inputs the weight of an upcoming assessment
     @FXML
     private TextField weightAssignment;
 	
@@ -169,12 +169,12 @@ public class GpaButton1Controller {
     			getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
     			weightAssignment.clear();
     		
-    		//If weight is not between 1 and 99 (inclusive), display error message
+    		//If weight (d) is not between 1 and 99 (inclusive), display error message in displayWeight
     		}else {
     			displayWeight.setText("Weight must be between 1 and 99");
     		}
     	
-    		//If weight is a string, display error message
+    		//If weight (d) is a string, display error message in displayWeight
     	}catch(Exception e) {
     		displayWeight.setText("Weight must be between 1 and 99");
     	}
