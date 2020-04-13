@@ -5,11 +5,12 @@ import java.io.FileWriter; //how we will actually write to new file
 import java.util.Scanner;
 
 
-/* How to use this program: The writeFile program creates a data.txt file in the directory where it is launched.
+/** The writeFile program creates a data.txt file in the directory where it is launched.
+ * 
  * The user can input data relating to the different clubs around campus, the program takes this data in a writes
  * the data into one line of data.txt.
+ * 
  * */
-
 public class WriteFile {
 
 	public static void main (String [] args) 
@@ -66,6 +67,10 @@ public class WriteFile {
 		}
 	}
 
+	/** writeToMap(File newFile) 
+	 * Writes information about interests related to clubs to a text file from user input
+	 * @param newFile - the file to write information to
+	 */
 	public static void writeToMap(File newFile) 
 	{
 		FileWriter fileW;
@@ -108,6 +113,10 @@ public class WriteFile {
 
 	}
 
+	/** writeToFile(File newFile) 
+	 * Writes information about clubs, line by line, to a text file from user input
+	 * @param newFile - the file to write information to
+	 */
 	public static void writeToFile(File newFile) 
 	{
 		try 
