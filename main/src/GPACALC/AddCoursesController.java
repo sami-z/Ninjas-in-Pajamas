@@ -111,6 +111,7 @@ public class AddCoursesController {
     			
     			//Display message in text displayGPA stating what GPA you have achieved
     			displayGPA.setText("You achieved a GPA of  " + GPA);
+    			//Calculate the grade needed
     			gradeNeeded = calc.gradeNeededToMaintain( GpaButton2Controller.getNumEnrolled(), GpaButton2Controller.getNewDesiredGrade());
     			nextC.setDisable(false);
     			if(gradeNeeded == -1) {

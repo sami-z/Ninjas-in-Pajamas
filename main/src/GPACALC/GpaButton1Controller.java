@@ -162,10 +162,15 @@ public class GpaButton1Controller {
     	//Initialize d to 0
     	double d = 0;
     	try {
+    		
     		//Get the input from weightAssignment and store it as d
     		d = Double.parseDouble(weightAssignment.getText());
     		if (d >= 1 && d <= 99) {
+    			
+    			//set the text for displayWeight
     			displayWeight.setText(weightAssignment.getText());
+    			
+    			//store neededCategoryWeight as input of weightAssignment
     			getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
     			weightAssignment.clear();
     		

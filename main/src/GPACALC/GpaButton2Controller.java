@@ -64,6 +64,7 @@ public class GpaButton2Controller {
     		//Get the input from numEnroll and store it as d
     		d = Integer.parseInt(numEnroll.getText());
     		if (d >= 2) {
+    			//set the text for displayCourse
     			displayCourse.setText("You are enrolled in " + numEnroll.getText() + " courses");
     			numberOfEnrolled = d;
     		}
@@ -136,6 +137,7 @@ public class GpaButton2Controller {
     		//Get the input from desiredG and store it as d
     		d = Double.parseDouble(desiredG.getText());
     		if (d >= 0.0 && d<= 4.0) {
+    			//set the text for displayDesiredG
     			displayDesiredG.setText("You wish to acheive a " + d);
     			newDesiredGrade = d;
     			addButton.setDisable(false);
