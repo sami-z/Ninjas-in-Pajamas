@@ -71,9 +71,10 @@ public class MasterPerson {
 	
 	public void displayInfo() 
 	{
-		System.out.println("Name: " + name);
-		System.out.println("Year of Study: " + yos);
-		System.out.println("Major: " + major);
+		System.out.println("Name: " + getName());
+		System.out.println("Year of Study: " + getYOS());
+		System.out.println("Major: " + getMajor());
+		System.out.println("Minor: " + getMinor());
 	}
 	
 	
