@@ -134,6 +134,15 @@ public class Main {
 		
 		return p1;
 	}
+
+	/** getInitialClubPerson(Scanner, MasterPerson)
+	 * Creates an instance of ClubPerson representing the current user. 
+	 * 
+	 * @param input - A Scanner object used to gather profile
+	 * information from the user
+	 * @param p1 - The instance of MasterPerson that represents the current
+	 * user. It is used to establish the non-club related aspects of the profile.
+	 */
 	
 	public static ClubPerson getInitialClubPerson(Scanner input, MasterPerson p1) 
 	{
@@ -174,6 +183,15 @@ public class Main {
 
 		return p2;
 	}
+
+	/** getInitialFinancePerson(Scanner, MasterPerson)
+	 * Creates an instance of FinancePerson representing the current user
+	 * 
+	 * @param input - A Scanner object used to gather profile
+	 * information from the user
+	 * @param p1 - The instance of MasterPerson that represents the current
+	 * user. It is used to establish the non-finance related aspects of the profile.
+	 */
 	
 	public static FinancePerson getInitialFinancePerson(Scanner input, MasterPerson p1)
 	{
