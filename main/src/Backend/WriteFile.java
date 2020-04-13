@@ -65,6 +65,7 @@ public class WriteFile {
 			}
 
 		}
+		input.close();
 	}
 
 	/** writeToMap(File newFile) 
@@ -110,7 +111,7 @@ public class WriteFile {
 			System.out.println("Failed to close FileWriter");
 		}
 
-
+		input.close();
 	}
 
 	/** writeToFile(File newFile) 
@@ -177,11 +178,13 @@ public class WriteFile {
 
 
 			buffW.close();
+			keyboard.close();
 		}
 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
+		
 	}
 }

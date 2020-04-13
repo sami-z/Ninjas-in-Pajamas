@@ -48,6 +48,9 @@ public class Main {
 			
 		}
 		
+		/** this block of code is for accessing features based on the user input for which
+		 * feature they would like to use
+		 */
 		if(userChoice == 1) 
 		{
 			ClubPerson  p2 = getInitialClubPerson(input,p1);
@@ -202,15 +205,18 @@ public class Main {
 		double currMonthlyExpense;
 		System.out.println("Enter your yearly tuition: ");
 		
-		double tuition = ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		double tuition = validateFinanceInput(input,"Invalid input: Input must be a positive double");
 
 		System.out.println("Enter the amount in your savings account: ");
-		double savings = ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		double savings = validateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		
 		String expense;
 		String monthExpense;
 		
+		/** this block of code is for getting input from the user regarding their weekly
+		 * expenses and also checks for invalid input
+		 */
 		do 
 		{
 			System.out.println("Enter all weekly expenses: ");
@@ -229,6 +235,9 @@ public class Main {
 			}
 		}while(!expense.equals(""));
 		
+		/** this block of code is for getting input from the user regarding their monthly
+		 * expenses and also checks for invalid input
+		 */
 		do 
 		{
 			System.out.println("Enter all monthly expenses: ");
@@ -249,16 +258,19 @@ public class Main {
 		}while(!monthExpense.equals(""));
 		
 		System.out.println("Enter your weekly income: ");
-		double weeklyIncome =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		double weeklyIncome =  validateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your weekly budget: ");
-		double weeklyBudget =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		double weeklyBudget =  validateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your long-term goal amount: ");
-		double longTermGoal =  ValidateFinanceInput(input,"Invalid input: Input must be a positive double");
+		double longTermGoal =  validateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
 		System.out.println("Enter your long-term goal period in months: ");
 		
+		/** this block of code is for getting input from the user regarding their long-term
+		 * goal period and also checks for invalid input
+		 */
 		int longTermGoalMonthBased = -1;
 		while(longTermGoalMonthBased==-1) {
 			String strLongTermGoalMonthBased = input.nextLine();
@@ -278,7 +290,12 @@ public class Main {
 		return p3;
 	} 
 	
-	private static double ValidateFinanceInput(Scanner input,String error) 
+	/** double validateFinanceInput(Scanner input, String error)
+	 * This method checks if the String input can be parsed into a Double, then checks if 
+	 * the input is negative, which then throws a NumberFormatException error
+	 * @return ret - A double which represents the correct input 
+	 */
+	private static double validateFinanceInput(Scanner input,String error) 
 	{
 		double ret = -1;
 		while(ret==-1) {

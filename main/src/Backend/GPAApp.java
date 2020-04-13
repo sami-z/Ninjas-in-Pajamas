@@ -56,6 +56,12 @@ public class GPAApp implements MainApp{
 		return true;
 	}
 
+
+/** maintainCurrGPA()
+* 
+* Displays the percentage needed to maintain the desired course grade of the user based on user input
+* Utilizes the GPACalculator.java class for calculations by creating a GPACalculator object
+*/
 public void maintainCurrGPA(){
 
 	GPACalculator calc1 = new GPACalculator();
@@ -83,10 +89,13 @@ public void maintainCurrGPA(){
 	String num2 = null;
 	String num3;
 	
-	
+	// Loops for the number of grade categories
 	for (int i = 0 ; i < numCate ; i++) {
 		double currNum1 = -1;
 		int currNum2 = -1;
+		
+		// Takes input from the user for the weight of the grade category
+		// and adds the weight to the calc1 object
 		System.out.println("Enter one of the " + numCate + " grade categories weight(0-99): ");
 		
 		while(currNum1<0) {
@@ -104,6 +113,8 @@ public void maintainCurrGPA(){
 			}
 		}
 		
+		// Takes input from the user for the number of components in the grade category 
+		// and adds the number of components to the calc1 object
 		System.out.println("Enter the number of components in this grade category: ");
 		
 		
@@ -121,9 +132,11 @@ public void maintainCurrGPA(){
 				currNum2 = -1;
 			}
 		
-		
+		// Loops for the number of components in the grade category
 		for (int k = 0 ; k < calc1.numCategoryComponents.get(i) ; k++) {
 			
+			// Takes input from the user for the grades in each component 
+			// and adds the grades to the calc1 object
 			System.out.println("Enter each of the " + num2 + " components grade: ");
 			double currNum3 = -1;
 			while(currNum3<0) {
@@ -149,12 +162,17 @@ public void maintainCurrGPA(){
 	double currNum4 = -1;
 	double currNum5 = -1;
 	
+	
+	// Takes input from the user for the type of assessment to by calculated
+	// and adds the name of the assessment to the calc1 object
 	System.out.println("What type of assessment would you like to use for the calculations?");
 	num6 = input.nextLine();
 	calc1.nameOfAssessment = num6;
 
 	System.out.println("What is the weight of the " + calc1.nameOfAssessment + "you would like to calculate?");
 	
+	// Takes input from the user for the weight of the assessment to by calculated
+	// and adds the weight of the assessment to the calc1 object
 	while(currNum4 <0) {
 		try {
 			num4 = input.nextLine();
@@ -172,6 +190,8 @@ public void maintainCurrGPA(){
 	
 	System.out.println("What percentage would you like to achieve in this class?");
 	
+	// Takes input from the user for the desired course grade
+	// and adds the desired course grade to the calc1 object
 	while(currNum4 <0) {
 		try {
 			num5 = input.nextLine();
@@ -195,7 +215,11 @@ public void maintainCurrGPA(){
 }
 
 
-
+/** maintainGPA()
+ * 
+ * Displays the GPA needed in a course to maintain the desired GPA of the user based on user input
+ * Utilizes the GPACalculator.java class for calculations by creating a GPACalculator object
+ */
 public void maintainGPA()  {
 	
 	Scanner input = new Scanner(System.in);
@@ -206,7 +230,7 @@ public void maintainGPA()  {
 	
 	System.out.println("Please enter the number of courses you are currently enrolled in: ");
 	
-	
+	// Takes input from the user for the number of courses the user is currently enrolled in 
 	while(numOfClasses==-1)
 	try {
 		String numbOfClassString = input.nextLine();
@@ -224,6 +248,7 @@ public void maintainGPA()  {
 	
 	System.out.println("Please enter your desired GPA: ");
 	
+	// Takes input from the user for the desired GPA of the user 
 	while(desiredGPA<0) {
 		try 
 		{
@@ -238,11 +263,14 @@ public void maintainGPA()  {
 		}
 	}
 	
+	// Loops for the number of classes the user is currently enrolled in
 	for (int i = 0; i < numOfClasses - 1; i++) {
 	
 		System.out.println("Please enter the final GPA achieved in a course: ");
 		double classGradeInt = -1;
 		
+		// Takes input from the user for the final GPA achieved by the user in a course 
+		// and adds the grade to the calc object
 		while(classGradeInt<0) 
 		{
 			try 
@@ -260,6 +288,9 @@ public void maintainGPA()  {
 			}
 		}
 		
+		// calculates the grade needed to maintain the user's desired GPA
+		// if the grade needed is not possible then a message will be displayed saying such
+		// else, displays the GPA required to maintain the user's desired GPA
 		gradeNeeded = calc.gradeNeededToMaintain(numOfClasses,desiredGPA);
 		if(gradeNeeded == -1) 
 		{
