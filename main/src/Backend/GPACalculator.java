@@ -4,21 +4,41 @@ import java.lang.*;
 
 public class GPACalculator {
 
+	// List of all grades of the person
 	public ArrayList<Double> allGrade;
+	
+	// Number of grade categories for a course of the person
 	public int numGradeCategories;
+	
+	// List of how many components are in a grade category
 	public ArrayList<Integer> numCategoryComponents = new ArrayList<Integer>();
+	
+	// List of all grades in a category 
 	public ArrayList<Double> allGrades = new ArrayList<Double>();
+	
+	// List of the weights of all the categories
 	public ArrayList<Double> categoryWeights = new ArrayList<Double>();
+	
+	// The weight of the category to be calculated
 	public double neededCategoryWeight;
+	
+	// The desired course grade of the person
 	public double desiredCourseGrade;
+	
+	// The name of the assessment to be calculated
 	public String nameOfAssessment;
 	
-	
+	/** GPA Calculator constructor 
+	 * **/
 	public GPACalculator() 
 	{
 		allGrade = new ArrayList<Double>();
 	}
-	/////////
+
+	/** calculateCGPA() 
+	 * Returns the calculated GPA of the user
+	 * @return average/allGrade.size() - a double which represents the calculated GPA of the user
+	 */
 	private double calculateCGPA() 
 	{
 		double average = 0;
@@ -30,6 +50,13 @@ public class GPACalculator {
 		return average/allGrade.size();
 	}
 	
+	/** gradeNeededToMaintain(int enrolledCourses,double GPAwanted) 
+	 * Returns the calculated grade needed to maintain the desired GPA of the user
+	 * @param enrolledCourses - number of courses that the user is enrolled in
+	 * @param GPAwanted - the desired GPA of the user
+	 * 
+	 * @return gradeNeeded - a double which represents the grade needed to maintain the user's desired GPA
+	 */
 	public double gradeNeededToMaintain(int enrolledCourses,double GPAwanted) 
 	{
 		double currentGPA = calculateCGPA();
@@ -41,13 +68,20 @@ public class GPACalculator {
 		else
 			return gradeNeeded;
 	}
-	///////
 	
+	/** addGrade(double grade)
+	 * Adds a grade to the ArrayList allGrade
+	 * @param grade - a double which represents the grade to add to allGrade
+	 */
 	public void addGrade(double grade) {
 		if(grade>=0.0 && grade<=4.0)
 			allGrade.add(grade);
 	}
 	
+	/** calculatePercentNeeded()
+	 * Returns a string message with the percentage needed to maintain the desired course grade of the user
+	 * @return infoMessage - a string message containing the percentage needed to maintain the desired course grade of the user
+	 */
 	public String calculatePercentNeeded()
 	{
 		

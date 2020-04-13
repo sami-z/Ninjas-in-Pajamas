@@ -4,6 +4,8 @@ import java.io.FileReader; // how to access file in Windows
 import java.util.*;
 
 public class ReadFile {	
+	
+	// 
 	private String dataFile;
 	public ReadFile(String dataFile) 
 	{
@@ -12,7 +14,7 @@ public class ReadFile {
 
 	public void setDataFile(String dataFile) 
 	{
-		this.dataFile=dataFile;
+		this.dataFile = dataFile;
 	}
 
 	private BufferedReader getFileReader() 
