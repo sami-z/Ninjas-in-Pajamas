@@ -80,52 +80,112 @@ public void maintainCurrGPA(){
 	}
 	
 	String num1;
-	String num2;
+	String num2 = null;
 	String num3;
 	
 	
 	for (int i = 0 ; i < numCate ; i++) {
+		double currNum1 = -1;
+		int currNum2 = -1;
+		System.out.println("Enter one of the " + numCate + " grade categories weight(0-99): ");
 		
-		System.out.println("Enter one of the " + numCate + " grade categories weight: ");
-		num1 = input.nextLine();
-		
-		double currNum1 = Double.parseDouble(num1);
-		calc1.categoryWeights.add(currNum1);
+		while(currNum1<0) {
+			try {
+				num1 = input.nextLine();
+				currNum1 = Double.parseDouble(num1);
+				if(!(currNum1>=1&&currNum1<=99)) {
+					throw new NumberFormatException();
+				}
+				calc1.categoryWeights.add(currNum1);
+			}
+			catch(NumberFormatException nfe) 
+			{
+				System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+			}
+		}
 		
 		System.out.println("Enter the number of components in this grade category: ");
-		num2 = input.nextLine();
-		int currNum2 = Integer.parseInt(num2);
-		calc1.numCategoryComponents.add(currNum2);
+		
+		
+		while(currNum2==-1)
+			try {
+				num2 = input.nextLine();
+				currNum2 = Integer.parseInt(num2);
+				if(currNum2<1) {
+					throw new NumberFormatException();
+					}
+				calc1.numCategoryComponents.add(currNum2);
+			}catch(NumberFormatException nfe)
+			{
+				System.out.println("Invalid input");
+				currNum2 = -1;
+			}
+		
 		
 		for (int k = 0 ; k < calc1.numCategoryComponents.get(i) ; k++) {
 			
 			System.out.println("Enter each of the " + num2 + " components grade: ");
-			num3 = input.nextLine();
-			if (num3.equals("")) {
-				break;
+			double currNum3 = -1;
+			while(currNum3<0) {
+				try {
+					num3 = input.nextLine();
+					currNum3 = Double.parseDouble(num3);
+					if(!(currNum3>=1&&currNum3<=99)) {
+						throw new NumberFormatException();
+					}
+					calc1.allGrades.add(currNum3);
+				}
+				catch(NumberFormatException nfe) 
+				{
+					System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+				}
 			}
-			double currNum3 = Double.parseDouble(num3);
-			calc1.allGrades.add(currNum3);
 		}
 	}
 	
 	String num4;
 	String num5;
 	String num6;
+	double currNum4 = -1;
+	double currNum5 = -1;
 	
 	System.out.println("What type of assessment would you like to use for the calculations?");
 	num6 = input.nextLine();
 	calc1.nameOfAssessment = num6;
 
 	System.out.println("What is the weight of the " + calc1.nameOfAssessment + "you would like to calculate?");
-	num4 = input.nextLine();
-	double currNum4 = Double.parseDouble(num4);
-	calc1.neededCategoryWeight = currNum4;
+	
+	while(currNum4 <0) {
+		try {
+			num4 = input.nextLine();
+			currNum4 = Double.parseDouble(num4);
+			if(!(currNum4>=1&&currNum4<=99)) {
+				throw new NumberFormatException();
+			}
+			calc1.neededCategoryWeight = currNum4;
+		}
+		catch(NumberFormatException nfe) 
+		{
+			System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+		}
+	}
 	
 	System.out.println("What percentage would you like to achieve in this class?");
-	num5 = input.nextLine();
-	double currNum5 = Double.parseDouble(num5);
-	calc1.desiredCourseGrade = currNum5;
+	
+	while(currNum4 <0) {
+		try {
+			num5 = input.nextLine();
+			currNum5 = Double.parseDouble(num5);
+			if(!(currNum5>=1&&currNum5<=99)) {
+				throw new NumberFormatException();
+			}
+			calc1.desiredCourseGrade = currNum5;
+		}
+		catch(NumberFormatException nfe) 
+		{
+			System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+		}
+	}
 	
 	String info = calc1.calculatePercentNeeded();
 
