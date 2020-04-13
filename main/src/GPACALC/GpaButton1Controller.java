@@ -85,7 +85,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when something is entered in numCate
      */
     @FXML
-    void numCategories(ActionEvent event) {
+    public void numCategories(ActionEvent event) {
     	//Initialize getNumCat to 0
     	int getNumCat = 0;
     	try {
@@ -115,7 +115,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when the button enterD is pressed
      */
     @FXML
-    void enterData(ActionEvent event) throws IOException {
+    public void enterData(ActionEvent event) throws IOException {
     	//Load scene
     	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GPACALC/NumberOfCategories.fxml"));
          Parent root = loader.load();
@@ -139,7 +139,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when input is entered in textfield typeA
      */
     @FXML
-    void getAsess(ActionEvent event) {
+    public void getAsess(ActionEvent event) {
     	//set text upcomingAssign to entered value of typeA
     	upcomingAssign.setText(typeA.getText());
     	
@@ -158,7 +158,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when input is entered in textfield weightAssignment
      */
     @FXML
-    void getWeightAssignment(ActionEvent event) {
+    public void getWeightAssignment(ActionEvent event) {
     	//Initialize d to 0
     	double d = 0;
     	try {
@@ -221,7 +221,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when button buttonC is pressed
      */	
 	@FXML
-    void calculateGrade(ActionEvent event) {
+    public void calculateGrade(ActionEvent event) {
 		//Set text displayResult to result of calculation
 		displayResult.setText(getGPACalc().calculatePercentNeeded());
 
@@ -235,7 +235,7 @@ public class GpaButton1Controller {
      * @param event - An action event that is triggered when input is entered in textfield desiredG
      */
     @FXML
-    void getDesiredG(ActionEvent event) {
+    public void getDesiredG(ActionEvent event) {
     	//Initialize d to 0
     	double d = 0;
     	try {

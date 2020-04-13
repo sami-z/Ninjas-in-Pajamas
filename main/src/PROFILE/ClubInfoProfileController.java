@@ -54,7 +54,7 @@ public class ClubInfoProfileController {
      * @param event - An ActionEvent object that is passed into the method when the BackButton is clicked
      */	
     @FXML
-    void BackButtonOnClick(ActionEvent event)throws Exception {
+    public void BackButtonOnClick(ActionEvent event)throws Exception {
     	currentStage.setScene(PreviousScene);
     	currentStage.show();
     }

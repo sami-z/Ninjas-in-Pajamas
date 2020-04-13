@@ -64,7 +64,7 @@ public class longtermController {
      */	
 	
     @FXML
-    void buttonOnClick(ActionEvent event) {
+    public void buttonOnClick(ActionEvent event) {
     	currentStage.setScene(previousScene);
     	currentStage.show();
     }

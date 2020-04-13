@@ -36,7 +36,7 @@ public class GpaController {
      * @param event - An action event that is triggered when the button gpa1 is pressed
      */
     @FXML
-    void display1(ActionEvent event) throws IOException {
+    public void display1(ActionEvent event) throws IOException {
     	//Load the scene
         Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPABUTTON1.fxml"));
         Scene scene = new Scene(root);
@@ -52,7 +52,7 @@ public class GpaController {
      * @param event - An action event that is triggered when the button gpa2 is pressed
      */
     @FXML
-    void display2(ActionEvent event) throws IOException {
+    public void display2(ActionEvent event) throws IOException {
     	//Load the scene
         Parent root = FXMLLoader.load(getClass().getResource("/GPACALC/GPABUTTON2.fxml"));
         Scene scene = new Scene(root);

@@ -57,7 +57,7 @@ public class GpaButton2Controller {
      * @param event - An action event that is triggered when input is entered in textfield numEnroll
      */
     @FXML
-    void getNumEnroll(ActionEvent event) {
+    public void getNumEnroll(ActionEvent event) {
     	//Initialize d to 0
     	int d = 0;
     	try {
@@ -85,7 +85,7 @@ public class GpaButton2Controller {
      * @param event - An action event that is triggered when the button addButton is pressed
      */
     @FXML
-    void goAddButton(ActionEvent event) throws IOException {
+    public void goAddButton(ActionEvent event) throws IOException {
     	//Load scene
     	 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GPACALC/AddCourses.fxml"));
          Parent root = loader.load();
@@ -130,7 +130,7 @@ public class GpaButton2Controller {
      * @param event - An action event that is triggered when input is entered in textfield desiredG
      */
     @FXML
-    void getDesiredG(ActionEvent event) {
+    public void getDesiredG(ActionEvent event) {
     	//Initialize d to 0
     	double d = 0;
     	try {

@@ -66,7 +66,7 @@ public class weeklySavingsController {
      * @param event - An ActionEvent object that is passed into the method when the BackButton is clicked
      */	
     @FXML
-    void buttonOnClick(ActionEvent event) {
+    public void buttonOnClick(ActionEvent event) {
     	currentStage.setScene(previousScene);
     	currentStage.show();
     }
