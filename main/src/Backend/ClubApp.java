@@ -24,15 +24,16 @@ public class ClubApp implements MainApp{
 	public ClubApp(String data, ClubPerson currentPerson) 
 	{
 		try {
-		masterClubList = ReadData(new String(data));
-		masterClubList.sortClubsByAlphabet();
+			masterClubList = ReadData(new String(data));
+			masterClubList.sortClubsByAlphabet();
 		}
 		catch(Exception e)
 		{
 			System.out.println("Unable to read data");
 		}
-
-		this.currentPerson = currentPerson;
+		
+		
+		this.currentPerson = new ClubPerson(currentPerson);
 	}
 
 	/**
