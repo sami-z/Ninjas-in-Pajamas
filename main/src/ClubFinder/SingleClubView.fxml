@@ -8,8 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClubFinder.SingleClubController">
-   <children>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="400.0" prefViewportHeight="314.0" prefViewportWidth="512.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClubFinder.SingleClubController">
+   <content>
       <VBox layoutX="6.0" layoutY="43.0" prefHeight="314.0" prefWidth="512.0" spacing="30.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
@@ -38,5 +39,5 @@
             </HBox>
          </children>
       </VBox>
-   </children>
-</AnchorPane>
+   </content>
+</ScrollPane>
