@@ -186,11 +186,11 @@ public class Club {
 	public String toString()
 	{
 		String out = "";
-		out += "Name: " + name.replace('_', ' ') + "\n";
-		out+= "Description: " + description+"\n";
-		out += "Link: " + link + "\n";
-		out += "Interests: " + numbOfInterest + "\n";
-		out+="\n";
+		out += "Name: " + getName().replace('_', ' ') + "\n";
+		out += "Description: " + getDescription()+"\n";
+		out += "Link: " + getLink() + "\n";
+		out += "Interests: " + getNumbOfInterest() + "\n";
+		out +="\n";
 		return out;
 	}
 	
