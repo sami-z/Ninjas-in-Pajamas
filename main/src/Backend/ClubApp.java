@@ -236,7 +236,7 @@ public class ClubApp implements MainApp{
 			break;
 		}
 
-
+		scan.close();
 	}
 
 	/**
@@ -284,7 +284,7 @@ public class ClubApp implements MainApp{
 				System.out.println(returnedClub.toString());
 		}while(response!=-1);
 
-
+		input.close();
 	}
 
 	/**

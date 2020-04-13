@@ -116,7 +116,7 @@ public void maintainCurrGPA(){
 
 	System.out.println(info);
 
-	
+	input.close();
 }
 
 
@@ -158,6 +158,6 @@ public void maintainGPA()  {
 	
 	}
 	
-	
+	input.close();
 	}
 }
