@@ -32,7 +32,7 @@ public class ClubPerson extends MasterPerson {
 	 * @param major - The major of the person
 	 * @param minor - The minor of the person
 	 * @param interests - The String ArrayList which contains all the interest of the person
-	 * @param faculties - The String ArrayList of the faculties by which the person is apart of
+	 * @param faculties - The String ArrayList of the faculties by which the person is a part of
 	 * 
 	 * */
 	public ClubPerson(String name, int yos, String major, String minor, ArrayList<String> interests, ArrayList<String> faculties) {
