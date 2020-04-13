@@ -210,7 +210,7 @@ public class GpaButton1Controller {
      * @return controller.calc1 - returns the instance of GPACalculator
      */
 	public GPACalculator getGPACalc() {
-		return controller.calc1;
+		return controller.getGPACalc();
 		
 	}
 	

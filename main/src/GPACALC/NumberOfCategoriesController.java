@@ -20,10 +20,10 @@ import GPACALC.GpaButton1Controller;
 
 public class NumberOfCategoriesController {
 		//Create a new ArrayList to store grades for use in calculation
-		public ArrayList <Double> newGrades = new ArrayList<Double>();   ///PRIVACY LEAK!!!
+		private ArrayList <Double> newGrades = new ArrayList<Double>(); 
 		
 		//Create instance of GPACalculator for use in calculations
-	 	public GPACalculator calc1 = new GPACalculator();				//PRIVACY LEAK!!!
+	 	private GPACalculator calc1 = new GPACalculator();	
 	 	
 	 	//Number used to loop through categories
 		private int num1 = 1;
@@ -205,12 +205,13 @@ public class NumberOfCategoriesController {
 	    	}catch( Exception e) {
 	    		displayWeight.setText("Invalid weight: must be a number between 1 and 99");
 	    	}
-	    	
+
+	    }
 	    
-	   
-
-
-
+	    
+	    public GPACalculator getGPACalc() 
+	    {
+	    	return calc1;
 	    }
 	}
 
