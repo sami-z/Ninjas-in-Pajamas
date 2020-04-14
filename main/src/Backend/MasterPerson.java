@@ -30,10 +30,10 @@ public class MasterPerson {
 
 	public MasterPerson(String name, int yos, String major, String minor) 
 	{
-		this.name = new String(name);
-		this.yos = yos;
-		this.major = new String(major);
-		this.minor = new String(minor);
+		setName(name);
+		setYOS(yos);
+		setMajor(major);
+		setMinor(minor);
 	}
 	
 	/** Master Person copy constructor
@@ -44,10 +44,10 @@ public class MasterPerson {
 
 	public MasterPerson(MasterPerson copy) 
 	{
-		this.name = copy.getName();
-		this.yos = copy.getYOS();
-		this.major = copy.getMajor();
-		this.minor = copy.getMinor();
+		setName(copy.getName());
+		setYOS(copy.getYOS());
+		setMajor(copy.getMajor());
+		setMinor(copy.getMinor());
 	}
 	
 	/** getName()

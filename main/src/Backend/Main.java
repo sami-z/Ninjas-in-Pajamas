@@ -37,7 +37,7 @@ public class Main {
 		
 		int userChoice = -1;
 		while(userChoice==-1) {
-			String userChoiceString = input.nextLine();
+			String userChoiceString = new String(input.nextLine());
 			try {
 				userChoice = Integer.parseInt(userChoiceString);
 			}
@@ -53,7 +53,7 @@ public class Main {
 		 */
 		if(userChoice == 1) 
 		{
-			ClubPerson  p2 = getInitialClubPerson(input,p1);
+			ClubPerson p2 = getInitialClubPerson(input,p1);
 			app = new ClubApp("data.txt",p2);
 		}
 		else if(userChoice == 2) 
@@ -71,7 +71,7 @@ public class Main {
 		do {
 			app.displayMenu();
 			
-			String actionString = input.nextLine();
+			String actionString = new String(input.nextLine());
 			int action = -1;
 			try {
 				action = Integer.parseInt(actionString);
@@ -109,13 +109,13 @@ public class Main {
 	public static MasterPerson getInitialMasterPerson(Scanner input)
 	{
 		System.out.println("Enter your name: ");
-		String name = input.nextLine();
+		String name = new String(input.nextLine());
 
 		System.out.println("Enter year of study: ");
 		String YOSString;	
 		int YOS = -1;
 		while(YOS==-1) {
-			YOSString = input.nextLine();
+			YOSString = new String(input.nextLine());
 			try {
 				YOS = Integer.parseInt(YOSString);
 			}
@@ -129,9 +129,9 @@ public class Main {
 		
 		
 		System.out.println("Enter your major: ");
-		String Major = input.nextLine();
+		String Major = new String(input.nextLine());
 		System.out.println("Enter your minor: ");
-		String Minor = input.nextLine();
+		String Minor = new String(input.nextLine());
 		
 		MasterPerson p1 = new MasterPerson(name, YOS, Major, Minor);
 		
@@ -158,9 +158,9 @@ public class Main {
 		do 
 		{
 			System.out.println("Enter your interest(s) based on the above mapping");
-			currInt = input.nextLine();
+			currInt = new String(input.nextLine());
 			if(!currInt.equals(""))
-			interests.add(currInt);
+			interests.add(new String(currInt));
 		}while(!currInt.equals(""));
 
 		do 
@@ -178,8 +178,8 @@ public class Main {
 			System.out.println("1.11|Graduate Societies");
 
 			System.out.println("Enter faculty(ies) you belong to based on the above mapping");
-			currFac = input.nextLine();
-			fac.add(currFac);
+			currFac = new String(input.nextLine());
+			fac.add(new String(currFac));
 		}while(!currFac.equals(""));
 
 		ClubPerson p2 = new ClubPerson(p1.getName(),p1.getYOS(),p1.getMajor(),p1.getMinor(),interests,fac);
@@ -220,13 +220,13 @@ public class Main {
 		do 
 		{
 			System.out.println("Enter all weekly expenses: ");
-			expense = input.nextLine();
+			expense = new String(input.nextLine());
 			if(!expense.equals("")) {
 				try {
 					currWeeklyExpense = Double.parseDouble(expense);
 					if(currWeeklyExpense<0)
 						throw new NumberFormatException("Negative double");
-					allWeeklyExpenses.add(currWeeklyExpense);
+					allWeeklyExpenses.add(new Double(currWeeklyExpense));
 				}
 				catch(NumberFormatException nfe)
 				{
@@ -241,14 +241,14 @@ public class Main {
 		do 
 		{
 			System.out.println("Enter all monthly expenses: ");
-			monthExpense = input.nextLine();
+			monthExpense = new String(input.nextLine());
 			
 			if(!monthExpense.equals("")) {
 				try {
 					currMonthlyExpense = Double.parseDouble(monthExpense);
 					if(currMonthlyExpense<0)
 						throw new NumberFormatException("Negative double");
-					allMonthlyExpenses.add(currMonthlyExpense);
+					allMonthlyExpenses.add(new Double(currMonthlyExpense));
 				}
 				catch(NumberFormatException nfe)
 				{
@@ -273,7 +273,7 @@ public class Main {
 		 */
 		int longTermGoalMonthBased = -1;
 		while(longTermGoalMonthBased==-1) {
-			String strLongTermGoalMonthBased = input.nextLine();
+			String strLongTermGoalMonthBased = new String(input.nextLine());
 			try {
 				longTermGoalMonthBased = Integer.parseInt(strLongTermGoalMonthBased);
 				if(longTermGoalMonthBased<0)
@@ -299,7 +299,7 @@ public class Main {
 	{
 		double ret = -1;
 		while(ret==-1) {
-			String strRet = input.nextLine();
+			String strRet = new String(input.nextLine());
 			try {
 				ret = Double.parseDouble(strRet);
 				if(ret<0)
