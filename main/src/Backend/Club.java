@@ -169,7 +169,7 @@ public class Club {
 	 * */
 	public ArrayList<String> getCategory()
 	{
-		ArrayList<String> copy = new ArrayList();
+		ArrayList<String> copy = new ArrayList<String>();
 		for(int i = 0;i<categories.size();i++) 
 		{
 			copy.add(new String(categories.get(i)));
