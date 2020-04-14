@@ -122,7 +122,7 @@ public class NumberOfCategoriesController {
 	    	grade = Double.parseDouble(inputGrades.getText());
 	    	if (grade >= 0 && grade <= 100) {
 	    		//add grade to allGrades
-	    		calc1.allGrades.add(grade);
+	    		calc1.addAllGrades(grade);
 	    		newGrades.add(grade);
 	    		//set text of gradesArray
 		    	gradesArray.setText(newGrades.toString());
@@ -156,7 +156,7 @@ public class NumberOfCategoriesController {
 	    		comp =Integer.parseInt(inputComponent.getText()); 
 		    	if (comp >= 1) {
 		    		//add comp to numCategoryComponents
-		    		calc1.numCategoryComponents.add(comp);
+		    		calc1.addNumCategoryComponents(comp);
 			    	numComp.setText(inputComponent.getText());
 			    	inputComponent.clear();
 			    	
@@ -193,7 +193,7 @@ public class NumberOfCategoriesController {
 	    			 //set text of displayWeight
 	 	    		displayWeight.setText(weightCategory.getText());
 	 	    		//add weight to ArrayList categoryWeights
-	 		    	calc1.categoryWeights.add(weight);
+	 		    	calc1.addCategoryWeights(weight);
 	 		    	weightCategory.clear();
 	 		
 	 		//If weight is not between 1 and 99 (inclusive), display error message in displayWeight

@@ -144,7 +144,7 @@ public class GpaButton1Controller {
     	upcomingAssign.setText(typeA.getText());
     	
     	//store typeA as nameOfAssesment in calc1
-    	getGPACalc().nameOfAssessment = typeA.getText();
+    	getGPACalc().setNameOfAssessment(new String(typeA.getText()));
     	
     	//clear the textfield 
     	typeA.clear();
@@ -171,7 +171,7 @@ public class GpaButton1Controller {
     			displayWeight.setText(weightAssignment.getText());
     			
     			//store neededCategoryWeight as input of weightAssignment
-    			getGPACalc().neededCategoryWeight = Double.parseDouble(weightAssignment.getText());
+    			getGPACalc().setNeededCategoryWeight(Double.parseDouble(weightAssignment.getText()));
     			weightAssignment.clear();
     		
     		//If weight (d) is not between 1 and 99 (inclusive), display error message in displayWeight
@@ -242,7 +242,7 @@ public class GpaButton1Controller {
     		//Set d to input entered in desiredG
     		d = Double.parseDouble(desiredG.getText());
     		if ( d>= 0 && d <= 100) {
-    			getGPACalc().desiredCourseGrade = Double.parseDouble(desiredG.getText());
+    			getGPACalc().setDesiredCourseGrade(Double.parseDouble(desiredG.getText()));
     			errorDG.setText("");
     		
     		//Display error message if d is not between 0 and 100

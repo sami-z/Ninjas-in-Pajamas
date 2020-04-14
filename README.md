@@ -1,8 +1,8 @@
 # Ninjas-in-Pajamas (T03 - GROUP 12)
 
-This is a form-based application designed to make student life easier. Our program consists of three features: a Club Opportunity Finder, a Financial Helper, and a GPA Calculator. As of the third version completed for Demo 3, all three features are implemented as text-based programs, and the GUIs of the main menu, GPA Calculator, profile page, and part of the Club Finder are functional. The GPA Calculator takes information about the students' grades and weightings and computes minimum grades required for future assessments/courses to achieve a specified goal, while the Club Finder provides a list of clubs at the U of C and information about each of them.
+This is a form-based application designed to make student life easier. Our program consists of three features: a Club Opportunity Finder, a Financial Helper, and a GPA Calculator. As of the completed final submission, all three features are implemented as both a GUI and text-based programs. The GPA Calculator takes information about the students' grades and weightings and computes minimum grades required for future assessments/courses to achieve a specified goal, the Club Finder provides a list of clubs at the U of C and information about each of them, and the Finance Helper takes spending and earning information from the user and predicts timelines and provides budgeting advice.
 
-Version 3 can be located in the master branch of the repository under the "main" folder. From there, the "src" folder contains the code for our project, which is organized into several packages. In "GUI_PACKAGE" you can find the Main.java file, which should be run in order to use the program.
+The final version can be located in the master branch of the repository under the "main" folder. From there, the "src" folder contains the code for our project, which is organized into several packages. In "GUI_PACKAGE" you can find the Main.java file, which should be run in order to use the program.
 
 How to Compile and Run GUI:
 1. Click "Clone or download" in the GitHub repository (Ninjas-in-Pajamas) and download the repository as a zip file.
