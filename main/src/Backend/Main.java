@@ -108,6 +108,7 @@ public class Main {
 
 	public static MasterPerson getInitialMasterPerson(Scanner input)
 	{
+		//Take input for user name
 		System.out.println("Enter your name: ");
 		String name = input.nextLine();
 
@@ -127,7 +128,7 @@ public class Main {
 		}
 		
 		
-		
+		//Take input foe user major and minor
 		System.out.println("Enter your major: ");
 		String Major = input.nextLine();
 		System.out.println("Enter your minor: ");
@@ -156,7 +157,7 @@ public class Main {
 
 		displayInterestMapping();
 		do 
-		{
+		{	
 			System.out.println("Enter your interest(s) based on the above mapping");
 			currInt = input.nextLine();
 			if(!currInt.equals(""))
@@ -257,6 +258,7 @@ public class Main {
 			}
 		}while(!monthExpense.equals(""));
 		
+		//Take input for user's finances
 		System.out.println("Enter your weekly income: ");
 		double weeklyIncome =  validateFinanceInput(input,"Invalid input: Input must be a positive double");
 		
