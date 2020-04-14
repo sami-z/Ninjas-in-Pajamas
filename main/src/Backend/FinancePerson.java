@@ -83,7 +83,7 @@ public class FinancePerson extends MasterPerson{
 		setLongTermGoal(toCopy.getLongTermGoal());
 		setLongTermGoalMonthBased(toCopy.getLongTermGoalMonthBased());
 		setWeeklyIncome(toCopy.getWeeklyIncome());
-		setWeeklyBudget(toCopy.getWeeklyIncome());
+		setWeeklyBudget(toCopy.getWeeklyBudget());
 		
 	}
 	

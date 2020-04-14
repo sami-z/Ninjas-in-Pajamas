@@ -21,7 +21,7 @@ public class GPAApp implements MainApp{
 	 */
 	public GPAApp(MasterPerson person) 
 	{
-		this.person = person;
+		this.person = new MasterPerson(person);
 	}
 
 	/**
