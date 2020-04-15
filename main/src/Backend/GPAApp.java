@@ -223,7 +223,7 @@ public class GPAApp implements MainApp{
 	
 		System.out.println(new String(info));
 	
-		
+		input.close();
 	}
 	
 	
@@ -312,9 +312,9 @@ public class GPAApp implements MainApp{
 			{
 				System.out.println("The GPA in your course required to maintain a " + desiredGPA + " is " +gradeNeeded  + " in " + (numOfClasses-i-1) + " classes");
 			}
-		
+	
 		}
 	
-	
+	input.close();
 	}
 }
