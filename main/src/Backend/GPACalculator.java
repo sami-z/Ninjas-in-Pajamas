@@ -195,6 +195,11 @@ public class GPACalculator {
 		numCategoryComponents.add(new Integer(newNumCategoryComponents));
 	}
 	
+	public void removeAllGrades(int unwantedGrade)
+	{
+		allGrades.remove(unwantedGrade);
+	}
+	
 	public String calculatePercentNeeded()
 	{
 		// Calculate the sum of all the weights the user has entered so far
@@ -207,7 +212,7 @@ public class GPACalculator {
 		}
 		
 		double finalWeight = totalWeight + getNeededCategoryWeight();
-		double multiplyWeight = 1 / finalWeight;
+		double multiplyWeight = 100 / finalWeight;
 
 		// Calculate the user's total current grade based on the assessment
 		// categories and weightings
@@ -221,11 +226,12 @@ public class GPACalculator {
 			for (int j = 0 ; j < currentNumCategoryComponents ; j++) {
 				
 				double currentGrade = getAllGrades().get(j);
-				totalGrade = totalGrade + (currentGrade * eachWeight);
+				removeAllGrades(j);
+				totalGrade = totalGrade + (currentGrade * (eachWeight / 100));
 			}
 		}
 		
-		double desiredWeight = getNeededCategoryWeight() * multiplyWeight;
+		double desiredWeight = getNeededCategoryWeight() * multiplyWeight / 100;
 		double minusWeight = getDesiredCourseGrade() - totalGrade;
 		double neededGrade = minusWeight / desiredWeight;
 		double dob = neededGrade * 100;

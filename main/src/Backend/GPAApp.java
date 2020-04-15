@@ -105,7 +105,7 @@ public class GPAApp implements MainApp{
 			
 			// Takes input from the user for the weight of the grade category
 			// and adds the weight to the calc1 object
-			System.out.println("Enter one of the " + numCate + " grade categories weight(0-99): ");
+			System.out.println("Enter one of the " + numCate + " grade categories weight(1-99): ");
 			
 			while(currNum1<0) {
 				try {
@@ -118,7 +118,7 @@ public class GPAApp implements MainApp{
 				}
 				catch(NumberFormatException nfe) 
 				{
-					System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+					System.out.println("Please enter a weight between 1 and 99 (inclusive)");
 				}
 			}
 			
@@ -152,14 +152,14 @@ public class GPAApp implements MainApp{
 					try {
 						num3 = new String(input.nextLine());
 						currNum3 = Double.parseDouble(num3);
-						if(!(currNum3>=1&&currNum3<=99)) {
+						if(!(currNum3>=0&&currNum3<=100)) {
 							throw new NumberFormatException();
 						}
 						calc1.addAllGrades(new Double(currNum3));
 					}
 					catch(NumberFormatException nfe) 
 					{
-						System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+						System.out.println("Please enter a weight between 0 and 100 (inclusive)");
 					}
 				}
 			}
@@ -207,7 +207,7 @@ public class GPAApp implements MainApp{
 			try {
 				num5 = input.nextLine();
 				currNum5 = Double.parseDouble(num5);
-				if(!(currNum5>=1&&currNum5<=99)) {
+				if(!(currNum5>=0&&currNum5<=100)) {
 					throw new NumberFormatException();
 				}
 				calc1.setDesiredCourseGrade(new Double(currNum5));
@@ -215,7 +215,7 @@ public class GPAApp implements MainApp{
 			}
 			catch(NumberFormatException nfe) 
 			{
-				System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+				System.out.println("Please enter a weight between 0 and 100 (inclusive)");
 			}
 		}
 		
