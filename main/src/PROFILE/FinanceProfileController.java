@@ -1,5 +1,10 @@
 package PROFILE;
 
+/**
+ * This class is the controller for the FinanceProfile.fxml scene and it
+ *  validates and stores the user input, this class also contains methods
+ * that allow the ProfileController class to extract information from this controller
+ */
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;

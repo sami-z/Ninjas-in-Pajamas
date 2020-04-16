@@ -24,7 +24,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import FNCECALC.FinanceCalculatorController;
 
-
+/**
+ * This class handles and validates the input for the user in the profie screen.
+ * This class also contains methods that allow the MainController get a FinancePerson object
+ * and a ClubPerson Object
+ *
+ */
 public class ProfileController {
 	
 	private ObservableList<String> YOSlist = FXCollections.observableArrayList("1", "2", "3", "4", "5+");
