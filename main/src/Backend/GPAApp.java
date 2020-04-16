@@ -181,7 +181,7 @@ public class GPAApp implements MainApp{
 		calc1.setNameOfAssessment(new String(num6));
 		
 	
-		System.out.println("What is the weight of the " + calc1.getNameOfAssessment() + "you would like to calculate?");
+		System.out.println("What is the weight of the " + calc1.getNameOfAssessment() + " you would like to calculate?");
 		
 		// Takes input from the user for the weight of the assessment to by calculated
 		// and adds the weight of the assessment to the calc1 object
@@ -197,7 +197,7 @@ public class GPAApp implements MainApp{
 			}
 			catch(NumberFormatException nfe) 
 			{
-				System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+				System.out.println("Please enter a weight between 1 and 99 (inclusive)");
 				currNum4 = -1;
 			}
 		}
