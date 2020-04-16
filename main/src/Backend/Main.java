@@ -284,6 +284,7 @@ public class Main {
 			catch(NumberFormatException nfe)
 			{
 				System.out.println("Please enter a positive integer");
+				longTermGoalMonthBased = -1;
 			}
 			
 		}
