@@ -293,7 +293,7 @@ public class GPAApp implements MainApp{
 				{
 					String classGradeStr = new String(input.nextLine());
 					classGradeInt = Double.parseDouble(classGradeStr);
-					if(!(desiredGPA<=4.0&&desiredGPA>=0))
+					if(!(classGradeInt<=4.0&&classGradeInt>=0))
 					{
 						throw new NumberFormatException();
 					}
