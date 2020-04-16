@@ -140,6 +140,7 @@ public class FinanceCalculatorController {
 		
 		// Calculates the weekly budget difference
 		s = c1.displayWeeklyBudgetDiff();
+		System.out.println(s);
 		
 		// Set the text/stage/previous scene instance variables in the new scene
 		weeklyBudgetControllerIn.setText(s);
@@ -211,7 +212,7 @@ public class FinanceCalculatorController {
 	 */
 	public void setFinancePerson(FinancePerson person) 
 	{
-		this.person = new FinancePerson(person);
+		this.person = person;
 	}
 	
     /**
