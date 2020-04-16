@@ -119,6 +119,7 @@ public class GPAApp implements MainApp{
 				catch(NumberFormatException nfe) 
 				{
 					System.out.println("Please enter a weight between 1 and 99 (inclusive)");
+					currNum1 = -1;
 				}
 			}
 			
@@ -160,6 +161,7 @@ public class GPAApp implements MainApp{
 					catch(NumberFormatException nfe) 
 					{
 						System.out.println("Please enter a weight between 0 and 100 (inclusive)");
+						currNum3 = -1;
 					}
 				}
 			}
@@ -196,6 +198,7 @@ public class GPAApp implements MainApp{
 			catch(NumberFormatException nfe) 
 			{
 				System.out.println("Please enter a weight between 0 and 99 (inclusive)");
+				currNum4 = -1;
 			}
 		}
 		
@@ -216,6 +219,7 @@ public class GPAApp implements MainApp{
 			catch(NumberFormatException nfe) 
 			{
 				System.out.println("Please enter a weight between 0 and 100 (inclusive)");
+				currNum5 = -1;
 			}
 		}
 		
@@ -272,6 +276,7 @@ public class GPAApp implements MainApp{
 			catch(NumberFormatException nfe) 
 			{
 				System.out.println("Invalid input - Please type a positive  number between 0 and 4.0");
+				desiredGPA = -1;
 			}
 		}
 		
@@ -297,6 +302,7 @@ public class GPAApp implements MainApp{
 				}
 				catch(NumberFormatException nfe){
 					System.out.println("Invalid input - Please type a positive  number between 0 and 4.0");
+					classGradeInt = -1;
 				}
 			}
 			
