@@ -11,7 +11,7 @@
    <content>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="478.0">
          <children>
-            <Button fx:id="enterD" layoutX="181.0" layoutY="175.0" mnemonicParsing="false" onAction="#enterData" prefHeight="28.0" prefWidth="126.0" text="Enter Data" />
+            <Button fx:id="enterD" disable="true" layoutX="181.0" layoutY="175.0" mnemonicParsing="false" onAction="#enterData" prefHeight="28.0" prefWidth="126.0" text="Enter Data" />
             <HBox layoutX="44.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="412.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many grade categories are in your course thus far?" translateY="20.0" wrappingWidth="188.7578125" />

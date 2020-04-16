@@ -97,7 +97,9 @@ public class GpaButton1Controller {
     		if(getNumCat >= 1) {
     			//Send getNumCat to method setNumOfCategories if getNumCat >=1
     			setNumOfCategories(getNumCat);
+    			enterD.setDisable(false);
     			errorCat.setText("");
+    			
     			
     		//If getNumCat is not >=1, display an error message
     		}else {
