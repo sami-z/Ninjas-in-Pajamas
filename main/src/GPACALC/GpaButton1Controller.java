@@ -76,6 +76,9 @@ public class GpaButton1Controller {
     @FXML
     private Text errorDG;
     
+    //name of the assessment
+    private String assesmentName = "";
+    
      
     
     /**
@@ -143,8 +146,9 @@ public class GpaButton1Controller {
     	//set text upcomingAssign to entered value of typeA
     	upcomingAssign.setText(typeA.getText());
     	
+    	assesmentName = typeA.getText();
+    	
     	//store typeA as nameOfAssesment in calc1
-    	getGPACalc().setNameOfAssessment(new String(typeA.getText()));
     	
     	//clear the textfield 
     	typeA.clear();
@@ -223,6 +227,7 @@ public class GpaButton1Controller {
 	@FXML
     public void calculateGrade(ActionEvent event) {
 		//Set text displayResult to result of calculation
+		getGPACalc().setNameOfAssessment(assesmentName);
 		displayResult.setText(getGPACalc().calculatePercentNeeded());
 
     }
@@ -238,6 +243,7 @@ public class GpaButton1Controller {
     public void getDesiredG(ActionEvent event) {
     	//Initialize d to 0
     	double d = 0;
+    	
     	try {
     		//Set d to input entered in desiredG
     		d = Double.parseDouble(desiredG.getText());

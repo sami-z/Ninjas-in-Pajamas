@@ -22,6 +22,9 @@ public class NumberOfCategoriesController {
 		//Create a new ArrayList to store grades for use in calculation
 		private ArrayList <Double> newGrades = new ArrayList<Double>(); 
 		
+		//Compenent numer of grades
+		private int comps;
+		
 		//Create instance of GPACalculator for use in calculations
 	 	private GPACalculator calc1 = new GPACalculator();	
 	 	
@@ -100,6 +103,7 @@ public class NumberOfCategoriesController {
 	    	inputComponent.clear();
 	    	numComp.setText(null);
 	    	inputGrades.clear();
+	    	inputGrades.setDisable(true);
 	    	gradesArray.setText(null);
 	    	newGrades.clear();
 	    	
@@ -116,6 +120,11 @@ public class NumberOfCategoriesController {
 	    @FXML
 	    void displayGrades(ActionEvent event) {
 	    	//Initialize grade to 0
+	    	if(newGrades.size() == comps) 
+	    	{
+	    		inputGrades.setText("Cannot input anymore values");
+	    		return;
+	    	}
 	    	double grade = 0;
 	    	try {
 	    	//Get the input from inputGrades and store is as grade
@@ -157,7 +166,9 @@ public class NumberOfCategoriesController {
 		    	if (comp >= 1) {
 		    		//add comp to numCategoryComponents
 		    		calc1.addNumCategoryComponents(comp);
+		    		comps=comp;
 			    	numComp.setText(inputComponent.getText());
+			    	inputGrades.setDisable(false);
 			    	inputComponent.clear();
 			    	
 			    //If comp is not >=1, display error message in numComp

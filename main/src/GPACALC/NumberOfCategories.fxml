@@ -52,7 +52,7 @@
       </VBox>
       <VBox layoutX="265.0" layoutY="430.0" prefHeight="102.0" prefWidth="133.0">
          <children>
-            <TextField fx:id="inputGrades" onAction="#displayGrades" prefHeight="39.0" prefWidth="156.0" />
+            <TextField fx:id="inputGrades" disable="true" onAction="#displayGrades" prefHeight="39.0" prefWidth="156.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grades:" textAlignment="CENTER" translateX="55.0" wrappingWidth="72.205078125" />
             <Text fx:id="gradesArray" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="190.0">
                <font>
