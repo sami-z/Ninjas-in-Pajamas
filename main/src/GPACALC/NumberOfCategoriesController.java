@@ -208,7 +208,11 @@ public class NumberOfCategoriesController {
 
 	    }
 	    
-	    
+	    /**
+		 * Returns the instance of GPACalculator 
+		 * 
+		 * @return calc1 - The instance of GPACalculator in the controller
+		 */
 	    public GPACalculator getGPACalc() 
 	    {
 	    	return calc1;
