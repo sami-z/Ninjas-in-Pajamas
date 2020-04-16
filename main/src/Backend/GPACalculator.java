@@ -295,18 +295,17 @@ public class GPACalculator {
 
 		// Calculate the user's total current grade based on the assessment
 		// categories and weightings
-		
+		int curr = 0;
 		for (int i = 0 ; i < getCategoryWeightsSize() ; i++) {
 			
 			double currentWeight = getCategoryWeights().get(i) * multiplyWeight;
 			int currentNumCategoryComponents = getNumCategoryComponents().get(i);
 			double eachWeight = currentWeight / currentNumCategoryComponents;
 			
-			for (int j = 0 ; j < currentNumCategoryComponents ; j++) {
-				
-				double currentGrade = getAllGrades().get(j);
-				removeAllGrades(j);
-				totalGrade = totalGrade + (currentGrade * (eachWeight / 100));
+			
+			for (int j = curr ; j < curr+currentNumCategoryComponents ; j++) {
+					double currentGrade = getAllGrades().get(j);
+					totalGrade = totalGrade + (currentGrade * (eachWeight / 100));
 			}
 		}
 		

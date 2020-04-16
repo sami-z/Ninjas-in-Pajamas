@@ -226,8 +226,7 @@ public class GPAApp implements MainApp{
 		String info = calc1.calculatePercentNeeded();
 	
 		System.out.println(new String(info));
-	
-		input.close();
+
 	}
 	
 	
@@ -321,6 +320,5 @@ public class GPAApp implements MainApp{
 	
 		}
 	
-	input.close();
 	}
 }
