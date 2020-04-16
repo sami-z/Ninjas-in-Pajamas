@@ -99,47 +99,81 @@ public class GPACalculator {
 			allGrade.add(new Double(grade));
 	}
 	
-	/** calculatePercentNeeded()
-	 * Returns a string message with the percentage needed to maintain the desired course grade of the user
-	 * @return infoMessage - a string message containing the percentage needed to maintain the desired course grade of the user
+	/**
+	 * Returns the needed category weight instance variable
+	 * 
+	 * @return this.neededCategoryWeight - A double representing the needed category weight 
 	 */
-
-	
 	public double getNeededCategoryWeight()
 	{
 		return this.neededCategoryWeight;
 	}
 	
+	/**
+	 * Sets the needed category weight instance variable to the value of parameter cateWeight
+	 * 
+	 *  @param cateWeight - the weight of the category
+	 */
 	public void setNeededCategoryWeight(double cateWeight)
 	{
 		this.neededCategoryWeight = cateWeight;
 	}
 	
+	/**
+	 * Returns the desired course grade instance variable
+	 * 
+	 * @return A double representing the desired course grade
+	 */
 	public double getDesiredCourseGrade()
 	{
 		return this.desiredCourseGrade;
 	}
 	
+	/**
+	 * Sets the desired course grade instance variable to the value of parameter desiredCourseGrade
+	 * 
+	 *  @param desiredCourseGrade - the desired course grade
+	 */
 	public void setDesiredCourseGrade(double desiredCourseGrade)
 	{
 		this.desiredCourseGrade = desiredCourseGrade;
 	}
 	
+	/**
+	 * Returns the nameOfAssesment instance variable
+	 * 
+	 * @return new String(this.nameOfAssessment) - A string representing the name of the assessment
+	 */
 	public String getNameOfAssessment()
 	{
 		return new String(this.nameOfAssessment);
 	}
 	
+	/**
+	 * Sets the desired course grade instance variable
+	 * 
+	 * @param noa - A double representing the desired course grade
+	 */
 	public void setNameOfAssessment(String noa)
 	{
 		this.nameOfAssessment = new String(noa);
 	}
 	
+	/**
+	 * Returns the size of the ArrayList categoryWeights
+	 * 
+	 * @return categoryWeights.size() - An integer representing the size of the ArrayList categoryWeights 
+	 */
 	public int getCategoryWeightsSize()
 	{
 		return categoryWeights.size();
 	}
 	
+	/**
+	 * Returns a copy of ArrayList categoryWeights
+	 * 
+	 * @return copy - A copy of the ArrayList categoryWeights
+	 */
 	public ArrayList<Double> getCategoryWeights() 
 	{
 		ArrayList<Double> copy = new ArrayList<Double> ();
@@ -150,16 +184,31 @@ public class GPACalculator {
 		return copy;
 	}
 	
+	/**
+	 * Adds the parameter newCategoryWeight to the ArrayList categoryWeight
+	 * 
+	 * @param newCategoryWeight- A double representing a new category weight
+	 */
 	public void addCategoryWeights(Double newCategoryWeight)
 	{
 		categoryWeights.add(new Double(newCategoryWeight));
 	}
 	
+	/**
+	 * Returns the size of the ArrayList allGrades
+	 * 
+	 * @return allGrades.size() - An integer representing the size of the ArrayList allGrades
+	 */
 	public int getAllGradesSize()
 	{
 		return allGrades.size();
 	}
 	
+	/**
+	 * Returns a copy of the ArrayList allGrades
+	 * 
+	 * @return copy - A copy of the ArrayList allGrades
+	 */
 	public ArrayList<Double> getAllGrades() 
 	{
 		ArrayList<Double> copy = new ArrayList<Double> ();
@@ -170,16 +219,31 @@ public class GPACalculator {
 		return copy;
 	}
 	
+	/**
+	 * Adds the parameter newAllGrades to the ArrayList allGrades
+	 * 
+	 * @param newAllGrades- A double representing a new grade 
+	 */
 	public void addAllGrades(Double newAllGrades)
 	{
 		allGrades.add(new Double(newAllGrades));
 	}
 	
+	/**
+	 * Returns the size of the ArrayList numCategoryComponents
+	 * 
+	 * @return numCategoryComponents.size() - An integer representing the size of the ArrayList numCategoryComponents
+	 */
 	public int getNumCategoryComponentsSize()
 	{
 		return numCategoryComponents.size();
 	}
 	
+	/**
+	 * Returns a copy of the ArrayList getNumCategoryComponents
+	 * 
+	 * @return copy - A copy of the ArrayList numCategoryComponents
+	 */
 	public ArrayList<Integer> getNumCategoryComponents() 
 	{
 		ArrayList<Integer> copy = new ArrayList<Integer> ();
@@ -190,16 +254,31 @@ public class GPACalculator {
 		return copy;
 	}
 	
+	/**
+	 * Adds the parameter newNumCategoryComponents to the ArrayList numCategoryComponents
+	 * 
+	 * @param newNumCategoryComponents - A double representing the number of category components
+	 */
 	public void addNumCategoryComponents(Integer newNumCategoryComponents)
 	{
 		numCategoryComponents.add(new Integer(newNumCategoryComponents));
 	}
 	
+	/**
+	 * Removes the parameter unwantedGrade from the ArrayList allGrades
+	 * 
+	 * @param unwantedGrade- An in representing a a grade to remove
+	 */
 	public void removeAllGrades(int unwantedGrade)
 	{
 		allGrades.remove(unwantedGrade);
 	}
 	
+	
+	/** calculatePercentNeeded()
+	 * Returns a string message with the percentage needed to maintain the desired course grade of the user
+	 * @return infoMessage - a string message containing the percentage needed to maintain the desired course grade of the user
+	 */
 	public String calculatePercentNeeded()
 	{
 		// Calculate the sum of all the weights the user has entered so far
