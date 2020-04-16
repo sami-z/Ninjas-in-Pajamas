@@ -300,7 +300,7 @@ public class Main {
 	private static double validateFinanceInput(Scanner input,String error) 
 	{
 		double ret = -1;
-		while(ret==-1) {
+		while(ret<0) {
 			String strRet = new String(input.nextLine());
 			try {
 				ret = Double.parseDouble(strRet);
