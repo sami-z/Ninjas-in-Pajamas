@@ -236,7 +236,6 @@ public class ClubApp implements MainApp{
 			break;
 		}
 
-		scan.close();
 	}
 
 	/**
@@ -261,17 +260,18 @@ public class ClubApp implements MainApp{
 			
 			// Try's to convert user input into integer. If the user does not enter an integer it will
 			// throw and exception and go back to the main menu
+			System.out.println("a");
 			try {
 			response = Integer.parseInt(responseStr);
+			// If the users input is -1 then the program will go back to the main menu
+			if(response==-1)
+				break;
 			}
 			catch (NumberFormatException nfe) {
 				System.out.println("Input is not a number");
 				response = -1;
 		    }
 			
-			// If the users input is -1 then the program will go back to the main menu
-			if(response==-1)
-				break;
 
 			//Gets the Club at the index specified
 			Club returnedClub = list.getClub(response-1);
@@ -284,7 +284,6 @@ public class ClubApp implements MainApp{
 				System.out.println(returnedClub.toString());
 		}while(response!=-1);
 
-		input.close();
 	}
 
 	/**

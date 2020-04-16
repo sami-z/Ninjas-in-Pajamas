@@ -25,7 +25,8 @@ import javafx.stage.Stage;
 import FNCECALC.FinanceCalculatorController;
 
 /**
- * This class handles and validates the input for the user in the profie screen.
+ * This class is the controller for the Profile.fxml scene and
+ * it handles and validates the input for the user in the profie screen.
  * This class also contains methods that allow the MainController get a FinancePerson object
  * and a ClubPerson Object
  *

@@ -25,6 +25,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * This class is the controller for the ClubInfoProfile.fxml scene and handles the events
+ * when the user adds or removes and interest
+ */
 public class ClubInfoProfileController {
 	
 	// The ArrayList that stores all of the interests
