@@ -79,6 +79,7 @@ public class AddCoursesController {
     	result.setText(null);
     	gpaAchieved.clear();
     	displayGPA.setText(null);
+    	gpaAchieved.setDisable(false);
     }
     
  	
@@ -120,6 +121,7 @@ public class AddCoursesController {
 	    			result.setText(("The GPA in your course required to maintain a " + GpaButton2Controller.getNewDesiredGrade()+ " is " + gradeNeeded  + " in " + (GpaButton2Controller.getNumEnrolled()-num2) + " classes"));
 	    		}
     			num2+=1;
+    			gpaAchieved.setDisable(true);
     		}
     	
     		//If GPA entered is not between 0.0 and 4.0, display an error message	

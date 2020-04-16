@@ -307,6 +307,7 @@ public class GPACalculator {
 					double currentGrade = getAllGrades().get(j);
 					totalGrade = totalGrade + (currentGrade * (eachWeight / 100));
 			}
+			curr+=currentNumCategoryComponents;
 		}
 		
 		double desiredWeight = getNeededCategoryWeight() * multiplyWeight / 100;
